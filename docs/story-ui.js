@@ -29,9 +29,9 @@ export class IntroController {
     this.onFinish = onFinish; this.index = 0; this.scene = null;
     this.dialog = $('introDialog');
     $('introNext').onclick = () => this.next();
-    $('introPrevious').onclick = () => this.setPage(this.index - 1);
+    $('introPrevious').onclick = () => this.setPage(this.index - 1, { scroll: true });
     $('introSkip').onclick = () => this.finish();
-    $('introProgress').onclick = event => { const button = event.target.closest('[data-intro-page]'); if (button) this.setPage(Number(button.dataset.introPage)); };
+    $('introProgress').onclick = event => { const button = event.target.closest('[data-intro-page]'); if (button) this.setPage(Number(button.dataset.introPage), { scroll: true }); };
     this.dialog.addEventListener('cancel', event => { event.preventDefault(); this.finish(); });
     this.dialog.addEventListener('keydown', event => {
       if (event.key === 'ArrowRight') { event.preventDefault(); this.next(); }
@@ -46,7 +46,7 @@ export class IntroController {
     this.scene.start(); this.setPage(0); $('introNext').focus({preventScroll:true});
   }
   refresh() { if (this.dialog.open) this.setPage(this.index); }
-  setPage(index) {
+  setPage(index, { scroll = false } = {}) {
     this.index = Math.max(0, Math.min(PROLOGUE.length - 1, index));
     const page = PROLOGUE[this.index][language()];
     $('introChapter').textContent = `PROLOGUE ${String(this.index + 1).padStart(2,'0')} / 04`;
@@ -57,8 +57,9 @@ export class IntroController {
     $('introProgress').innerHTML = PROLOGUE.map((item,i) => `<button class="intro-dot ${i===this.index?'active':''} ${i<this.index?'seen':''}" data-intro-page="${i}" aria-label="${esc(tr('第{n}幕：{label}','Scene {n}: {label}',{n:i+1,label:item[language()].label}))}" ${i===this.index?'aria-current="step"':''}><span></span></button>`).join('');
     this.scene?.setScene(this.index); this.dialog.dataset.chapter = String(this.index);
     $('introCanvas').setAttribute('aria-label', page.aria);
+    if (scroll) this.dialog.scrollTo({ top: 0, behavior: 'instant' });
   }
-  next() { if (this.index < 3) this.setPage(this.index + 1); else this.finish(); }
+  next() { if (this.index < 3) this.setPage(this.index + 1, { scroll: true }); else this.finish(); }
   finish() { this.scene?.stop(); this.dialog.close(); this.onFinish(); }
 }
 
@@ -75,7 +76,7 @@ export class BriefingController {
     this.models=3;this.mode='normal';
     $('briefingNext').onclick=()=>this.next(); $('briefingBack').onclick=()=>this.onClose();
     $('briefingSkip').onclick=()=>this.onLaunch(); $('briefingFullText').onclick=()=>this.reveal();
-    $('briefingTabs').onclick=event=>{const button=event.target.closest('[data-briefing-beat]');if(button)this.setBeat(Number(button.dataset.briefingBeat));};
+    $('briefingTabs').onclick=event=>{const button=event.target.closest('[data-briefing-beat]');if(button)this.setBeat(Number(button.dataset.briefingBeat),{scroll:true});};
     $('briefingDossier').onclick=event=>{if(event.target.closest('[data-print-models]'))this.onPrint();};
   }
   open(target,{mode='normal',models=3}={}) {
@@ -88,10 +89,23 @@ export class BriefingController {
     $('briefingDestination').textContent=target.dossier.system;
     $('briefingFlightMode').textContent=mode==='warp'?tr('航法：無茶なワープ（自己責任）','Reckless warp (insurance void)'):tr('航法：通常航行（安全だが退屈）','Conventional flight (safe, dull)');
     $('briefingFlightMode').classList.toggle('risky',mode==='warp');
-    if(changed)this.setBeat(0);else if(localeChanged)this.setBeat(this.index);else this.renderDossier();
+    if(changed){$('briefingScreen').scrollTop=0;$('briefingDossier').scrollTop=0;this.setBeat(0);}else if(localeChanged)this.setBeat(this.index);else this.renderDossier();
   }
   hide() {this.active=false;clearTimeout(this.timer);this.scene?.stop();}
-  setBeat(index) {
+  scrollToTop() {
+    $('briefingScreen').scrollTop=0;
+    $('briefingDossier').scrollTop=0;
+    if(window.innerWidth>760)return;
+    if(document.activeElement?.closest?.('.briefing-controls'))document.activeElement.blur();
+    const jump=()=>{
+      const anchor=$('briefingTabs')||$('briefingScreen');
+      const top=anchor?Math.max(0,anchor.getBoundingClientRect().top+window.scrollY-10):0;
+      window.scrollTo({top,behavior:'instant'});
+    };
+    jump();
+    requestAnimationFrame(jump);
+  }
+  setBeat(index,{scroll=false}={}) {
     if(!this.active)return;
     this.index=Math.max(0,Math.min(3,index)); const beat=BEATS[this.index];
     $('briefingChapter').textContent=beat.english; $('briefingBeatTitle').textContent=tr(...beat.title);
@@ -100,6 +114,7 @@ export class BriefingController {
     $('briefingTabs').innerHTML=BEATS.map((item,i)=>`<button class="briefing-tab ${i===this.index?'active':''}" data-briefing-beat="${i}" ${i===this.index?'aria-current="step"':''}><span>${String(i+1).padStart(2,'0')}</span>${tr(...item.label)}</button>`).join('');
     this.renderDossier();this.speak(this.target.briefing[this.index]);this.scene.setBeat(this.index);
     $('cockpitCanvas').setAttribute('aria-label',tr('宇宙船内のワウバッガー。窓の外は{planet}。{beat}の資料を読みながらボヤいている。','Wowbagger in his cockpit, peering out at {planet} and grumbling over the {beat} dossier.',{planet:this.target.dossier.planet,beat:tr(...beat.label)}));
+    if(scroll)this.scrollToTop();
   }
   speak(line) {
     clearTimeout(this.timer);this.line=line;this.characters=Array.from(line);this.position=0;
@@ -109,8 +124,8 @@ export class BriefingController {
     const tick=()=>{if(!this.active)return;this.position=Math.min(this.characters.length,this.position+(language()==='en'?3:2));$('briefingSpokenLine').textContent=this.characters.slice(0,this.position).join('');if(this.position<this.characters.length)this.timer=setTimeout(tick,28);else this.reveal();};tick();
   }
   reveal() {clearTimeout(this.timer);this.position=this.characters?.length||0;$('briefingSpokenLine').textContent=this.line||'';$('briefingFullText').hidden=true;$('briefingDialogue').classList.remove('speaking');}
-  next() {if(!this.active)return;if(this.index<3)this.setBeat(this.index+1);else this.onLaunch();}
-  previous(){if(this.index>0)this.setBeat(this.index-1);else this.onClose();}
+  next() {if(!this.active)return;if(this.index<3)this.setBeat(this.index+1,{scroll:true});else this.onLaunch();}
+  previous(){if(this.index>0)this.setBeat(this.index-1,{scroll:true});else this.onClose();}
   renderDossier() {
     const d=this.target.dossier;
     const head=`<div class="dossier-header"><span class="eyebrow">UNIVERSAL CENSUS</span><span class="dossier-class">${tr('名簿番号','ENTRY')} ${String(this.target.ordinal).padStart(5,'0')}</span></div>`;

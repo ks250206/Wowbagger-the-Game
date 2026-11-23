@@ -1,190 +1,187 @@
-# WOWBAGGER — 悪口と、結晶を。 / Insults and Crystals
+# WOWBAGGER — 全宇宙へ、悪口と結晶模型をお届け。 / Insults & Unsolicited Crystals
 
-**[ブラウザで遊ぶ / Play in your browser](https://ks250206.github.io/Wowbagger-the-Game/)** · [Source](https://github.com/ks250206/Wowbagger-the-Game) · [CI / deployment](https://github.com/ks250206/Wowbagger-the-Game/actions/workflows/pages.yml)
+**[ブラウザで遊ぶ / Play in your browser](https://ks250206.github.io/Wowbagger-the-Game/)** · [ソースコード / Source](https://github.com/ks250206/Wowbagger-the-Game) · [CI・公開ワークフロー / CI & Pages](https://github.com/ks250206/Wowbagger-the-Game/actions/workflows/pages.yml)
 
-不死身のワウバッガーになって、宇宙の住民にアルファベット順で悪口を届けるブラウザゲームです。今回の用件には、**LGPS（Li₁₀GeP₂S₁₂）の結晶模型を一人に一つ渡すこと**も追加されました。永遠という勤務時間に対して、福利厚生はとくにありません。
+くだらない事故で不死身になってしまった「無限引き伸ばされワウバッガー」として、宇宙の全住民に**英語フルネーム順で悪口を言って回る**ブラウザゲームです。  
+しかもこのゲームでは、悪口を浴びせた直後に、誰からも頼まれていない**LGPS（Li₁₀GeP₂S₁₂）の結晶模型**まで一人に一個ずつ押し付けます。インストール不要で、PCでもスマートフォンでもそのまま遊べます。
 
-Become Wowbagger the Infinitely Prolonged: visit the Universe in alphabetical order, insult each resident personally, and hand over an unsolicited LGPS crystal model. An endless job, now with a second deliverable. Play on desktop or mobile; no installation is required.
+Become **Wowbagger the Infinitely Prolonged**: tour the Universe in strict alphabetical order, insult every living being to their face, and press an unsolicited **LGPS (Li₁₀GeP₂S₁₂) crystal model** into their hands. Play right in your desktop or mobile browser—no installation needed.
 
-## 日本語・English
+---
 
-画面の **「日本語」／「EN」**（物語画面では「English」）で切り替えられます。画面、人物資料、独白、選択肢、反応、航海記録、遊び方をその場で切り替え、**進行をリセットしません**。選んだ言語はブラウザに保存され、次回も引き継がれます。文章は両言語とも、宇宙規模の事務仕事と不条理を淡々と語る調子で書き直しています。
+## 日本語 / English 切り替え
 
-Use **日本語 / EN** or **English** to change language immediately, including during story scenes. The interface, dossiers, monologues, choices, reactions, voyage log and help are available in both languages. Switching preserves your current voyage, score, elapsed years, cargo and any model still awaiting handover. Your language preference is saved in this browser.
+画面上の **「日本語」／「EN」**（ストーリー画面では「English」）ボタンから、いつでも表示言語を切り替えられます。  
+UI・人物資料・船内の独り言・悪口の選択肢・住民のリアクション・航海日誌・遊び方まで丸ごと切り替わり、**進行中のプレイはリセットされません**。選んだ言語はブラウザに保存されます。  
+文章は日本語・英語ともに、ダグラス・アダムス風の皮肉とブリティッシュ・ジョークを効かせた読みやすいトーンで書き下ろしています。
+
+Use **日本語 / EN** (or **English** in story scenes) to switch languages at any moment without losing your progress, score, elapsed years, or cargo. All UI text, dossiers, cockpit rants, insults, reactions, ship's logs, and help text are authored in both languages with Douglas Adams-style British humour.
+
+---
 
 ## 遊び方 / How to play
 
-1. **船内で資料を読む / Read the briefing.** 次の住民の所在地、性格、経歴、家族の記録を確認して出発します。通常航行は確実に到着し、無茶なワープは事故で年月を失うことがあります。 Read the next recipient's dossier, then choose normal travel or a risky warp.
-2. **悪口を選ぶ / Deliver an insult.** 相手を観察し、3つから一つを選びます。こだわりに合う悪口ほど高得点です。 Inspect the resident for a hint, then choose one of three insults.
-3. **模型を渡す / Hand over the crystal.** 悪口と模型がそろって初めて配達完了です。在庫は3個まで。補充には8年かかります。 A delivery counts only after both insult and model; refill the three-model shelf when needed.
-4. **次の名前へ / Continue down the list.** 6人で一区画を終え、次の区画へ進みます。 Complete six deliveries per sector, then continue. The Universe has declined to provide an end date.
+1. **操縦席で下調べして出発する / Check the dossier and fly**  
+   次の被害者の住所・種族・性格・経歴・家族をチェックしてから出発します。「通常航行」は安全ですが退屈が増え、「無茶なワープ」は速い代わりに、たまに恒星の中に飛び込んで丸焦げ（再生に数十年）になります。
+2. **自慢のツボを突く悪口を選ぶ / Spot their flaw and insult them**  
+   相手のセリフを聞いて、3つの選択肢から悪口を選びます。「相手をじっくり観察する（2年消費）」を使うと弱点のヒントが出ます。一番痛いところを突くほど高得点＆退屈がスッキリ解消します。
+3. **LGPS結晶模型を押し付けて完了 / Hand over the crystal model**  
+   悪口だけでは配達完了になりません。仕上げにLGPS模型を手渡しましょう。在庫は3個までで、切れたら船内プリンターで補充できます（8年待ち）。
+4. **次の名前へ進む / Continue down the list**  
+   6人片付けると1宙域クリア。名簿はその先も永遠に続きます。
 
-事故で死んでも再生し、ゲームオーバーにはなりません。退屈が限界に達すると千年間の休眠を経て復帰します。模型切れでも、その場で補充して続行できます。効果音は右上の音符ボタンで切り替えられます。
+ワウバッガーは不死身なので、恒星に突っ込んでも、退屈が100%になって千年ほど昼寝をしてしまっても、**ゲームオーバーにはなりません**。効果音は右上の音符ボタンでオン／オフできます。
 
-You are immortal: accidents cost time, and excessive boredom costs a thousand-year nap. An empty shelf can be refilled without abandoning the recipient. Sound effects are optional; use the music-note button.
+You are immortal: warp mishaps only cost decades, and hitting 100% Sunday dread triggers a thousand-year nap—never a game over. You can restock models on the spot and toggle Web Audio sound effects with the top-right note button.
 
-## 物語と船内独白 / Story and cockpit briefings
+---
 
-初回は、事故、不死身の退屈、全宇宙への悪口計画、模型の追加用件を描く**4場面のグラフィック付きイントロ**から始まります。スキップでき、**「?」→「グラフィック付きのあらすじを見る」**から再生できます。
+## ストーリーと船内ブリーフィング / Story & cockpit briefings
 
-A four-scene illustrated prologue introduces the accident, immortality, the alphabetical undertaking and the crystal assignment. Skip it to begin immediately, or replay it through **? → Replay the illustrated prologue**.
+- **イラスト付きプロローグ（全4幕）**  
+  初回起動時に、不死身になった事故・日曜午後の耐えがたい退屈・全宇宙悪口計画・LGPS模型の押し付けまでを4場面のアニメーション付きで紹介します。スキップ可能で、**「?」→「イラスト付きのあらすじをもう一度見る」**からいつでも見返せます。
+- **13人分の人物資料と4章の船内独り言**  
+  本作オリジナルのクセ者宇宙人12人と、原作でおなじみの地球人 **アーサー・フィリップ・デント** の計13人分を用意しています。操縦席の窓やホログラムを見ながら、4章構成で下調べできます。
 
-**13人分の人物資料と、それぞれ4章の船内独白**を用意しています。12人は本作の創作住民、1人は原作のアーサー・フィリップ・デントです。独白は字幕で表示し、章に合わせて操縦席の窓、住民の肖像、記録、模型のホログラムが切り替わります。
-
-There are **13 authored dossiers, each with a four-part cockpit monologue**: twelve original residents and an adaptation of Arthur Philip Dent. Text appears as subtitles, with changing cockpit views and holograms. Use the chapter tabs, reveal the complete text, or skip ahead to departure.
-
-| 章 / Chapter | 内容 / Contents |
+| 章 / Chapter | 見られる内容 / What's inside |
 | --- | --- |
-| 航路と所在地 / Route and location | 恒星系、惑星、大陸、国、都市、住所 / System, planet, continent, country, city and address |
-| 種族と性格 / Species and disposition | 種族、肩書き、性格、本人のひとこと / Species, occupation, personality and opening remark |
-| 経歴と家族 / Background and family | 経歴と家族の記録。未確認情報は未確認と表示 / Background and family records; unknown details stay unknown |
-| 今日の用件 / Today's assignment | 悪口、模型の贈呈、現在の在庫 / The insult, the gift and current cargo |
+| 01 場所と住所 / Where on Earth (or elsewhere)? | 恒星系・惑星・大陸・国・町・詳しい住所 |
+| 02 種族と性格 / Species & disposition | 種族・職業・性格の要注意点・よく言うセリフ |
+| 03 経歴と家族 / History & household | これまでの経歴と家族構成（未確認の記録はそのまま表示） |
+| 04 本日のノルマ / Today's awkward errand | 悪口とLGPS模型の配達タスク・現在の模型在庫 |
 
-### 名簿の順序 / Directory order
+### 名簿の並び順 / Directory order
 
-本作は、**英語のフルネームを先頭から辞書順で比較**します。日本語表示でも同じ順序です。原作はアルファベット順という方針を示しますが、名・姓のどちらを優先するかは明示していないため、この比較規則は本作の実装上の選択です。[原作の公開抜粋](https://www.penguinrandomhouseretail.com/book/?isbn=9780345391827)
+名簿は表示言語にかかわらず、**英語のフルネームを頭から辞書順（アルファベット順）**で並べています。原作では「アルファベット順」とだけ書かれていて名・姓の優先ルールが明記されていないため、本作ではフルネーム順を採用しました（[出版社による原作の公開抜粋](https://www.penguinrandomhouseretail.com/book/?isbn=9780345391827)）。
 
-The game sorts **complete English names lexicographically**, regardless of display language. This is an explicit game rule: the novel specifies alphabetical order without establishing a given-name or surname convention.
-
-| 順番 / Order | 英語フルネーム / Full English name |
-| --- | --- |
-| 1 | Argo Hanko |
-| 2 | Arthur Philip Dent |
-| 3 | Bela Echo |
-| 4 | Chroma Live |
-| 5 | Col Unopened |
-| 6 | Doctor Noise |
-| 7 | Emper XVII |
-| 8 | Finn Mish |
-| 9 | Ludo Patch |
-| 10 | Omni Deluxe |
-| 11 | Posta Notice |
-| 12 | Senet Assembly |
-| 13 | Sulf Zero |
-
-最初の並びは **Argo Hanko < Arthur Philip Dent < Bela Echo**。**Col Unopened は Chroma Live の直後**です。13人を6人ずつの区画に分けて巡回した後は、`Z` で始まる登録名を持つ創作住民へと名簿が続きます。アーサーは改訂名簿に一度だけ登場し、その後の生成対象には含めません。
-
-The first thirteen entries follow the table across six-person sectors. Afterwards, fictional residents receive increasing `Z`-prefixed registered names, keeping the directory moving forward. **Arthur appears once in the revised route and is excluded from the endless generated population.**
-
-### アーサーとの遭遇 / Arthur's encounter
-
-先史時代の地球、後にイズリントンとなる場所。アーサーは銀色の宇宙船に救助を期待します。ワウバッガーはフルネームを確かめ、悪口を言い、彼を救助せずに去ります。この原作の出来事を専用の4場面で翻案しています。家族人数はこの遭遇の原作箇所から確認できないため、創作で補わず未確認としています。[出版社による第1章の抜粋](https://www.penguinrandomhouseretail.com/book/?isbn=9780345391827)
-
-On prehistoric Earth, at the future site of Islington, Arthur hopes the arriving ship means rescue. Wowbagger checks his full name, insults him and leaves him behind. The four-scene adaptation retains those events. Arthur's family count is left unknown because the cited encounter does not establish it.
-
-**LGPS模型の贈呈は本作で追加したファンアレンジです。台詞と独白も本作のために書いた文章で、原文の再録ではありません。**
-
-**The LGPS gift is an addition created for this fan game. Dialogue and monologues are newly written; the novel's prose is not reproduced.**
-
-## 保存と旧版からの移行 / Saves and migration
-
-進行はブラウザの `localStorage` に自動保存されます。別の端末・ブラウザ・公開先とは共有されません。同じブラウザでも、GitHub Pagesと別の配信URLでは別の記録になります。
-
-旧版（v1）の保存を開いた場合は、**現在の区画を旧名簿のまま完了**できます。悪口を言った後の未贈呈の模型も引き継ぎ、その相手への配達を続けられます。区画を終えて次へ進むと、アーサーを含む改訂名簿が Argo から始まります。過去の配達数、得点、経過年数、模型在庫は保持します。言語を変えるために新しく始め直す必要はありません。
-
-Progress is saved automatically in this browser's `localStorage`, separately for each hosted origin. It does not sync between devices, browsers or hosting URLs. A **v1 save finishes its current sector using the old directory**, including an insult whose model has not yet been handed over. The next sector starts the revised route at Argo, including Arthur, while retaining previous deliveries, score, elapsed years and model stock. Changing language never requires a reset.
-
-## 操作 / Controls
-
-スマートフォンでは、同じ機能を画面上のボタンで操作できます。On mobile, use the corresponding on-screen buttons.
-
-| 操作 / Action | PCのキー / Key | 画面操作 / On-screen control |
+| 順番 | 英語フルネーム | 日本語名 |
 | --- | --- | --- |
-| 船内で次の住民を確認 / Open briefing | `J`（地図 / map） | 船内で確認 / Open briefing |
-| 独白を飛ばして出発 / Skip briefing and depart | `J`（船内 / cockpit） | 出発ボタン / Departure button |
-| イントロを進める・戻す / Prologue next / previous | `→` / `←` | 続き・前の場面 / Continue / Previous |
-| 船内字幕を全文表示・次章へ / Reveal text / next chapter | `Enter` / `→` | 全文表示・続き / Reveal / Continue |
-| 船内の前章へ / Previous briefing chapter | `←` | 章のタブ / Chapter tabs |
-| 船内から地図へ / Return to map | `Esc` | 銀河地図に戻る / Return to map |
-| 悪口を選ぶ / Choose an insult | `1` / `2` / `3` | 各選択肢 / Choice buttons |
-| 模型を渡す・配達後に進む / Hand over model / continue | `Enter` | 贈呈・次へ / Gift / Continue |
-| 模型を補充 / Print models | `R` | 模型在庫・補充 / Cargo / Refill |
-| 遊び方を開く / Open help | `H` / `?` | 右上の `?` / Top-right `?` |
-| 模型を回転 / Rotate model | ドラッグ / Drag | ドラッグ / Drag |
-| 表示言語を切り替え / Change language | — | 日本語 / EN / English |
+| 1 | Argo Hanko | アルゴ・ハンコ |
+| 2 | Arthur Philip Dent | アーサー・フィリップ・デント |
+| 3 | Bela Echo | ベラ・エコー |
+| 4 | Chroma Live | クロマ・ライブ |
+| 5 | Col Unopened | コル・未開封 |
+| 6 | Doctor Noise | ドクター・ノイズ |
+| 7 | Emper XVII | エンペル十七世 |
+| 8 | Finn Mish | フィン・ミシュ |
+| 9 | Ludo Patch | ルード・パッチ |
+| 10 | Omni Deluxe | オムニ・デラックス |
+| 11 | Posta Notice | ポスタ・不在票 |
+| 12 | Senet Assembly | セネト全員 |
+| 13 | Sulf Zero | サルフ・ゼロ |
 
-## ローカルで動かす / Run locally
+13人を6人ずつの宙域で巡回したあとは、`Z` から始まる登録名の住民が延々と続きます。アーサーは改訂名簿に一度だけ登場し、その後の自動生成には含まれません。
 
-ビルド不要のHTML・CSS・JavaScript製ゲームです。外部ライブラリや外部画像は読み込みません。Canvasで描画し、効果音にはWeb Audioを使用します。動きの軽減設定にも対応しています。
+### アーサー・デントとの遭遇 / Arthur's encounter
 
-A dependency-free static HTML/CSS/JavaScript game. It uses Canvas for graphics and optional Web Audio effects, with reduced-motion support. No build or package installation is needed to play locally.
+先史時代の地球（未来のロンドン・イズリントン）で、銀色の宇宙船を見て「ついに助けが来た！」と喜ぶアーサーの前に降り立ち、名前を確認して悪口を言い、そのまま置き去りにして去る――原作『宇宙クリケット大戦争』第1章の出来事を、専用の4場面で翻案しています。  
+なお、原作の該当箇所に家族の人数は書かれていないため、創作で補わず「記録なし」としています。**LGPS模型を押し付ける展開と、すべての台詞・独り言は本作オリジナルのアレンジです（原文の再録ではありません）。**
 
-リポジトリのルートで実行 / From the project root:
+---
+
+## セーブと旧版（v1）からの引き継ぎ / Saves & migration
+
+進行状況はこのブラウザの `localStorage` に自動保存されます（別の端末やブラウザ、別URLとは共有されません）。
+
+旧版（v1）のセーブデータが残っている場合も、そのまま現在の宙域を最後まで遊べます。その宙域を終えて次へ進むと、スコア・経過年月・模型在庫を引き継いだまま、アーサーを含む改訂名簿（Argo → Arthur → Bela）へ移行します。
+
+---
+
+## 操作方法 / Controls
+
+スマートフォンでもすべての操作を画面ボタンで行えます。
+
+| やりたいこと / Action | キーボード / Key | 画面ボタン / On-screen |
+| --- | --- | --- |
+| 操縦席で次の相手を下調べ | `J`（地図画面） | 操縦席で下調べ |
+| グチを飛ばしてすぐ出発 | `J`（操縦席画面） | グチを飛ばしてすぐ出発 |
+| あらすじを進める／戻す | `→` / `←` | 続きを見る／前の場面 |
+| 独り言を全文表示・次の章へ | `Enter` / `→` | 全文を一気読み／次のページをめくる |
+| 前の章に戻る | `←` | 章タブ |
+| 操縦席から銀河地図へ戻る | `Esc` | 銀河地図に戻る |
+| 悪口を選ぶ | `1` / `2` / `3` | 悪口ボタン |
+| 模型を渡す・次へ進む | `Enter` | LGPS模型を押し付ける／次へ |
+| 模型を3個まで補充する | `R` | 結晶模型の在庫／補充 |
+| 遊び方・説明書を開く | `H` / `?` | 右上の `?` |
+| 結晶模型をぐるぐる回す | ドラッグ | ドラッグ |
+| 言語を切り替える | — | 日本語 / EN / English |
+
+---
+
+## ローカルで動かす・検証する / Local setup & checks
+
+外部ライブラリやビルド手順は一切不要な、素の HTML / CSS / JavaScript 製です。Canvas 描画と Web Audio 効果音を使い、OS の「視差効果を減らす（`prefers-reduced-motion`）」にも対応しています。
+
+リポジトリのルートでローカルサーバーを起動します（ES Modules を使うため、HTTP 経由で開いてください）：
 
 ```bash
 python3 -m http.server 8000 --directory docs
 ```
 
-**<http://localhost:8000/>** を開いてください。ES Modulesを使うため、ファイルを直接開く代わりにHTTPサーバーを経由します。
+ブラウザで **<http://localhost:8000/>** を開けば遊べます。
 
-Open **<http://localhost:8000/>**. Serve the files over HTTP; opening `index.html` directly does not provide the module-loading environment the game expects.
+### 自動チェック
 
-### 検証 / Checks
-
-Node.jsとnpmを利用できる環境で実行します。依存パッケージのインストールは不要です。Use Node.js and npm; no `npm install` is required.
+Node.js があれば、`npm install` なしでそのまま検証できます：
 
 ```bash
 npm run check
 ```
 
-JavaScriptの構文、配達・在庫・得点・ワープ・休眠・保存の状態遷移、13人の名簿と並び、アーサーの一度だけの登場、旧版の移行、日本語・英語の文言、相対パスの参照を検証します。
+全 JS ファイルの構文、配達・在庫・得点・ワープ事故・千年昼寝・セーブ移行のロジック、13人の名簿順、アーサーの一度きり登場、日英の翻訳漏れ、相対パス参照をまとめてチェックします。
 
-Checks cover JavaScript syntax, delivery and inventory transitions, scores, warp and sleep recovery, save restoration, the thirteen-person sorted roster, Arthur's single appearance, v1 migration, Japanese/English text and relative asset references.
+---
 
-## ソース構成 / Source layout
+## ファイル構成 / Source layout
 
-`docs/` がゲームのソースとGitHub Pagesの公開対象を兼ねます。 The files in `docs/` are both the game source and the Pages deployment artifact.
+`docs/` フォルダがそのままゲームのソースであり、GitHub Pages の公開対象です。
 
-| パス / Path | 役割 / Purpose |
+| パス / Path | 役割 / Role |
 | --- | --- |
-| `docs/index.html` | 画面とダイアログ / Screens and dialogs |
-| `docs/style.css`, `story.css`, `arthur.css` | 基本画面・物語・アーサーのレイアウト / Main, story and Arthur layouts |
-| `docs/app.js` | 画面、入力、保存、言語切替、効果音 / UI, input, saves, language changes and audio |
-| `docs/engine.js` | 配達、名簿、在庫、得点、航行、保存移行 / Pure game logic and save migration |
-| `docs/profiles.js` | 13人分の日英人物資料・独白 / Bilingual dossiers and monologues for thirteen residents |
-| `docs/i18n.js` | 日英UI文言と表示処理 / UI translations and localisation helpers |
-| `docs/scene.js` | 銀河・宇宙船・住民の描画 / Galaxy, ship and resident graphics |
-| `docs/crystal.js` | 25原子の回転する模式模型 / Rotatable 25-atom schematic model |
-| `docs/intro-scene.js`, `cockpit-scene.js` | イントロと操縦席の描画 / Prologue and cockpit graphics |
-| `docs/story-ui.js` | イントロ・人物資料・独白字幕 / Prologue, dossiers and briefing subtitles |
-| `docs/arthur-episode.js`, `arthur-scene.js` | アーサーの4場面と描画 / Arthur's four-scene episode and graphics |
-| `check-project.mjs` | 構文検証と各チェックの実行 / Syntax checks and test runner |
-| `engine-check.mjs` | ゲーム状態・名簿・保存移行の検証 / Game state, roster and migration checks |
-| `i18n-check.mjs` | 翻訳と配信ファイル参照の検証 / Translation and asset-reference checks |
-| `package.json` | `npm run check` の定義 / Check command |
-| `docs/.nojekyll` | 静的配信用のマーカー / Static-site marker |
-| `.github/workflows/pages.yml` | 自動検証とPages公開 / CI and Pages deployment |
+| `docs/index.html` | 画面と各ダイアログのHTML |
+| `docs/style.css`, `story.css`, `arthur.css` | メイン画面・ストーリー・アーサー編のスタイル |
+| `docs/app.js` | 画面描画・操作・保存・言語切替・効果音 |
+| `docs/engine.js` | ゲーム状態・名簿生成・得点・航行・セーブ移行 |
+| `docs/profiles.js` | 13人分の日英キャラクター資料・選択肢・独り言 |
+| `docs/i18n.js` | 日英UIテキストと翻訳ヘルパー |
+| `docs/scene.js` | 銀河地図・宇宙船・住民ポートレート描画 |
+| `docs/crystal.js` | ドラッグで回る25原子のLGPS模式模型 |
+| `docs/intro-scene.js`, `cockpit-scene.js` | プロローグと操縦席のCanvasアニメーション |
+| `docs/story-ui.js` | プロローグと船内ブリーフィングのUI制御 |
+| `docs/arthur-episode.js`, `arthur-scene.js` | アーサー遭遇4場面のUIとCanvas描画 |
+| `check-project.mjs` | 構文チェックと各検証スクリプトの実行 |
+| `engine-check.mjs` | ゲームロジック・名簿・移行の自動テスト |
+| `i18n-check.mjs` | 日英テキストと相対パス参照の自動テスト |
+| `.github/workflows/pages.yml` | GitHub Actions による自動検証と Pages デプロイ |
 
-## CIとGitHub Pages / CI and GitHub Pages
+---
 
-公開URL / Public URL: **<https://ks250206.github.io/Wowbagger-the-Game/>**
+## CI と GitHub Pages / Deployment
 
-GitHub版の既存ワークフロー [CI and deploy GitHub Pages](https://github.com/ks250206/Wowbagger-the-Game/actions/workflows/pages.yml) は、`main` へのpushで次の処理を行います。
+公開URL: **<https://ks250206.github.io/Wowbagger-the-Game/>**
 
-1. Node.js 24で `npm run check` を実行。
-2. 成功した場合に、GitHubリポジトリの `docs/` をPages用成果物としてアップロード。
-3. 検証ジョブの成功後に、その成果物をGitHub Pagesへ公開。
+`main` ブランチへ push すると、[CI and deploy GitHub Pages](https://github.com/ks250206/Wowbagger-the-Game/actions/workflows/pages.yml) が自動で以下の順に実行されます。
 
-The existing GitHub Actions workflow runs **checks → upload `docs/` → deploy Pages** for pushes to `main`. Deployment depends on successful validation. No game build, dependency installation or custom secrets are required, and Pages deployments are serialised.
+1. Node.js 24 で `npm run check` を実行
+2. 検証に通った `docs/` を Pages 用アーティファクトとしてアップロード
+3. GitHub Pages へ自動デプロイ
 
-**Settings → Pages → Build and deployment → Source** は **GitHub Actions** に設定します。必要な場合は、上記Actionsページの **Run workflow** から `main` を選んで手動実行できます。
+リポジトリ設定の **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にしておけば自動公開されます。手動公開したい場合は Actions 画面から **Run workflow**（`main`）を実行してください。
 
-Set the repository's **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. For a manual deployment, select **Run workflow** on the linked Actions page and choose `main`. CSS and JavaScript use relative references so the game works under `/Wowbagger-the-Game/`.
+---
 
-## LGPS模型について / About the crystal model
+## LGPS結晶模型について / About the LGPS model
 
-模型は **Li₁₀GeP₂S₁₂の組成式に対応する25原子（Li 10 + Ge 1 + P 2 + S 12）**と、GeS₄・PS₄の四面体配位を示す模式図です。ドラッグして回転できます。実際の単位格子、結晶座標、Ge/Pの混合占有を再現した結晶構造データではありません。
+登場する模型は、実在の硫化物系固体電解質 **LGPS（Li₁₀GeP₂S₁₂）** の組成（Li 10・Ge 1・P 2・S 12 の計25原子）と GeS₄・PS₄ 四面体配位をわかりやすく示した**構造模式模型**です。ドラッグして自由に回転できます。  
+※実際の単位格子、結晶座標、Ge/P の混合占有までは再現していません。
 
-The rotatable model represents **25 atoms per formula unit: 10 Li + 1 Ge + 2 P + 12 S**, arranged to illustrate GeS₄ and PS₄ tetrahedra. It is a schematic, not a reconstruction of the real unit cell, atomic coordinates or mixed Ge/P occupancy.
+原著論文: N. Kamaya et al., [“A lithium superionic conductor,” *Nature Materials* **10**, 682–686 (2011)](https://www.nature.com/articles/nmat3066) / DOI: [10.1038/nmat3066](https://doi.org/10.1038/nmat3066)
 
-LGPSの原著 / Original LGPS paper: N. Kamaya et al., [“A lithium superionic conductor,” *Nature Materials* **10**, 682–686 (2011)](https://www.nature.com/articles/nmat3066). DOI: [10.1038/nmat3066](https://doi.org/10.1038/nmat3066).
+---
 
-## 着想・クレジット / Inspiration and credits
+## 着想・クレジット / Credits
 
-Douglas Adams『宇宙クリケット大戦争』(*Life, the Universe and Everything*) の **Wowbagger the Infinitely Prolonged** に着想を得た非公式ファンゲームです。ワウバッガーとアーサーは原作の登場人物です。12人の創作住民、ゲームの台詞と独白、LGPS模型の贈呈、図版とプログラムは本作のために制作しています。公式作品や権利者との提携を示すものではありません。
+Douglas Adams『宇宙クリケット大戦争』(*Life, the Universe and Everything*) に登場する **Wowbagger the Infinitely Prolonged** に着想を得た非公式ファンゲームです。ワウバッガーとアーサーは原作のキャラクターですが、12人のオリジナル宇宙人・台詞・独白・LGPS模型の押し付け・イラスト・プログラムはすべて本作のために制作したものであり、公式作品や権利者とは無関係です。
 
-An unofficial fan game inspired by Douglas Adams's *Life, the Universe and Everything*. Wowbagger and Arthur are characters from the original work. The twelve fictional residents, game dialogue, monologues, LGPS gift, artwork and code were created for this adaptation. This project is not affiliated with the original work's rights holders.
-
-原作の紹介と公開抜粋 / Publisher's book page and excerpt: [Penguin Random House](https://www.penguinrandomhouseretail.com/book/?isbn=9780345391827).
-
-リポジトリのライセンス / Repository license: [MIT License](LICENSE), copyright 2026 ks250206. 原作の登場人物・作品に関する権利は、それぞれの権利者に帰属します。 Rights in the original characters and work remain with their respective rights holders.
+- 原作紹介・公開抜粋: [Penguin Random House](https://www.penguinrandomhouseretail.com/book/?isbn=9780345391827)
+- リポジトリのライセンス: [MIT License](LICENSE) (copyright 2026 ks250206). 原作キャラクターおよび作品に関する権利はそれぞれの権利者に帰属します。

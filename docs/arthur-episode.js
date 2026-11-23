@@ -133,7 +133,7 @@ export class ArthurEpisode {
     return promise;
   }
   setLocale(locale){this.locale=locale==='en'?'en':'ja';if(this.active)this.render();}
-  setPage(index){if(!this.active)return;this.index=Math.max(0,Math.min(1,index));this.render();}
+  setPage(index){if(!this.active)return;this.index=Math.max(0,Math.min(1,index));this.render();this.dialog.scrollTo({top:0,behavior:'instant'});}
   next(){if(!this.active)return;if(this.index===0)this.setPage(1);else this.close(false);}
   previous(){if(this.active&&this.index>0)this.setPage(this.index-1);}
   render(){
