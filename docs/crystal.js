@@ -18,6 +18,15 @@ export const LGPS_META = Object.freeze({
   sourceLabel: 'Kamaya et al., Nature Materials (2011)',
 });
 
+/** Localised display metadata; the chemical formula and geometry are unchanged. */
+export function getLgpsMeta(locale='ja') {
+  return locale==='en' ? {
+    ...LGPS_META,
+    title:'LGPS crystal model',
+    caption:'Schematic composition and coordination. Crystallographic coordinates and site occupancy are not reproduced.',
+  } : {...LGPS_META};
+}
+
 const COLORS = {
   Li: { light: '#f1fff9', mid: '#b6ffd7', dark: '#2e9e82', radius: .082 },
   Ge: { light: '#faf1ff', mid: '#c29aff', dark: '#7149ae', radius: .152 },
@@ -65,12 +74,14 @@ function makeGeometry() {
 export const LGPS_GEOMETRY = makeGeometry();
 
 export class CrystalModel {
-  constructor(canvas, { interactive = true, compact = false } = {}) {
+  constructor(canvas, { interactive = true, compact = false, locale = 'ja' } = {}) {
     if (!canvas || !canvas.getContext) throw new TypeError('CrystalModel needs a canvas');
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
     this.interactive = interactive;
     this.compact = compact;
+    this.locale = locale==='en'?'en':'ja';
+    this.meta = getLgpsMeta(this.locale);
     this.angle = -.48;
     this.tilt = -.17;
     this.time = 0;
@@ -95,7 +106,7 @@ export class CrystalModel {
     };
     this.media?.addEventListener?.('change', this.motion);
     this.canvas.setAttribute('role', 'img');
-    this.canvas.setAttribute('aria-label', 'LGPS Li10GeP2S12 の構造模式模型。黄色は硫黄、紫はゲルマニウム、水色はリン、緑はリチウム。実際の結晶座標ではありません。');
+    this.updateAria();
     if (interactive) {
       this.canvas.style.touchAction = 'pan-y';
       this.canvas.style.cursor = 'grab';
@@ -128,6 +139,18 @@ export class CrystalModel {
     document.addEventListener('visibilitychange', this.visibility);
     this.resize();
     this.start();
+  }
+
+  updateAria() {
+    this.canvas.setAttribute('aria-label',this.locale==='en'
+      ? 'Schematic LGPS Li10GeP2S12 model. Yellow: sulphur; purple: germanium; blue: phosphorus; green: lithium. These are not crystallographic coordinates.'
+      : 'LGPS Li10GeP2S12 の構造模式模型。黄色は硫黄、紫はゲルマニウム、水色はリン、緑はリチウム。実際の結晶座標ではありません。');
+  }
+
+  setLocale(locale) {
+    this.locale=locale==='en'?'en':'ja';
+    this.meta=getLgpsMeta(this.locale);
+    this.updateAria();
   }
 
   resize() {

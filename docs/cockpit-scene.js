@@ -23,11 +23,12 @@ function glow(c,x,y,r,color,alpha=.3) { const g=c.createRadialGradient(x,y,0,x,y
 function shorten(value,n=18) { const chars=Array.from(String(value||'')); return chars.length>n ? chars.slice(0,n-1).join('')+'…' : chars.join(''); }
 
 export class CockpitScene {
-  constructor(canvas,{reducedMotion}={}) {
+  constructor(canvas,{reducedMotion,locale='ja'}={}) {
     if (!canvas?.getContext) throw new TypeError('CockpitScene needs a canvas');
     this.canvas=canvas; this.ctx=canvas.getContext('2d');
     if (!this.ctx) throw new Error('Canvas2D is unavailable');
     this.target=null; this.beat=0; this.oldBeat=0; this.blend=1;
+    this.locale=locale==='en'?'en':'ja';
     this.elapsed=0; this.width=1; this.height=1; this.scale=1;
     this.running=false; this.destroyed=false; this.frame=null; this.lastTime=0; this.lastDraw=0;
     this.parallax={x:0,y:0}; this.aim={x:0,y:0};
@@ -49,9 +50,18 @@ export class CockpitScene {
     this.observer=typeof ResizeObserver==='undefined'?null:new ResizeObserver(this.resize);
     this.observer?.observe(canvas);
     canvas.setAttribute('role','img');
-    canvas.setAttribute('aria-label','宇宙船の操縦席。金色のローブを着たワウバッガーが、窓外の目的地と住民の立体資料を確認している。');
+    this.updateAria();
     this.resize(); this.start();
   }
+  updateAria() {
+    const en=this.locale==='en',place=this.target?.dossier?.planet||this.target?.planetName||(en?'the next destination':'次の配達先');
+    const name=this.target?.name||(en?'the recipient':'住民');
+    const beat=en?['navigation','the recipient','their background and household','the LGPS delivery'][this.beat]:['航路','相手の人物像','経歴と家族','LGPSの贈呈'][this.beat];
+    this.canvas.setAttribute('aria-label',en
+      ? `Inside the spaceship. ${place} is visible through the window. Wowbagger, wearing golden robes, studies a holographic file on ${name} and discusses ${beat}.`
+      : `宇宙船内のブリーフィング。窓外には${place}。金色のローブのワウバッガーが${name}の立体資料を読み、${beat}について独白している。`);
+  }
+  setLocale(locale) {this.locale=locale==='en'?'en':'ja';this.updateAria();this.draw();this.wake();}
   isVisible() { return !document.hidden && this.canvas.getClientRects().length>0 && this.canvas.clientWidth>0 && this.canvas.clientHeight>0; }
   cancelFrame() { if(this.frame!==null)cancelAnimationFrame(this.frame);this.frame=null;this.lastTime=0; }
   wake() {
@@ -80,14 +90,14 @@ export class CockpitScene {
       });
       this.beat=0;this.oldBeat=0;this.blend=1;
     }
-    const place=target?.dossier?.planet||target?.planetName||'次の配達先';
-    this.canvas.setAttribute('aria-label',`宇宙船内のブリーフィング。窓外には${place}。金色のローブのワウバッガーが${target?.name||'住民'}の立体資料を読み、独白している。`);
+    this.updateAria();
     this.draw();this.wake();
   }
   setBeat(index) {
     const next=clamp(Math.floor(Number(index)||0),0,3);
     if(next===this.beat){this.wake();return;}
     this.oldBeat=this.beat;this.beat=next;this.blend=this.reducedMotion?1:0;
+    this.updateAria();
     this.draw();this.wake();
   }
   start() { if(this.destroyed)return;this.running=true;this.lastTime=0;this.wake(); }
@@ -136,7 +146,8 @@ export class CockpitScene {
     c.save();c.translate(W*.66+px,H*.31+py);c.rotate(-.25);c.scale(1,.32);c.setLineDash([3,8]);for(const r of [136,181,228]){circle(c,0,0,r);c.strokeStyle='rgba(130,220,206,.12)';c.lineWidth=1;c.stroke();}c.restore();
     const cx=W*.67+px,cy=H*.30+py,r=Math.min(106,H*.205);
     this.drawPlanet(c,cx,cy,r,t);
-    for(const [xx,yy,rr] of [[W*.41,H*.17,10],[W*.87,H*.44,6]]){const g=c.createRadialGradient(xx-rr*.4,yy-rr*.5,1,xx,yy,rr*1.4);g.addColorStop(0,'#829da8');g.addColorStop(1,'#152c38');c.fillStyle=g;circle(c,xx,yy,rr);c.fill();}
+    const moons=this.target?.kind==='arthur'?[[W*.41,H*.17,10]]:[[W*.41,H*.17,10],[W*.87,H*.44,6]];
+    for(const [xx,yy,rr] of moons){const g=c.createRadialGradient(xx-rr*.4,yy-rr*.5,1,xx,yy,rr*1.4);g.addColorStop(0,'#829da8');g.addColorStop(1,'#152c38');c.fillStyle=g;circle(c,xx,yy,rr);c.fill();}
     // A soft reflection from the cabin gives the window a physical surface.
     path(c,[[60,65],[140,46],[W*.60,base],[W*.53,base]]);c.fillStyle='rgba(156,219,222,.025)';c.fill();
     c.restore();
@@ -146,7 +157,7 @@ export class CockpitScene {
     line(c,[[W*.83,44],[W*.80,base-1]],'#10232f',8);line(c,[[W*.832,45],[W*.802,base-1]],'#314653',1);
     const textSize=Math.max(13,12/this.scale);
     c.font=`${textSize}px ${FONT}`;c.fillStyle='rgba(179,221,207,.65)';c.textAlign='right';
-    c.fillText(shorten(this.target?.dossier?.system||'LOCAL STELLAR SYSTEM',18),W-55,80);
+    c.fillText(shorten(this.target?.dossier?.system||(this.locale==='en'?'LOCAL STELLAR SYSTEM':'現在の恒星系'),this.locale==='en'?26:18),W-55,80,420);
     c.textAlign='left';
     c.save();c.translate(cx,cy);c.strokeStyle='rgba(213,246,139,.55)';c.lineWidth=1.1;
     for(let i=0;i<4;i++){const a=i*Math.PI/2+Math.PI/4;c.beginPath();c.arc(0,0,r+17,a-.10,a+.10);c.stroke();}
@@ -155,17 +166,18 @@ export class CockpitScene {
     c.restore();
   }
   drawPlanet(c,x,y,r,t) {
-    const color=this.target?.color||'#93cdb6';
+    const earth=this.target?.kind==='arthur',color=earth?'#5a9fcd':this.target?.color||'#93cdb6';
     glow(c,x,y,r*1.24,color,.17);
     c.save();circle(c,x,y,r);c.clip();
     const base=c.createRadialGradient(x-r*.52,y-r*.45,r*.08,x+r*.35,y+r*.28,r*1.45);base.addColorStop(0,color);base.addColorStop(.4,rgba(color,.8));base.addColorStop(1,'#061623');c.fillStyle=base;c.fillRect(x-r,y-r,r*2,r*2);
     const movement=Math.sin(t*.045)*r*.12;
-    for(let i=0;i<this.terrain.length;i++){path(c,this.terrain[i].map(([a,b])=>[x+a*r+movement,y+b*r]));c.fillStyle=i%2?'rgba(19,64,61,.34)':'rgba(9,38,43,.22)';c.fill();}
+    for(let i=0;i<this.terrain.length;i++){path(c,this.terrain[i].map(([a,b])=>[x+a*r+movement,y+b*r]));c.fillStyle=earth?(i%2?'rgba(107,150,91,.72)':'rgba(93,139,91,.65)'):(i%2?'rgba(19,64,61,.34)':'rgba(9,38,43,.22)');c.fill();}
     c.save();c.translate(x,y);c.rotate(-.28);
     for(let j=0;j<5;j++){const yy=-r*.72+j*r*.34;c.beginPath();c.ellipse(Math.sin(j+t*.05)*r*.2,yy,r*.82,r*.055,j*.1,0,TAU);c.fillStyle=`rgba(238,250,229,${.035+(j%2)*.045})`;c.fill();}c.restore();
     const shadow=c.createLinearGradient(x-r,y-r,x+r,y+r);shadow.addColorStop(0,'rgba(4,13,24,0)');shadow.addColorStop(.5,'rgba(4,13,24,.03)');shadow.addColorStop(.74,'rgba(4,13,24,.42)');shadow.addColorStop(1,'rgba(4,13,24,.94)');c.fillStyle=shadow;c.fillRect(x-r,y-r,r*2,r*2);
     const rng=seeded(44532);
-    for(let i=0;i<28;i++){const xx=(rng()-.15)*r,yy=(rng()-.4)*r;if(Math.hypot(xx,yy)>r*.88)continue;c.fillStyle=`rgba(245,207,119,${.2+rng()*.45})`;c.fillRect(x+xx,y+yy,1.4,1.4);}
+    // Prehistoric Earth has no illuminated cities.
+    if(!earth)for(let i=0;i<28;i++){const xx=(rng()-.15)*r,yy=(rng()-.4)*r;if(Math.hypot(xx,yy)>r*.88)continue;c.fillStyle=`rgba(245,207,119,${.2+rng()*.45})`;c.fillRect(x+xx,y+yy,1.4,1.4);}
     c.restore();circle(c,x,y,r);c.strokeStyle=rgba(color,.5);c.lineWidth=1;c.stroke();
     c.beginPath();c.arc(x,y,r+1,-Math.PI*.93,-Math.PI*.22);c.strokeStyle=rgba('#caffee',.5);c.lineWidth=2;c.stroke();
   }
@@ -257,8 +269,12 @@ export class CockpitScene {
     else if(beat===2)this.drawArchive(c,t);
     else this.drawModel(c,t);
     c.font=`${Math.max(13,11.5/unit)}px ${FONT}`;c.fillStyle='#b7e9d8';c.textAlign='center';
-    const captions=['DESTINATION LOCKED','RESIDENT DOSSIER',`FAMILY · ${this.target?.dossier?.familyCount||3}`, 'Li₁₀GeP₂S₁₂'];
-    c.fillText(captions[beat],0,77);
+    const family=this.target?.dossier?.familyCount;
+    const recorded=Number.isInteger(family)&&family>0;
+    const captions=this.locale==='en'
+      ? ['DESTINATION LOCKED','RESIDENT DOSSIER',recorded?`HOUSEHOLD · ${family}`:'FAMILY · UNRECORDED','Li₁₀GeP₂S₁₂']
+      : ['目的地確認済み','訪問対象の記録',recorded?`家族 · ${family}人`:'家族 · 記録なし','Li₁₀GeP₂S₁₂'];
+    c.fillText(captions[beat],0,77,250);
     c.restore();
   }
   drawNavigation(c,t) {
@@ -283,7 +299,17 @@ export class CockpitScene {
     c.save();c.translate(0,-33);
     path(c,[[-66,69],[-54,27],[-26,15],[29,15],[54,31],[65,69]]);c.fillStyle=rgba(color,.24);c.fill();c.strokeStyle=rgba(color,.7);c.stroke();
     rounded(c,-13,1,26,29,5);c.fillStyle=rgba(color,.45);c.fill();
-    if(type===2){rounded(c,-43,-67,86,84,15);c.fillStyle=rgba(color,.44);c.fill();c.strokeStyle=rgba(color,.9);c.stroke();rounded(c,-32,-39,64,26,7);c.fillStyle='#091d26';c.fill();for(let i=0;i<3;i++){circle(c,-18+i*18,-26,4);c.fillStyle=color;c.fill();}}
+    if(this.target?.kind==='arthur'){
+      // A recognisably human silhouette; this original design uses no actor likeness.
+      for(const sign of [-1,1]){ellipse(c,sign*31,-26,6,10);c.fillStyle=rgba(color,.4);c.fill();}
+      c.beginPath();c.moveTo(-29,-43);c.bezierCurveTo(-33,-76,33,-76,30,-43);c.lineTo(27,-3);c.quadraticCurveTo(15,23,0,24);c.quadraticCurveTo(-22,18,-28,-4);c.closePath();c.fillStyle=rgba(color,.43);c.fill();c.strokeStyle=rgba(color,.9);c.stroke();
+      path(c,[[-30,-25],[-36,-53],[-27,-68],[-9,-67],[-2,-79],[9,-68],[23,-74],[22,-62],[35,-51],[32,-29],[24,-39],[21,-51],[7,-44],[2,-55],[-12,-45],[-24,-49],[-25,-27]]);c.fillStyle=rgba(color,.2);c.fill();c.strokeStyle=rgba(color,.9);c.stroke();
+      for(const sign of [-1,1]){ellipse(c,sign*13,-31,8,6);c.fillStyle='rgba(226,247,223,.8)';c.fill();circle(c,sign*13+1,-30,3);c.fillStyle='#153a3b';c.fill();line(c,[[sign*13-8,-43],[sign*13,-46],[sign*13+8,-42]],rgba(color,.95),2);}
+      line(c,[[0,-27],[-4,-13],[4,-13]],rgba(color,.7),1.3);line(c,[[-8,4],[0,1],[9,5]],rgba(color,.95),1.8);
+      path(c,[[-27,19],[-8,64],[4,49],[-12,20]]);c.fillStyle=rgba(color,.3);c.fill();path(c,[[27,19],[8,65],[-2,49],[13,20]]);c.fill();
+      rounded(c,-47,28,19,37,3);c.fillStyle=rgba(color,.55);c.fill();for(let y=36;y<65;y+=7)line(c,[[-45,y],[-30,y]],rgba(color,.85),.7);
+    }
+    else if(type===2){rounded(c,-43,-67,86,84,15);c.fillStyle=rgba(color,.44);c.fill();c.strokeStyle=rgba(color,.9);c.stroke();rounded(c,-32,-39,64,26,7);c.fillStyle='#091d26';c.fill();for(let i=0;i<3;i++){circle(c,-18+i*18,-26,4);c.fillStyle=color;c.fill();}}
     else{
       const broad=type===4?48:40;
       path(c,[[-broad,-47],[-broad+8,-70],[broad-8,-70],[broad,-45],[broad-8,5],[16,23],[-15,22],[-broad+7,4]]);c.fillStyle=rgba(color,.43);c.fill();c.strokeStyle=rgba(color,.85);c.stroke();
@@ -302,10 +328,19 @@ export class CockpitScene {
     for(let i=2;i>=0;i--){c.save();c.translate(-14+i*13,-15-i*14);c.rotate(-.06+i*.05);rounded(c,-88,-103,176,144,6);c.fillStyle=`rgba(16,44,51,${.44+i*.07})`;c.fill();c.strokeStyle=`rgba(141,215,194,${.26+i*.12})`;c.lineWidth=1;c.stroke();
       if(i===0){c.fillStyle='#b6d6be';c.fillRect(-68,-84,54,3);for(let j=0;j<4;j++){c.fillStyle='rgba(138,202,184,.23)';c.fillRect(-68,-70+j*9,117-(j%3)*19,2);}line(c,[[-68,-26],[66,-26]],'#8ed1b544',1);}
       c.restore();}
-    const count=clamp(Number(this.target?.dossier?.familyCount)||3,1,8),spacing=count>5?22:29,total=(count-1)*spacing;
+    const family=this.target?.dossier?.familyCount;
+    const known=Number.isInteger(family)&&family>0;
+    const count=known?clamp(family,1,8):0,spacing=count>5?22:29,total=(count-1)*spacing;
     c.save();c.translate(0,23);
-    line(c,[[0,-43],[0,-30]],'#bddfbb99',1);line(c,[[-total/2,-30],[total/2,-30]],'#bddfbb77',1);
-    for(let i=0;i<count;i++){const xx=-total/2+i*spacing;line(c,[[xx,-30],[xx,-16]],'#9cc6b555',1);circle(c,xx,-9,6);c.fillStyle=i===0?'#d9f78b':'#93bfb2';c.fill();path(c,[[xx-7,1],[xx+7,1],[xx+9,17],[xx-9,17]]);c.fillStyle=i===0?'rgba(217,247,139,.65)':'rgba(147,191,178,.35)';c.fill();}
+    if(known){
+      line(c,[[0,-43],[0,-30]],'#bddfbb99',1);line(c,[[-total/2,-30],[total/2,-30]],'#bddfbb77',1);
+      for(let i=0;i<count;i++){const xx=-total/2+i*spacing;line(c,[[xx,-30],[xx,-16]],'#9cc6b555',1);circle(c,xx,-9,6);c.fillStyle=i===0?'#d9f78b':'#93bfb2';c.fill();path(c,[[xx-7,1],[xx+7,1],[xx+9,17],[xx-9,17]]);c.fillStyle=i===0?'rgba(217,247,139,.65)':'rgba(147,191,178,.35)';c.fill();}
+    }else{
+      // Missing source data is rendered as an unanswered record, never invented relatives.
+      c.setLineDash([3,5]);circle(c,0,-3,29);c.strokeStyle='#a8c8b877';c.lineWidth=1;c.stroke();c.setLineDash([]);
+      c.font=`30px ${FONT}`;c.fillStyle='#d9f78bcc';c.textAlign='center';c.fillText('?',0,7);
+      line(c,[[-63,-3],[-40,-3]],'#9cc6b555',1);line(c,[[40,-3],[63,-3]],'#9cc6b555',1);
+    }
     c.restore();
     c.save();c.translate(-91,-100);c.rotate(-.12);rounded(c,-22,-16,44,31,4);c.strokeStyle='#d9f78b99';c.lineWidth=1.4;c.stroke();c.font=`${Math.max(12,10/this.scale)}px ${FONT}`;c.fillStyle='#d9f78b';c.textAlign='center';c.fillText('ID',0,5);c.restore();
   }

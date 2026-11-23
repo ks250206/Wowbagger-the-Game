@@ -28,6 +28,7 @@ export class SpaceScene {
     this.canvas=canvas;
     this.ctx=canvas.getContext('2d');
     this.options=options;
+    this.locale=options.locale==='en'?'en':'ja';
     this.view={targets:[],currentIndex:0,selectedIndex:0,phase:'map',sector:1};
     this.width=1; this.height=1; this.ship={x:.11,y:.86}; this.flight=null; this.effects=[];
     this.destroyed=false; this.last=0; this.elapsed=0; this.hover=-1; this.frame=null; this.pausedAt=null;
@@ -53,8 +54,17 @@ export class SpaceScene {
     document.addEventListener('visibilitychange',this.handleVisibility);
     this.resizeObserver = new ResizeObserver(()=>this.resize());
     this.resizeObserver.observe(canvas);
+    canvas.setAttribute('role','img');
+    this.updateAria();
     this.resize();
   }
+  updateAria() {
+    const count=this.view.targets.length;
+    this.canvas.setAttribute('aria-label',this.locale==='en'
+      ? `Galactic route chart${count?` with ${count} destinations`:''}. The highlighted planet is the next recipient.`
+      : `銀河の航路図${count?`。${count}か所の訪問先`:''}。光っている惑星が次の配達先です。`);
+  }
+  setLocale(locale) { this.locale=locale==='en'?'en':'ja';this.updateAria();this.wake(); }
   isVisible() { return !document.hidden && this.canvas.getClientRects().length>0 && this.canvas.clientWidth>0 && this.canvas.clientHeight>0; }
   sleep() {
     if(this.frame!==null)cancelAnimationFrame(this.frame);
@@ -79,6 +89,8 @@ export class SpaceScene {
   setView(view) {
     const previous=this.view;
     this.view={...previous,...view};
+    if(view.locale!==undefined)this.locale=view.locale==='en'?'en':'ja';
+    this.updateAria();
     if (view.reducedMotion!==undefined) this.reduced=Boolean(view.reducedMotion);
     const sectorChanged=previous.sector!==this.view.sector;
     const phaseChanged=previous.phase!==this.view.phase;
@@ -197,16 +209,17 @@ export class SpaceScene {
     const c=this.ctx,t=this.view.targets[i],p=this.targetPosition(i),current=i===this.view.currentIndex;
     const selected=i===this.view.selectedIndex,done=i<this.view.currentIndex || Boolean(t.completed);
     const compact=this.width<520;const r=compact?18+(i%3)*1.5:27+(i%3)*3;
-    const color=t.color||palette[i%palette.length];
+    const earth=t.kind==='arthur';
+    const color=earth?'#6bafcf':t.color||palette[i%palette.length];
     const rng=random(hash(t.id||t.name||i));
     c.save();c.translate(p.x,p.y);if(done)c.globalAlpha=.48;
     if(current){const g=c.createRadialGradient(0,0,r*.8,0,0,r*3.3);g.addColorStop(0,rgba(color,.13));g.addColorStop(1,rgba(color,0));c.fillStyle=g;circle(c,0,0,r*3.3);c.fill();}
     // Satellite track and small moon.
-    if(i%2===0){c.save();c.rotate(-.55);c.beginPath();c.ellipse(0,0,r*1.65,r*.8,0,Math.PI,TAU);stroke(c,'rgba(173,200,205,.17)');const m=time*.08+i;c.fillStyle='#8b9da6';circle(c,Math.cos(m)*r*1.65,Math.sin(m)*r*.8,2.5);c.fill();c.restore();}
-    if(i%3===2)this.ring(c,r,color,true);
+    if(earth||i%2===0){c.save();c.rotate(-.55);c.beginPath();c.ellipse(0,0,r*1.65,r*.8,0,Math.PI,TAU);stroke(c,'rgba(173,200,205,.17)');const m=time*.08+i;c.fillStyle='#8b9da6';circle(c,Math.cos(m)*r*1.65,Math.sin(m)*r*.8,2.5);c.fill();c.restore();}
+    if(!earth&&i%3===2)this.ring(c,r,color,true);
     c.save();circle(c,0,0,r);c.clip();
     const base=c.createRadialGradient(-r*.4,-r*.45,r*.05,r*.18,r*.25,r*1.5);base.addColorStop(0,color);base.addColorStop(.45,rgba(color,.92));base.addColorStop(1,'#12232d');c.fillStyle=base;c.fillRect(-r,-r,r*2,r*2);
-    if(i%3===0){
+    if(earth||i%3===0){
       // Ragged islands, generated once from the name's seed.
       for(let j=0;j<6;j++){const x=(rng()-.5)*r*1.8,y=(rng()-.5)*r*1.7,s=4+rng()*r*.33;c.beginPath();for(let k=0;k<8;k++){const a=k*TAU/8,rr=s*(.5+rng()*.65);const xx=x+Math.cos(a)*rr,yy=y+Math.sin(a)*rr;if(k)c.lineTo(xx,yy);else c.moveTo(xx,yy);}c.closePath();c.fillStyle=j%2?'rgba(20,70,65,.26)':'rgba(24,53,51,.25)';c.fill();}
       c.fillStyle='rgba(227,255,224,.22)';c.beginPath();c.ellipse(-r*.24,-r*.75,r*.65,r*.15,-.1,0,TAU);c.fill();
@@ -217,15 +230,16 @@ export class SpaceScene {
     }
     const shade=c.createLinearGradient(-r,-r,r,r);shade.addColorStop(0,'rgba(2,12,21,0)');shade.addColorStop(.45,'rgba(2,12,21,0)');shade.addColorStop(1,'rgba(2,12,21,.73)');c.fillStyle=shade;c.fillRect(-r,-r,r*2,r*2);c.restore();
     circle(c,0,0,r);stroke(c,rgba(color,.48),.8);
-    if(i%3===2)this.ring(c,r,color,false);
+    if(!earth&&i%3===2)this.ring(c,r,color,false);
     if(current || selected || this.hover===i){
       c.save();c.rotate(time*.08);c.setLineDash(current?[12,5,2,5]:[3,5]);circle(c,0,0,r+10);stroke(c,current?'#c2ed8a':'rgba(188,221,210,.55)',current?1.3:1);c.restore();
-      if(current){c.fillStyle='#c2ed8a';c.font='600 12px ui-monospace, monospace';c.textAlign='center';c.fillText('NEXT',0,-r-18);}
+      if(current){c.fillStyle='#c2ed8a';c.font='600 12px ui-monospace, monospace';c.textAlign='center';c.fillText(this.locale==='en'?'NEXT':'次の相手',0,-r-18);}
     }
     if(done){c.fillStyle='#bce991';circle(c,r*.75,-r*.7,8);c.fill();c.beginPath();c.moveTo(r*.75-3,-r*.7);c.lineTo(r*.75-1,-r*.7+2);c.lineTo(r*.75+3,-r*.7-2);stroke(c,'#122822',1.6);}
-    const label=compact?`${String(i+1).padStart(2,'0')} ${(t.name||t.planetName||'UNKNOWN').slice(0,4)}`:t.planetName||t.name||'UNKNOWN';
+    const unknown=this.locale==='en'?'UNKNOWN':'記録なし';
+    const label=compact?`${String(i+1).padStart(2,'0')} ${(t.name||t.planetName||unknown).slice(0,this.locale==='en'?8:4)}`:t.planetName||t.name||unknown;
     c.textAlign='center';c.font='500 12px system-ui, sans-serif';c.fillStyle=current?'#e1efcc':'#a3b4bc';
-    const chars=compact?10:12;const short=label.length>chars?label.slice(0,chars-1)+'…':label;
+    const chars=compact?(this.locale==='en'?13:10):(this.locale==='en'?21:12);const short=label.length>chars?label.slice(0,chars-1)+'…':label;
     c.fillText(short,0,r+27);
     if(!compact){c.font='12px ui-monospace, monospace';c.fillStyle='#79909a';const roman=t.romanName||t.name||'';c.fillText(roman.length>17?roman.slice(0,15)+'…':roman,0,r+44);}
     c.restore();
@@ -260,9 +274,57 @@ export class SpaceScene {
   }
 }
 
-/** Static original recipient portrait; call again after a card resize. */
-export function drawAlien(canvas, {species='bureaucrat',color='#a3d9b7',mood='neutral'}={}) {
+/** An original human design, with no film or television actor as a reference. */
+export function drawHumanArthur(canvas,{mood='neutral',locale='ja'}={}) {
   if(!canvas)return;
+  const rect=canvas.getBoundingClientRect(),w=rect.width||260,h=rect.height||220,dpr=Math.min(globalThis.devicePixelRatio||1,2);
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  canvas.setAttribute('role','img');
+  canvas.setAttribute('aria-label',locale==='en'
+    ? 'Arthur Philip Dent, a bewildered human in a brown dressing gown, with a towel over one shoulder.'
+    : '茶色のガウンを着て肩にタオルをかけた、困惑する地球人アーサー・フィリップ・デント。');
+  const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
+  const scale=Math.min(w/260,h/230),angry=['angry','offended','fail'].includes(mood),surprised=['confused','gift','surprised'].includes(mood);
+  c.save();c.translate(w/2,h/2);c.scale(scale,scale);
+  const halo=c.createRadialGradient(0,-6,2,0,-6,112);halo.addColorStop(0,'rgba(111,185,198,.18)');halo.addColorStop(1,'rgba(111,185,198,0)');c.fillStyle=halo;circle(c,0,-6,112);c.fill();
+  c.save();c.setLineDash([3,7]);circle(c,0,-7,83);stroke(c,'rgba(143,205,196,.18)');c.restore();
+  c.beginPath();c.ellipse(0,92,76,10,0,0,TAU);c.fillStyle='rgba(0,0,0,.23)';c.fill();
+  // A dressing gown that has outlived its intended commute to the bathroom.
+  c.beginPath();c.moveTo(-21,23);c.bezierCurveTo(-52,24,-70,50,-70,91);c.quadraticCurveTo(0,107,70,91);c.bezierCurveTo(70,50,48,26,21,23);c.closePath();
+  const robe=c.createLinearGradient(-65,20,60,100);robe.addColorStop(0,'#a08a6d');robe.addColorStop(.5,'#76604c');robe.addColorStop(1,'#493c36');c.fillStyle=robe;c.fill();stroke(c,'#bfa88c66',1.3);
+  c.beginPath();c.moveTo(-22,24);c.lineTo(0,73);c.lineTo(22,24);c.fillStyle='#ded8b7';c.fill();
+  c.beginPath();c.moveTo(-28,24);c.lineTo(-8,86);c.lineTo(5,67);c.lineTo(-11,27);c.closePath();c.fillStyle='#b79a74';c.fill();
+  c.beginPath();c.moveTo(24,24);c.lineTo(8,89);c.lineTo(-2,71);c.lineTo(11,26);c.closePath();c.fillStyle='#8f7558';c.fill();
+  c.fillStyle='#a58d6c';c.fillRect(-56,82,109,7);
+  c.beginPath();c.moveTo(0,84);c.lineTo(12,96);stroke(c,'#c6af83',4);
+  // The towel is useful even when the person offering assistance is not.
+  c.beginPath();c.moveTo(-47,30);c.quadraticCurveTo(-35,23,-25,34);c.lineTo(-28,87);c.quadraticCurveTo(-40,91,-51,86);c.closePath();c.fillStyle='#b4d1c3';c.fill();stroke(c,'#e5e4c577',1);
+  for(let y=43;y<84;y+=9){c.beginPath();c.moveTo(-48,y);c.lineTo(-29,y+2);stroke(c,'#5c908366',1);}
+  for(let x=-46;x<-28;x+=6){c.beginPath();c.moveTo(x,39);c.lineTo(x-2,86);stroke(c,'#ebf0d944',1);}
+  c.fillStyle='#c6a081';c.fillRect(-12,12,24,24);
+  for(const sign of [-1,1]){c.beginPath();c.ellipse(sign*31,-18,7,12,sign*.2,0,TAU);c.fillStyle='#bd977c';c.fill();}
+  const skin=c.createLinearGradient(-30,-55,30,28);skin.addColorStop(0,'#e2c3a2');skin.addColorStop(.65,'#c9a88b');skin.addColorStop(1,'#aa866e');
+  c.beginPath();c.moveTo(-30,-42);c.bezierCurveTo(-35,-75,35,-75,32,-41);c.lineTo(28,2);c.quadraticCurveTo(20,28,0,31);c.quadraticCurveTo(-23,25,-29,3);c.closePath();c.fillStyle=skin;c.fill();
+  c.beginPath();c.moveTo(-30,-21);c.lineTo(-38,-44);c.lineTo(-29,-61);c.lineTo(-34,-70);c.lineTo(-15,-72);c.lineTo(-5,-83);c.lineTo(5,-72);c.lineTo(23,-77);c.lineTo(22,-66);c.lineTo(37,-56);c.lineTo(35,-30);c.lineTo(27,-35);c.lineTo(22,-50);c.lineTo(7,-43);c.lineTo(4,-55);c.lineTo(-12,-44);c.lineTo(-23,-49);c.lineTo(-25,-23);c.closePath();c.fillStyle='#4b443d';c.fill();
+  c.beginPath();c.moveTo(-22,-62);c.quadraticCurveTo(-8,-71,6,-63);stroke(c,'#9b826333',3);
+  for(const sign of [-1,1]){
+    const x=sign*14;
+    c.beginPath();c.ellipse(x,-22,9,surprised?10:7,0,0,TAU);c.fillStyle='#ede5cf';c.fill();
+    c.beginPath();c.ellipse(x+1,-21,3.2,4.8,0,0,TAU);c.fillStyle='#344348';c.fill();circle(c,x,-23,1.2);c.fillStyle='#fffbea';c.fill();
+    c.beginPath();c.moveTo(x-9,-34+(angry?-sign*3:sign*2));c.quadraticCurveTo(x,-38+(surprised?-3:0),x+9,-34+(angry?sign*3:-sign*2));stroke(c,'#5b4a3d',2.8);
+  }
+  c.beginPath();c.moveTo(1,-19);c.lineTo(-4,-4);c.quadraticCurveTo(0,0,5,-4);stroke(c,'#947360',1.8);
+  c.beginPath();if(surprised)c.ellipse(1,12,5,7,0,0,TAU);else{c.moveTo(-10,12);c.quadraticCurveTo(0,angry?3:8,11,14);}stroke(c,'#765343',2);
+  for(const [x,y] of [[-20,4],[-16,9],[-11,20],[0,23],[11,21],[20,8],[24,1]]){c.beginPath();c.moveTo(x,y);c.lineTo(x+.5,y+2);stroke(c,'#76685c77',.9);}
+  c.restore();
+}
+
+/** Static original recipient portrait; call again after a card resize. */
+export function drawAlien(canvas, {species='bureaucrat',color='#a3d9b7',mood='neutral',kind,locale='ja'}={}) {
+  if(!canvas)return;
+  if(kind==='arthur')return drawHumanArthur(canvas,{mood,locale});
+  canvas.setAttribute('role','img');
+  canvas.setAttribute('aria-label',locale==='en'?'Portrait of the alien recipient.':'訪問先の宇宙人の肖像。');
   const rect=canvas.getBoundingClientRect(),w=rect.width||260,h=rect.height||220,dpr=Math.min(globalThis.devicePixelRatio||1,2);
   canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
   const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
