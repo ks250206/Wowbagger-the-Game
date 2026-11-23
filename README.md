@@ -106,20 +106,25 @@ JavaScriptの構文に加え、次のゲーム状態遷移を確認します。
 | `docs/.nojekyll` | 静的ファイルをそのまま配信するための設定 |
 | `engine-check.mjs` | ゲームロジックの検証 |
 | `package.json` | 検証コマンド |
+| `.github/workflows/pages.yml` | 自動検証とGitHub Pagesへの公開 |
 
-## GitHub Pages
+## CIとGitHub Pages
 
 公開URL：**<https://ks250206.github.io/Wowbagger-the-Game/>**
 
-リポジトリの **Settings → Pages** で、以下を公開元に設定します。
+[CI and deploy GitHub Pages](https://github.com/ks250206/Wowbagger-the-Game/actions/workflows/pages.yml) が、`main` へのpushごとに次の処理を行います。
 
-| 設定 | 値 |
-| --- | --- |
-| Source | Deploy from a branch |
-| Branch | `main` |
-| Folder | `/docs` |
+1. Node.js 24で `npm run check` を実行し、JavaScriptの構文とゲーム状態遷移を検証。
+2. 検証が成功した場合に限り、`docs/` をPages用の成果物としてアップロード。
+3. その成果物をGitHub Pagesに公開。
 
-`main` の `docs/` を更新するとGitHub Pagesに反映されます。ビルド処理やAPIキーは不要です。CSSとJavaScriptは相対パスで参照しているため、`/Wowbagger-the-Game/` 配下で動作します。
+検証と公開は別のジョブで、公開ジョブは検証成功後に実行されます。同時に複数の公開を実行せず、進行中の公開が終わってから次を処理します。ゲームの依存パッケージのインストールやビルド、独自のAPIキー・シークレットは不要です。
+
+リポジトリの **Settings → Pages → Build and deployment → Source** は **GitHub Actions** に設定します。配信対象はワークフロー内で `docs/` と指定しています。
+
+必要な場合は、上記Actionsページの **Run workflow** から `main` を選んで手動実行できます。実行結果は、同じページの検証・公開ジョブで確認できます。
+
+CSSとJavaScriptは相対パスで参照しているため、`/Wowbagger-the-Game/` 配下で動作します。
 
 ## LGPS模型について
 
