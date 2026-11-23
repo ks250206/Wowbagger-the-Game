@@ -66,7 +66,7 @@ function apply(result,{announce=true}={}) {
   state=result.state;save();render();if(announce)computer(result.event.message);return true;
 }
 function renderTargets(container) {
-  container.innerHTML=state.targets.map((target,index)=>`<button class="target-row ${index<state.targetIndex?'past':index===state.targetIndex?'current':''} ${target.kind==='arthur'?'canon-target':''}" data-target="${index}" ${index===state.targetIndex?'aria-current="step"':''} aria-label="${escape(target.name)}, ${index<state.targetIndex?tr('配達済み','delivered'):index===state.targetIndex?tr('次の配達先','next recipient'):tr('未訪問','not yet visited')}"><span class="target-id">${index<state.targetIndex?'✓':pad(index+1)}</span><span class="target-person"><strong>${escape(target.name)}</strong><span>${escape(target.romanName)}</span>${target.kind==='arthur'?`<small class="canon-chip">${tr('原作のエピソード','FROM THE NOVEL')}</small>`:''}</span><span class="target-dot" style="background:${target.color}"></span></button>`).join('');
+  container.innerHTML=state.targets.map((target,index)=>`<button class="target-row ${index<state.targetIndex?'past':index===state.targetIndex?'current':''} ${target.kind==='arthur'?'canon-target':''}" data-target="${index}" ${index===state.targetIndex?'aria-current="step"':''} aria-label="${escape(target.name)}, ${index<state.targetIndex?tr('不快に済み','already offended'):index===state.targetIndex?tr('次の被害者','next victim'):tr('まだ無事','still blissfully uninsulted')}"><span class="target-id">${index<state.targetIndex?'✓':pad(index+1)}</span><span class="target-person"><strong>${escape(target.name)}</strong><span>${escape(target.romanName)}</span>${target.kind==='arthur'?`<small class="canon-chip">${tr('原作のエピソード','FROM THE NOVEL')}</small>`:''}</span><span class="target-dot" style="background:${target.color}"></span></button>`).join('');
 }
 function render() {
   const target=Engine.getTarget(state),view=Engine.view(state);
@@ -91,40 +91,40 @@ function render() {
   scene.setView({targets:state.targets,currentIndex:state.targetIndex,selectedIndex,phase,sector:state.sector,player:state.ship,reducedMotion,locale:language()});
   if(phase==='map'&&target){
     text('nextNumber',pad(state.targetIndex+1));text('nextRole',target.role);text('nextName',target.name);text('nextPlanet',target.planetName);
-    text('mapHeadline',state.completed===0?tr('宇宙に、用事がある。','The Universe requires a word.'):state.targetIndex===0?tr('宇宙は、協力的でない。','The Universe is not helping.'):tr('まだ、帰れない。','Still no reason to go home.'));
-    $('mapSubline').innerHTML=state.completed===0?tr('訪ねて、言って、模型を渡す。<br>宇宙規模でも、仕事は増える。','Visit. Offend. Leave a crystal.<br>A remarkably scalable nuisance.'):tr('{n}人に配達完了。<br>感謝状の収納場所は、まだ要りません。',state.completed===1?'One delivery completed.<br>No additional storage for thank-you notes is required.':'{n} deliveries completed.<br>No additional storage for thank-you notes is required.',{n:number(state.completed)});
+    text('mapHeadline',state.completed===0?tr('さあ、全宇宙にケンカを売りに行こう。','Right then. Let’s go upset the cosmos.'):state.targetIndex===0?tr('新しい宙域、新しい被害者たち。','A fresh sector of unsuspecting citizens.'):tr('まだまだ先は長い（文字どおり永遠に）。','Only infinity left to go.'));
+    $('mapSubline').innerHTML=state.completed===0?tr('訪ねて、悪口を言って、結晶模型を押し付ける。<br>まずは「操縦席で下調べ」を押して出発しよう。','Drop by, insult them personally, leave a crystal.<br>Open the dossier below to get this dreadful show on the road.'):tr('これまで{n}人を不快にしました。<br>感謝状は、いまのところ一通も届いていません。',state.completed===1?'One citizen successfully offended.<br>Curiously, not a single thank-you card has arrived.':'{n} citizens successfully offended.<br>Curiously, not a single thank-you card has arrived.',{n:number(state.completed)});
     crystal?.stop();
   }
   if(phase==='encounter'||phase==='gift'){
     const resident=afterGift?.target||target,pending=afterGift?.result||state.pendingInsult;
-    text('encounterStage',afterGift?tr('受領完了 / 感謝は任意','DELIVERED / GRATITUDE OPTIONAL'):phase==='gift'?tr('02 / LGPS模型を渡す','02 / THE UNREQUESTED GIFT'):tr('01 / 本人に悪口を伝える','01 / THE PERSONAL REMARK'));
+    text('encounterStage',afterGift?tr('配達完了 / 苦情はブラックホールまで','DELIVERED / COMPLAINTS IGNORED'):phase==='gift'?tr('02 / LGPS模型を押し付ける','02 / THE UNSOLICITED GIFT'):tr('01 / 面と向かって悪口を言う','01 / THE PERSONAL INSULT'));
     text('encounterPlanet',resident.planetName);text('residentName',resident.name);text('residentRoman',resident.romanName);text('residentRole',resident.role);text('residentSpecies',resident.species);
     text('residentSpeech',afterGift?afterGift.result.giftResponse:phase==='gift'?pending.response:resident.intro);
     show('canonNote',resident.kind==='arthur');
-    if(resident.kind==='arthur')text('canonNote',tr('『宇宙クリケット大戦争』第1章の遭遇に基づく翻案。台詞は創作、LGPS贈呈は本作独自の追加です。','Adapted from the Chapter 1 encounter in Life, the Universe and Everything. Dialogue is newly written; the LGPS gift is this game’s addition.'));
+    if(resident.kind==='arthur')text('canonNote',tr('『宇宙クリケット大戦争』第1章の展開に基づく翻案です。台詞は本作オリジナル、LGPS模型の押し付けはゲーム独自の悪ノリです。','Adapted from Chapter 1 of Life, the Universe and Everything. Original dialogue; the LGPS gift is this game’s own mischief.'));
     const portraitKey=`${resident.id}:${phase}:${language()}:${afterGift?'done':pending?.effect||0}`;
     const mood=afterGift?'confused':phase==='gift'?pending.effect>=2?'angry':'happy':'neutral';
     if(portraitKey!==lastPortrait||lastPhase!==phase){requestAnimationFrame(()=>drawAlien($('alienCanvas'),{species:resident.portrait??resident.species,kind:resident.kind,color:resident.color,mood,locale:language()}));lastPortrait=portraitKey;}
     show('insultPanel',phase==='encounter');show('giftPanel',phase==='gift');show('effectBadge',phase==='gift');
     if(phase==='encounter'){
       show('hintText',state.inspected);text('hintText',resident.hint);$('observeButton').disabled=state.inspected;
-      $('observeButton').innerHTML=state.inspected?tr('観察済み <span>自慢の所在を確認しました。</span>','Observation complete <span>Pride successfully located.</span>'):tr('相手を観察する <span>2年かけて</span>','Observe the recipient <span>Allow two years</span>');
+      $('observeButton').innerHTML=state.inspected?tr('観察済み <span>相手の自慢ポイントが丸見えです</span>','Observation complete <span>Sore spot located</span>'):tr('相手をじっくり観察する <span>2年かけて弱点を探る</span>','Observe the recipient <span>Spend 2 years spotting flaws</span>');
       $('insultChoices').innerHTML=resident.choices.map((choice,index)=>`<button class="insult-choice" data-choice="${index}"><span class="choice-number">${index+1}</span><span class="choice-body"><span class="choice-tag">${escape(choice.tag)}</span>${tr('「{line}」','“{line}”',{line:escape(choice.text)})}</span></button>`).join('');crystal?.stop();
     }else{
-      const effectText=pending.effect===3?tr('的確な迷惑','PRECISION NUISANCE'):pending.effect===2?tr('十分に不愉快','SATISFACTORILY OFFENDED'):tr('被害は軽微','ONLY SLIGHTLY INCONVENIENCED');
-      text('effectBadge',afterGift?tr('悪口 ＋ 模型 受領済み · +{n}点','INSULT + MODEL RECEIVED · +{n} points',{n:pending.points}):effectText);$('effectBadge').classList.toggle('weak',pending.effect===1&&!afterGift);
+      const effectText=pending.effect===3?tr('クリティカル不快！（大成功）','DIRECT HIT ON THE EGO!'):pending.effect===2?tr('まあまあ不快にした','NICELY AGGRAVATED'):tr('ほぼ空振り（相手にされず）','BARELY RUFFLED THEIR FEATHERS');
+      text('effectBadge',afterGift?tr('悪口＋模型 配達完了 · +{n}点','INSULT + MODEL DELIVERED · +{n} pts',{n:pending.points}):effectText);$('effectBadge').classList.toggle('weak',pending.effect===1&&!afterGift);
       show('giftPrintButton',!afterGift&&state.models===0);$('giftButton').disabled=busy||(!afterGift&&state.models<1);
-      $('giftButton').innerHTML=afterGift?(resident.kind==='arthur'?tr('船へ戻る','Return to the ship'):state.phase==='result'?tr('この宙域の配達を終える','Complete this sector'):tr('次の名前へ','Next name, please')):tr('LGPS模型を手渡す <kbd>Enter</kbd>','Hand over the LGPS model <kbd>Enter</kbd>');
-      $('giftPanel').querySelector('.gift-copy').textContent=afterGift?afterGift.result.fact:state.models===0?tr('模型棚は空です。プリンターだけが、まだやる気です。','The shelf is empty. The printer remains distressingly willing.'):tr('悪口だけでは、サービスが行き届きません。','An insult alone would be a rather incomplete service.');
-      $('giftPanel').querySelector('.section-heading .eyebrow').textContent=afterGift?'DELIVERED, WHETHER THEY LIKE IT OR NOT':'AND ONE MORE THING';
-      $('giftPanel').querySelector('.section-heading h3').textContent=afterGift?tr('贈り物は、受け取られた。','The present has been accepted.'):tr('それと、こちらをどうぞ。','And this is also for you.');
+      $('giftButton').innerHTML=afterGift?(resident.kind==='arthur'?tr('アーサーを置いて船へ戻る','Leave Arthur behind & board ship'):state.phase==='result'?tr('この宙域の報告書を見る','View sector report'):tr('よし、次の被害者へ','Right then—next name')):tr('LGPS模型を押し付ける <kbd>Enter</kbd>','Hand over the LGPS model <kbd>Enter</kbd>');
+      $('giftPanel').querySelector('.gift-copy').textContent=afterGift?afterGift.result.fact:state.models===0?tr('おっと、模型の在庫切れです。船内プリンターで3個作ってから渡しましょう（8年待ち）。','Dear me, out of stock. Print three more models before completing the nuisance (8 years).'):tr('悪口だけでは片手落ち。仕上げに謎の固体電解質模型を押し付けて帰りましょう。','An insult without a baffling souvenir would feel terribly half-hearted.');
+      $('giftPanel').querySelector('.section-heading .eyebrow').textContent=afterGift?'DELIVERED, WHETHER THEY WANTED IT OR NOT':'AND ONE MORE THING';
+      $('giftPanel').querySelector('.section-heading h3').textContent=afterGift?tr('模型はしっかり押し付けた。','The baffling gift has been accepted.'):tr('それと、ついでにこれをどうぞ。','Oh, and do take this crystal.');
       requestAnimationFrame(()=>{if(!crystal)crystal=new CrystalModel($('crystalCanvas'),{locale:language()});crystal.setLocale(language());crystal.start();crystal.setCelebrating(!!afterGift);});
     }
   }
   if(phase==='result'){
-    crystal?.stop();text('resultSubtitle',tr('第{n}宙域の全員が、悪口とLGPS模型を受け取りました。返品窓口は、ありません。','Everyone in sector {n} has received an insult and an LGPS model. There is no returns desk.',{n:state.sector}));
-    $('resultStats').innerHTML=`<div class="result-stat"><span>${tr('この宙域の得点','Sector score')}</span><strong>${number(view.sectorScore)}</strong></div><div class="result-stat"><span>${tr('通算の配達','Lifetime deliveries')}</span><strong>${number(state.completed)}</strong></div><div class="result-stat"><span>${tr('失われた年月','Years misplaced')}</span><strong>${number(state.years)}</strong></div>`;
-    text('resultQuote',tr('あなたの称号：{rank}','Your official designation: {rank}',{rank:view.rank}));
+    crystal?.stop();text('resultSubtitle',tr('第{n}宙域の6人全員に、悪口とLGPS模型をお届けしました。返品窓口は銀河のどこにもありません。','All six residents of sector {n} now possess a bruised ego and an LGPS crystal. No returns desk exists anywhere in the galaxy.',{n:state.sector}));
+    $('resultStats').innerHTML=`<div class="result-stat"><span>${tr('この宙域のスコア','Sector score')}</span><strong>${number(view.sectorScore)}</strong></div><div class="result-stat"><span>${tr('通算で不快にした人数','Lifetime victims')}</span><strong>${number(state.completed)}</strong></div><div class="result-stat"><span>${tr('無駄にした年月','Years mislaid')}</span><strong>${number(state.years)}</strong></div>`;
+    text('resultQuote',tr('現在の称号：{rank}','Your current official title: {rank}',{rank:view.rank}));
   }
   if(lastPhase!==phase){if(window.innerWidth<=650)window.scrollTo({top:0,behavior:'instant'});lastPhase=phase;}
   text('soundText',options.sound?'ON':'OFF');$('soundButton').setAttribute('aria-label',options.sound?tr('効果音をオフにする','Turn sound off'):tr('効果音をオンにする','Turn sound on'));$('soundButton').setAttribute('aria-pressed',String(options.sound));
@@ -132,7 +132,7 @@ function render() {
 function selectTarget(index) {
   if(busy||state.phase!=='map'||afterGift)return;
   const target=state.targets[index];if(!target)return;selectedIndex=index;scene.setView({selectedIndex});clearTimeout(previewTimer);
-  $('selectedPreview').innerHTML=`<button id="closePreview" aria-label="${tr('閉じる','Close')}">×</button><span>${index<state.targetIndex?tr('配達済み','Delivered'):index===state.targetIndex?tr('次の配達先','Next recipient'):tr('あと{n}人先',index-state.targetIndex===1?'One name ahead':'{n} names ahead',{n:index-state.targetIndex})}</span><strong>${escape(target.name)}</strong>${escape(target.role)}<br><span>${escape(target.planetName)}</span>${index>state.targetIndex?`<br><small>${tr('英語のフルネーム順。先方の知名度も例外にはなりません。','Full English-name order. Celebrity does not qualify for an exemption.')}</small>`:''}`;
+  $('selectedPreview').innerHTML=`<button id="closePreview" aria-label="${tr('閉じる','Close')}">×</button><span>${index<state.targetIndex?tr('不快に済み','Already offended'):index===state.targetIndex?tr('次の被害者','Next victim'):tr('あと{n}人先',index-state.targetIndex===1?'One name ahead':'{n} names ahead',{n:index-state.targetIndex})}</span><strong>${escape(target.name)}</strong>${escape(target.role)}<br><span>${escape(target.planetName)}</span>${index>state.targetIndex?`<br><small>${tr('英語のフルネーム順を厳守。どれほど大物でも割り込みは認めません。','Strict alphabetical order. Not even royalty gets to jump this queue.')}</small>`:''}`;
   show('selectedPreview',true);previewTimer=setTimeout(()=>show('selectedPreview',false),5500);$('closePreview').onclick=()=>show('selectedPreview',false);
 }
 function openBriefing(){if(busy||state.phase!=='map'||afterGift)return;briefingOpen=true;show('selectedPreview',false);render();playSound('tap');}
@@ -151,10 +151,10 @@ async function doTravel(){
   briefingOpen=false;render();const result=Engine.travel(state,{mode});const departureLocale=language();
   if(result.event.type==='blocked'){toast(result.event.message);return;}
   busy=true;show('selectedPreview',false);$('travelButton').disabled=true;document.body.classList.add('busy');
-  text('travelButton',mode==='warp'?tr('時空と交渉中…','Negotiating with space-time…'):tr('航行中…','In transit…'));
-  computer(mode==='warp'?tr('シートベルトをどうぞ。物理法則に対しては気休めです。','Fasten your seat belt. It provides moral support against the laws of physics.'):tr('出発しました。地図上では、ひどく簡単な仕事です。','We have departed. On the map this is an embarrassingly simple job.'));playSound('travel');
+  text('travelButton',mode==='warp'?tr('時空に無理を言っています…','Bending space-time recklessly…'):tr('のんびり航行中…','Chugging along…'));
+  computer(mode==='warp'?tr('シートベルトをお締めください。物理法則の前ではただの気休めですが。','Fasten your seat belt. Purely decorative against the laws of physics, mind.'):tr('出発しました。地図の上では、拍子抜けするほど簡単な仕事に見えるんですけどね。','We are under way. Looks embarrassingly easy on the star chart, doesn’t it?'));playSound('travel');
   try{await scene.travelTo(state.targetIndex,mode);}finally{busy=false;document.body.classList.remove('busy');}
-  if(result.event.died){show('transitOverlay',true);text('transitTitle',tr('到着先は、恒星の中でした。','We have arrived inside a star.'));text('transitText',tr('再生に{n}年。苦情を言う相手も、あなたです。','Regeneration took {n} years. Complaints may be addressed to yourself.',{n:result.event.years}));playSound('accident');busy=true;await new Promise(resolve=>setTimeout(resolve,reducedMotion?650:1900));show('transitOverlay',false);busy=false;}
+  if(result.event.died){show('transitOverlay',true);text('transitTitle',tr('おっと、恒星のど真ん中に出ました。','Slight snag: we’ve parked inside a star.'));text('transitText',tr('丸焦げからの再生に{n}年かかりました。苦情は操縦したご本人までどうぞ。','Regenerating from ash took {n} years. Kindly address all complaints to the pilot.',{n:result.event.years}));playSound('accident');busy=true;await new Promise(resolve=>setTimeout(resolve,reducedMotion?650:1900));show('transitOverlay',false);busy=false;}
   if(departureLocale!==language()){result.state=Engine.setLocale(result.state,language());result.event.message=Engine.view(result.state).objective;}
   selectedIndex=-1;apply(result);$('travelButton').innerHTML=message('openBriefing');
   if(Engine.getTarget(state)?.kind==='arthur'&&!options.arthurArrivalSeen)await showArthur('arrival');
@@ -165,8 +165,8 @@ async function doGift(){
   if(afterGift){
     if(afterGift.target.kind==='arthur'&&options.arthurDeparturePending)await showArthur('departure');
     const completedSector=state.phase==='result';afterGift=null;render();
-    if(completedSector){playSound('result');computer(tr('一区画完了。宇宙は、その間に仕事を増やしておきました。','Sector complete. The Universe has used the interval to create more work.'));}
-    else{playSound('tap');computer(state.lastResult?.fact||tr('次の配達先を表示しました。','Next recipient displayed.'));scene.burst('success');}return;
+    if(completedSector){playSound('result');computer(tr('6人完了！　なお、そのあいだに宇宙では新しい住民が何十億人も生まれました。','Sector complete! Meanwhile, several billion fresh citizens were born to keep you busy.'));}
+    else{playSound('tap');computer(state.lastResult?.fact||tr('次の被害者を画面に出しておきました。','Next unsuspecting citizen loaded on screen.'));scene.burst('success');}return;
   }
   if(state.phase!=='gift')return;const target=Engine.getTarget(state),result=Engine.gift(state);
   if(result.event.type==='blocked'){toast(result.event.message);return;}
@@ -174,8 +174,8 @@ async function doGift(){
   if(target.kind==='arthur'){options.arthurDeparturePending=true;saveOptions();}
   save();render();playSound('gift');computer(result.event.giftResponse);
 }
-function doPrint(){if(busy||afterGift)return;const result=Engine.printModels(state);if(apply(result)){playSound('print');toast(tr('模型を{n}個補充。8年です。お急ぎ便でした。','{n} models restocked. Eight years. That was the express service.',{n:result.event.amount}));}}
-function renderLog(){$('logEntries').innerHTML=state.log.length?state.log.map(item=>`<article class="log-entry"><time>${tr('経過 {n} 年','YEAR {n}',{n:number(item.years)})}</time><p>${escape(item.message)}</p></article>`).join(''):`<p class="log-empty">${tr('まだ誰も不愉快になっていません。不手際です。','Nobody has been offended yet. An administrative oversight.')}</p>`;}
+function doPrint(){if(busy||afterGift)return;const result=Engine.printModels(state);if(apply(result)){playSound('print');toast(tr('模型を{n}個補充しました（たった8年。これでもお急ぎ便です）。','{n} models printed in a brisk eight years. That was the express setting.',{n:result.event.amount}));}}
+function renderLog(){$('logEntries').innerHTML=state.log.length?state.log.map(item=>`<article class="log-entry"><time>${tr('経過 {n} 年','YEAR {n}',{n:number(item.years)})}</time><p>${escape(item.message)}</p></article>`).join(''):`<p class="log-empty">${tr('まだ誰ひとり不快にしていません。怠慢極まりないですね。','Not a single citizen offended yet. Dreadful slacking.')}</p>`;}
 function showLog(){renderLog();$('logDialog').showModal();}
 function setMode(next){if(busy)return;mode=next;$('normalMode').classList.toggle('active',mode==='normal');$('warpMode').classList.toggle('active',mode==='warp');$('normalMode').setAttribute('aria-pressed',String(mode==='normal'));$('warpMode').setAttribute('aria-pressed',String(mode==='warp'));playSound('tap');}
 $('travelButton').onclick=openBriefing;$('normalMode').onclick=()=>setMode('normal');$('warpMode').onclick=()=>setMode('warp');
@@ -191,8 +191,8 @@ for(const id of ['targetList','mobileTargetList'])$(id).onclick=e=>{const button
 for(const dialog of document.querySelectorAll('dialog:not(#introDialog):not(#arthurEpisodeDialog)'))dialog.addEventListener('click',e=>{if(e.target.closest('[data-close]'))dialog.close();if(e.target===dialog){const box=dialog.getBoundingClientRect();if(e.clientX<box.left||e.clientX>box.right||e.clientY<box.top||e.clientY>box.bottom)dialog.close();}});
 $('resetButton').onclick=()=>{$('helpDialog').close();$('resetDialog').showModal();};
 $('confirmResetButton').onclick=()=>{
-  if(busy){toast(tr('航行中です。宇宙の順番を守ってください。','Please wait for transit to finish. The Universe has a queue.'));return;}
-  $('resetDialog').close();afterGift=null;briefingOpen=false;state=Engine.createGame(undefined,language());selectedIndex=-1;lastPortrait='';lastPhase=null;options.arthurArrivalSeen=false;options.arthurDeparturePending=false;saveOptions();scene.setView({sector:0});save();render();computer(tr('記録は消せました。不死身の方は、権限が足りません。','The records have been cleared. We lack the permissions to remove immortality.'));
+  if(busy){toast(tr('今は航行中です。宇宙の順番くらい守りたまえ。','Hold on—we are mid-flight. Even eternity has a queue.'));return;}
+  $('resetDialog').close();afterGift=null;briefingOpen=false;state=Engine.createGame(undefined,language());selectedIndex=-1;lastPortrait='';lastPhase=null;options.arthurArrivalSeen=false;options.arthurDeparturePending=false;saveOptions();scene.setView({sector:0});save();render();computer(tr('配達記録はきれいに消しました。不死身のほうは、システム権限が足りなくて消せませんでした。','Voyage wiped clean. Sadly, I lack admin privileges to cancel your immortality.'));
 };
 document.addEventListener('keydown',e=>{
   if(e.altKey||e.ctrlKey||e.metaKey||e.repeat||document.querySelector('dialog[open]')||busy||/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))return;
@@ -208,6 +208,6 @@ document.addEventListener('keydown',e=>{
 });
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(state.phase==='encounter'||state.phase==='gift'||afterGift){lastPortrait='';render();}},120);});
 render();save();
-if(!storageAvailable)toast(tr('自動保存を利用できません。タブを閉じると、この航海の記録が失われる可能性があります。','Automatic saving is unavailable. Closing this tab may lose this voyage.'),5500);
+if(!storageAvailable)toast(tr('自動保存が使えません。タブを閉じると、せっかく怒らせた記録が消えてしまいます。','Local storage is unavailable. Closing this tab will tragically erase your hard-earned grievances.'),5500);
 if(!options.introSeen)introUI.open();else resumeStory();
-computer(state.completed===0&&state.phase==='map'?tr('まずは6人。名簿は英語のフルネーム順です。礼節は順番にだけ適用されます。','Six names to begin with, in full English-name order. Courtesy applies strictly to the sequence.'):tr('航海記録を復元しました。終わらない仕事へ、お帰りなさい。','Voyage restored. Welcome back to the job that has declined to end.'));
+computer(state.completed===0&&state.phase==='map'?tr('さあまずは6人。英語フルネーム順に、面と向かって悪口と模型を配りましょう。','Six citizens to start with, strictly alphabetical. Do try to offend them properly.'):tr('前回の航海記録を復元しました。終わらないお仕事へ、おかえりなさいませ。','Voyage restored. Welcome back to the chore that stubbornly refuses to end.'));

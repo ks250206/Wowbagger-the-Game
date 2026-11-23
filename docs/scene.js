@@ -233,7 +233,7 @@ export class SpaceScene {
     if(!earth&&i%3===2)this.ring(c,r,color,false);
     if(current || selected || this.hover===i){
       c.save();c.rotate(time*.08);c.setLineDash(current?[12,5,2,5]:[3,5]);circle(c,0,0,r+10);stroke(c,current?'#c2ed8a':'rgba(188,221,210,.55)',current?1.3:1);c.restore();
-      if(current){c.fillStyle='#c2ed8a';c.font='600 12px ui-monospace, monospace';c.textAlign='center';c.fillText(this.locale==='en'?'NEXT':'次の相手',0,-r-18);}
+      if(current){c.fillStyle='#c2ed8a';c.font='600 12px ui-monospace, monospace';c.textAlign='center';c.fillText(this.locale==='en'?'NEXT':'次の被害者',0,-r-18);}
     }
     if(done){c.fillStyle='#bce991';circle(c,r*.75,-r*.7,8);c.fill();c.beginPath();c.moveTo(r*.75-3,-r*.7);c.lineTo(r*.75-1,-r*.7+2);c.lineTo(r*.75+3,-r*.7-2);stroke(c,'#122822',1.6);}
     const unknown=this.locale==='en'?'UNKNOWN':'記録なし';

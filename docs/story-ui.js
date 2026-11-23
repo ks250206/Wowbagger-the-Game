@@ -7,20 +7,20 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;',
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export const PROLOGUE = [
   {
-    ja:{label:'死亡届の、出しようがない',time:'ある日の昼休み。最後ではない。',title:'事故は、\n終わりませんでした。',body:'粒子加速器と昼酒と輪ゴムが、珍しく意見の一致を見せた。ワウバッガーは不死身になった。設備担当者は、事故の影響を「長期的」と報告した。',note:'あなたは、無限引き伸ばされワウバッガー。退職日は未定。',aria:'粒子加速器、昼酒、輪ゴム。事故で不死身になってしまうワウバッガー。'},
-    en:{label:'A SMALL ADMINISTRATIVE DIFFICULTY',time:'A lunch break. Not his last.',title:'The accident\nfailed to end.',body:'A particle accelerator, a liquid lunch and some rubber bands achieved an unfortunate consensus. Wowbagger became immortal. Maintenance described the consequences as “ongoing” and closed the ticket.',note:'You are Wowbagger the Infinitely Prolonged. Retirement is not in the benefits package.',aria:'A particle accelerator, a drink and rubber bands cause Wowbagger to become immortal.'},
+    ja:{label:'実に締まらない不死の誕生',time:'とある火曜日の昼休み。残念ながら最後ではない。',title:'事故のせいで、\n死ねなくなった。',body:'宇宙には数多くの不死者がいるが、たいていは生まれつき不死身で、それらしく優雅に振る舞っている。しかしワウバッガーは違った。粒子加速器と、昼間から引っ掛けた安酒と、どこにでもある輪ゴム二本が奇跡の化学反応を起こし、うっかり不死身になってしまったのだ。設備担当者は報告書に「影響：長期的」とだけ書き、紅茶を淹れに行ってしまった。',note:'こうしてあなたは「無限引き伸ばされワウバッガー」になった。定年も、退職金も、死ぬ権利もない。',aria:'粒子加速器と昼酒と輪ゴムの事故で、うっかり不死身になってしまうワウバッガー。'},
+    en:{label:'A DEEPLY UNHEROIC IMMORTALITY',time:'One Tuesday lunch break. Regrettably not his last.',title:'The mishap\nrefused to wear off.',body:'Most immortals in the Universe are born that way and carry it off with dignity. Wowbagger was not. A particle accelerator, an ill-advised liquid lunch, and two perfectly ordinary rubber bands achieved a freak consensus, rendering him permanently unkillable. Facilities logged the side effects as “ongoing”, closed the ticket, and wandered off for tea and a biscuit.',note:'You are now Wowbagger the Infinitely Prolonged. Retirement is no longer covered by your pension.',aria:'A particle accelerator, a drink and two rubber bands accidentally render Wowbagger immortal.'},
   },
   {
-    ja:{label:'永遠は、休憩にも来る',time:'何百万年か後。まだ日曜日。',title:'宇宙は壮大だ。\n午後は、もっと長い。',body:'見聞を広め、財産を築き、趣味を一通り絶滅させた。それでも日曜の午後が余った。永遠を有意義に使うには、有意義であることを諦める必要があった。',note:'宇宙の終わりより、まず今日の終わりが欲しかった。',aria:'ワウバッガーが座り込み、星と文明が移り変わっても終わらない午後に退屈している。'},
-    en:{label:'ETERNITY INCLUDES THE WEEKENDS',time:'Several million years later. Still Sunday.',title:'A vast Universe.\nA longer afternoon.',body:'He acquired experience, wealth and the ability to outlive every hobby he took up. Sunday afternoons remained. Clearly, filling eternity with meaningful activity had been an error in the requirements.',note:'The end of the Universe could wait. The end of the afternoon was becoming urgent.',aria:'Wowbagger sits bored while stars and civilisations pass and the afternoon refuses to end.'},
+    ja:{label:'不死身の最大の敵は、日曜の午後',time:'数百万年後。まだ日曜日の午後3時14分。',title:'宇宙は広い。\nだが、暇はもっと広い。',body:'最初の数百万年はそれなりに愉快だった。大金持ちになり、あらゆる銀河を旅し、思いつく限りの趣味が絶滅するのを見届けた。それでも「日曜日の午後3時すぎ」だけはしつこくやって来る。風呂に入る気力もなく、本を読む気も起きず、ぬるくなった紅茶を前に天井を見つめるあの呪われた時間帯が――永遠に。',note:'宇宙の終焉を待つ前に、まず今日の午後をどうにかしないと気が狂いそうだった。',aria:'星も文明も滅びていくのに、日曜日の午後3時すぎのまま動かない時計の前で途方に暮れるワウバッガー。'},
+    en:{label:'THE TRUE ENEMY IS SUNDAY AFTERNOON',time:'Several million years later. Still 3:14 p.m.',title:'Space is vast.\nSunday is vaster.',body:'The first few million years were quite jolly. He made a fortune, toured the wonders of the cosmos, and watched every hobby he took up go extinct—usually by Wednesday. Yet Sunday afternoons kept arriving: that damp, soul-sapping stretch around quarter past three, staring at a lukewarm mug of tea with nothing to do. Forever.',note:'Never mind the heat death of the Universe; he simply needed to survive half past three.',aria:'Wowbagger slumps in a decaying armchair while stars die and a cracked clock refuses to leave Sunday afternoon.'},
   },
   {
-    ja:{label:'壮大な計画には、事務作業が要る',time:'ついに予定表へ、一件',title:'宇宙の全員に、\n悪口を言おう。',body:'本人の前で、一人ずつ、アルファベット順に。計画が不可能だという意見もあった。不可能なら、終わって次の用事を探す心配がない。採用するには十分だった。',note:'本作の名簿は英語のフルネーム順。Argo、Arthur、Bela……。',aria:'ワウバッガーが宇宙の住民を英語のフルネーム順に並べた名簿と航路を開く。'},
-    en:{label:'A PLAN WITH EXCELLENT JOB SECURITY',time:'At last, an entry in the diary',title:'Insult everyone.\nAlphabetically.',body:'In person. Individually. In alphabetical order. Objections were raised that the scheme could never be finished. Wowbagger considered this a substantial advantage over every previous occupation.',note:'This directory uses full English names: Argo, Arthur, Bela…',aria:'Wowbagger opens a directory of residents ordered by full English name and plots his route.'},
+    ja:{label:'実に建設的な、壮大な暇つぶし',time:'ついに手帳に、予定が一行',title:'宇宙の全員に、\n悪口を言って回ろう。',body:'そこで彼は、永遠の命にふさわしい崇高な目標を立てた。宇宙に生きとし生ける全員のもとを一軒ずつ訪ね、面と向かって悪口を浴びせて回るのだ。英語のフルネーム順で。賢者たちは「絶対に終わらないから無意味だ」と忠告したが、終わらないことこそがこの計画の最大の長所だった。',note:'名簿は英語のフルネーム順。Argo、Arthur、Bela……と銀河の果てまで続いていく。',aria:'全宇宙の住民を英語のフルネーム順に並べた巨大な名簿を開き、やる気を出しているワウバッガー。'},
+    en:{label:'A HOBBY WITH EXCELLENT JOB SECURITY',time:'At last, a reason to put trousers on',title:'Insult everyone.\nIn alphabetical order.',body:'At last, a noble purpose worthy of eternity: he would track down every living being in the Universe, one by one, and insult them to their face. In strict alphabetical order. Sages warned that it could never possibly be finished—which Wowbagger felt was the plan’s single finest selling point.',note:'This directory runs strictly by full English name: Argo, Arthur, Bela, and onwards into madness.',aria:'Wowbagger opens a holographic alphabetical directory of the entire Universe and plots his route.'},
   },
   {
-    ja:{label:'本作独自の、余計なサービス',time:'しかも、手ぶらでは失礼だ',title:'悪口には、\n模型も付きます。',body:'今回はLGPSの結晶模型も配ることにした。誰からも頼まれていないが、依頼の有無で仕事を選んでいては、この計画は始まらない。Li₁₀GeP₂S₁₂を、一人に一つ。',note:'悪口を選び、模型を手渡す。苦情の受付時間は、永遠です。',aria:'相手に悪口とLGPS結晶模型を届ける。模型の贈呈はこのゲーム独自の追加設定。'},
-    en:{label:'AN UNREQUESTED ADDITION FOR THIS GAME',time:'One must bring something',title:'The insult comes\nwith a model.',body:'This time he is also distributing LGPS crystal models. Nobody requested one, but requiring customer demand would cripple the entire operation. One Li₁₀GeP₂S₁₂ per recipient. No substitutions.',note:'Choose the remark. Hand over the model. Complaints remain open for eternity.',aria:'Wowbagger offers an insult and an LGPS crystal model. The model is an original addition for this game.'},
+    ja:{label:'本作だけの、頼んでもいない付属品',time:'手ぶらで訪ねるのも無粋なので',title:'悪口には、\n結晶模型も付きます。',body:'さらに本作では、悪口を浴びせた直後に「LGPS（Li₁₀GeP₂S₁₂）」という実在の固体電解質の結晶模型まで一個ずつ押し付けることにした。なぜそんな理系っぽい置物を配るのか？　誰にも頼まれていないが、そもそも悪口だって誰にも頼まれていない。理不尽に一貫性が出て、実に結構なことではないか。',note:'相手を観察し、的確に罵倒し、結晶模型を手渡す。クレーム窓口は永遠に開いています（誰も出ませんが）。',aria:'困惑する宇宙人に悪口を言い、光るLGPS結晶模型を手渡すワウバッガー。'},
+    en:{label:'THIS GAME’S ENTIRELY UNSOLICITED EXTRA',time:'One mustn’t drop by empty-handed',title:'Every insult comes\nwith a crystal model.',body:'As an inexplicable bonus for this voyage, he is also pressing a scale model of the real solid-state electrolyte LGPS (Li₁₀GeP₂S₁₂) into every victim’s hands. Why a chemistry ornament? Nobody ordered one, of course—but then nobody ordered a bespoke insult either, so the sheer pointlessness is gloriously consistent.',note:'Spot the flaw, deliver the barb, hand over the crystal. Complaints are filed directly into the nearest black hole.',aria:'Wowbagger delivers an insult and hands a glowing LGPS crystal model to a thoroughly bewildered alien.'},
   },
 ];
 
@@ -52,7 +52,7 @@ export class IntroController {
     $('introChapter').textContent = `PROLOGUE ${String(this.index + 1).padStart(2,'0')} / 04`;
     $('introTime').textContent = page.time; $('introLabel').textContent = page.label;
     $('introTitle').textContent = page.title; $('introBody').textContent = page.body; $('introNote').textContent = page.note;
-    $('introNext').textContent = this.index === 3 ? tr('名簿を開く。宇宙の迷惑が始まる。','Open the directory. Become a nuisance.') : tr('続きを見る','Continue the unfortunate story');
+    $('introNext').textContent = this.index === 3 ? tr('名簿を開く（全宇宙の迷惑、開始）','Open the directory (ruin everyone’s day)') : tr('続きを見る','Continue this dreadful tale');
     $('introPrevious').disabled = this.index === 0;
     $('introProgress').innerHTML = PROLOGUE.map((item,i) => `<button class="intro-dot ${i===this.index?'active':''} ${i<this.index?'seen':''}" data-intro-page="${i}" aria-label="${esc(tr('第{n}幕：{label}','Scene {n}: {label}',{n:i+1,label:item[language()].label}))}" ${i===this.index?'aria-current="step"':''}><span></span></button>`).join('');
     this.scene?.setScene(this.index); this.dialog.dataset.chapter = String(this.index);
@@ -63,10 +63,10 @@ export class IntroController {
 }
 
 const BEATS = [
-  {label:['航路と所在地','Where, precisely?'],english:'DESTINATION / NAVIGATION',title:['さて、次はどこだ。','Where have they put this one?']},
-  {label:['種族と性格','Species & disposition'],english:'RECIPIENT / PERSONALITY',title:['どんな面倒な奴だ。','What sort of bother is he?']},
-  {label:['経歴と家族','History & household'],english:'HISTORY / HOUSEHOLD',title:['人生も、添付されている。','They have attached a life story.']},
-  {label:['今日の用件','The obligation'],english:'MISSION / SPECIAL DELIVERY',title:['悪口と、備品一式。','One insult. All accessories included.']},
+  {label:['場所と住所','Where on Earth (or elsewhere)?'],english:'DESTINATION / NAVIGATION',title:['さて、今度はどこの田舎だ。','Where have they hidden this one?']},
+  {label:['種族と性格','Species & disposition'],english:'RECIPIENT / PERSONALITY',title:['どれどれ、どんな面倒な奴だ。','What brand of nuisance is this?']},
+  {label:['経歴と家族','History & household'],english:'HISTORY / HOUSEHOLD',title:['頼んでもいない身の上話付きか。','Someone attached their entire biography.']},
+  {label:['本日のノルマ','Today’s awkward errand'],english:'MISSION / SPECIAL DELIVERY',title:['悪口を一発、模型を一個。','One bespoke insult. One inexplicable crystal.']},
 ];
 export class BriefingController {
   constructor({onLaunch = () => {},onClose = () => {},onPrint = () => {}} = {}) {
@@ -86,7 +86,7 @@ export class BriefingController {
     this.scene.setLocale(language());this.scene.setTarget(target);this.scene.start();
     $('briefingName').textContent=target.name; $('briefingRoman').textContent=target.romanName;
     $('briefingDestination').textContent=target.dossier.system;
-    $('briefingFlightMode').textContent=mode==='warp'?tr('航法：無茶なワープ','Reckless warp. Best not to ask.'):tr('航法：通常航行','Conventional flight. Alas.');
+    $('briefingFlightMode').textContent=mode==='warp'?tr('航法：無茶なワープ（自己責任）','Reckless warp (insurance void)'):tr('航法：通常航行（安全だが退屈）','Conventional flight (safe, dull)');
     $('briefingFlightMode').classList.toggle('risky',mode==='warp');
     if(changed)this.setBeat(0);else if(localeChanged)this.setBeat(this.index);else this.renderDossier();
   }
@@ -96,10 +96,10 @@ export class BriefingController {
     this.index=Math.max(0,Math.min(3,index)); const beat=BEATS[this.index];
     $('briefingChapter').textContent=beat.english; $('briefingBeatTitle').textContent=tr(...beat.title);
     $('briefingPage').textContent=`${this.index+1} / 4`;
-    $('briefingNext').textContent=this.index===3?tr('この相手に会いに行く','Go and trouble this person'):tr('続きをぼやく','Continue grumbling');
+    $('briefingNext').textContent=this.index===3?tr('よし、不快にさせに行くぞ','Right then—off to ruin their day'):tr('次のページをめくる','Next page of grumbling');
     $('briefingTabs').innerHTML=BEATS.map((item,i)=>`<button class="briefing-tab ${i===this.index?'active':''}" data-briefing-beat="${i}" ${i===this.index?'aria-current="step"':''}><span>${String(i+1).padStart(2,'0')}</span>${tr(...item.label)}</button>`).join('');
     this.renderDossier();this.speak(this.target.briefing[this.index]);this.scene.setBeat(this.index);
-    $('cockpitCanvas').setAttribute('aria-label',tr('宇宙船内のワウバッガー。窓の外は{planet}。{beat}の資料を読みながら独白している。','Wowbagger in his cockpit, looking out at {planet} and grumbling over the {beat} dossier.',{planet:this.target.dossier.planet,beat:tr(...beat.label)}));
+    $('cockpitCanvas').setAttribute('aria-label',tr('宇宙船内のワウバッガー。窓の外は{planet}。{beat}の資料を読みながらボヤいている。','Wowbagger in his cockpit, peering out at {planet} and grumbling over the {beat} dossier.',{planet:this.target.dossier.planet,beat:tr(...beat.label)}));
   }
   speak(line) {
     clearTimeout(this.timer);this.line=line;this.characters=Array.from(line);this.position=0;
@@ -113,19 +113,19 @@ export class BriefingController {
   previous(){if(this.index>0)this.setBeat(this.index-1);else this.onClose();}
   renderDossier() {
     const d=this.target.dossier;
-    const head=`<div class="dossier-header"><span class="eyebrow">UNIVERSAL CENSUS</span><span class="dossier-class">${tr('訪問記録','ENTRY')} ${String(this.target.ordinal).padStart(5,'0')}</span></div>`;
-    const canon=this.target.kind==='arthur'?`<p class="dossier-canon">${tr('原作の訪問先 · 先史時代の地球','FROM THE NOVEL · PREHISTORIC EARTH')}</p>`:'';
+    const head=`<div class="dossier-header"><span class="eyebrow">UNIVERSAL CENSUS</span><span class="dossier-class">${tr('名簿番号','ENTRY')} ${String(this.target.ordinal).padStart(5,'0')}</span></div>`;
+    const canon=this.target.kind==='arthur'?`<p class="dossier-canon">${tr('原作の名場面 · 先史時代の地球','FROM THE NOVEL · PREHISTORIC EARTH')}</p>`:'';
     let body='';
     if(this.index===0){
-      const rows=[[tr('星系','System'),d.system],[tr('惑星','World'),d.planet],[tr('大陸','Continent'),d.continent],[tr('国','Country'),d.country],[tr('町','Town'),d.city]];
-      body=`<h3>${tr('宇宙の、このあたり。','Somewhere in all this space.')}</h3>${canon}<div class="destination-route">${rows.map(([label,value],i)=>`<div class="destination-stop" style="--depth:${i}"><span class="route-node">${String(i+1).padStart(2,'0')}</span><div><span>${label}</span><strong>${esc(value)}</strong></div></div>`).join('')}</div><p class="dossier-footnote">${tr('最終所在地：','Last known address: ')}${esc(d.address)}</p>`;
+      const rows=[[tr('恒星系','System'),d.system],[tr('惑星','World'),d.planet],[tr('大陸','Continent'),d.continent],[tr('国','Country'),d.country],[tr('町','Town'),d.city]];
+      body=`<h3>${tr('だいたい、宇宙のこのあたり。','Somewhere out in the unfashionable bit.')}</h3>${canon}<div class="destination-route">${rows.map(([label,value],i)=>`<div class="destination-stop" style="--depth:${i}"><span class="route-node">${String(i+1).padStart(2,'0')}</span><div><span>${label}</span><strong>${esc(value)}</strong></div></div>`).join('')}</div><p class="dossier-footnote">${tr('詳しい住所：','Last known address: ')}${esc(d.address)}</p>`;
     }else if(this.index===1){
-      body=`<h3>${esc(this.target.name)}</h3>${canon}<div class="dossier-identity"><span class="identity-mark" aria-hidden="true">◈</span><div><span>${tr('種族・出身','Species / origin')}</span><strong>${esc(d.species)}</strong></div></div><dl class="dossier-facts"><div><dt>${tr('肩書き','Occupation')}</dt><dd>${esc(this.target.role)}</dd></div><div><dt>${tr('性格','Disposition')}</dt><dd>${esc(d.personality)}</dd></div></dl><div class="dossier-note"><span>${tr('本人からのひとこと','The recipient, in their own defence')}</span><p>${esc(this.target.intro)}</p></div>`;
+      body=`<h3>${esc(this.target.name)}</h3>${canon}<div class="dossier-identity"><span class="identity-mark" aria-hidden="true">◈</span><div><span>${tr('種族・出身','Species / origin')}</span><strong>${esc(d.species)}</strong></div></div><dl class="dossier-facts"><div><dt>${tr('職業・肩書き','Occupation')}</dt><dd>${esc(this.target.role)}</dd></div><div><dt>${tr('性格（要注意点）','Disposition')}</dt><dd>${esc(d.personality)}</dd></div></dl><div class="dossier-note"><span>${tr('本人のよく言うセリフ','Typical opening remark')}</span><p>${esc(this.target.intro)}</p></div>`;
     }else if(this.index===2){
-      const family=d.familyCount===null||d.familyCount===undefined?`<div class="family-heading"><span>${tr('家族構成','Household')}</span><strong class="family-unknown">${tr('記録なし','Not recorded')}</strong></div><p class="dossier-footnote">${esc(d.familyNote||tr('原作で確認できる家族人数は記載されていません。現在この場所には一人。','No household count is established here in the novel. He is alone at this location.'))}</p>`:`<div class="family-heading"><span>${tr('家族構成','Household')}</span><strong>${d.familyCount}<small>${tr('人家族','members')}</small></strong></div><ul class="family-members">${d.familyMembers.map(person=>`<li><span class="family-symbol" aria-hidden="true"><i></i></span><span>${esc(person)}</span></li>`).join('')}</ul><p class="dossier-footnote">${tr('人数には本人を含む。苦情の票数ではありません。','Includes the recipient. This is not a count of complaints.')}</p>`;
-      body=`<h3>${tr('人生は、添付資料に。','A life, abridged for travel.')}</h3>${canon}<dl class="dossier-facts"><div><dt>${tr('経歴','History')}</dt><dd>${esc(d.background)}</dd></div></dl>${family}`;
+      const family=d.familyCount===null||d.familyCount===undefined?`<div class="family-heading"><span>${tr('家族構成','Household')}</span><strong class="family-unknown">${tr('記録なし','Not recorded')}</strong></div><p class="dossier-footnote">${esc(d.familyNote||tr('原作のこの場面では家族の人数は書かれていません。今はぽつんと一人です。','No household count appears in this chapter of the novel. At present he is conspicuously alone.'))}</p>`:`<div class="family-heading"><span>${tr('家族構成','Household')}</span><strong>${d.familyCount}<small>${tr('人家族','members')}</small></strong></div><ul class="family-members">${d.familyMembers.map(person=>`<li><span class="family-symbol" aria-hidden="true"><i></i></span><span>${esc(person)}</span></li>`).join('')}</ul><p class="dossier-footnote">${tr('※本人を含む人数です。苦情を入れてくる親戚の人数ではありません（たぶん）。','Includes the recipient. Not necessarily the number of relatives who will write an angry letter.')}</p>`;
+      body=`<h3>${tr('経歴と、身内のメモ。','A brief and avoidable history.')}</h3>${canon}<dl class="dossier-facts"><div><dt>${tr('これまでの経歴','Background')}</dt><dd>${esc(d.background)}</dd></div></dl>${family}`;
     }else{
-      body=`<h3>${tr('本日も、余計な二件。','Two entirely unsolicited items.')}</h3><div class="delivery-objective"><span class="objective-number">01</span><div><strong>${tr('本人に悪口を言う','Deliver the insult in person')}</strong><p>${tr('本人の自慢を確認。輸送中にへこむ可能性があります。','Check the source of pride. Expect some damage in transit.')}</p></div></div><div class="delivery-objective"><span class="objective-number">02</span><div><strong>${tr('LGPS模型を手渡す','Hand over the LGPS model')}</strong><p>${tr('Li₁₀GeP₂S₁₂を一人に一つ。返品先はありません。','One Li₁₀GeP₂S₁₂ per person. No return address.')}</p></div></div>${this.target.kind==='arthur'?`<p class="dossier-canon">${tr('LGPS贈呈は本作独自の追加場面。原作では救助せず立ち去ります。','The LGPS gift is this game’s addition. In the novel, Wowbagger departs without rescuing Arthur.')}</p>`:''}<div class="briefing-cargo ${this.models===0?'empty':''}"><span>${tr('船内の模型在庫','Models aboard')}</span><strong>${this.models}<small> / 3</small></strong></div>${this.models<3?`<button class="button button-secondary" data-print-models>${tr('模型を補充する · 8年','Restock models · 8 years')}</button>`:`<p class="dossier-footnote">${tr('在庫は確認済み。先方の希望は、確認対象外です。','Stock checked. The recipient’s wishes are outside the scope.')}</p>`}`;
+      body=`<h3>${tr('今日のやること（2ステップ）','Today’s two entirely unrequested tasks')}</h3><div class="delivery-objective"><span class="objective-number">01</span><div><strong>${tr('面と向かって悪口を言う','Deliver the insult in person')}</strong><p>${tr('相手が一番自慢している部分をズバリ突くほど高得点です。','Pierce their favourite vanity for maximum score and relief from boredom.')}</p></div></div><div class="delivery-objective"><span class="objective-number">02</span><div><strong>${tr('LGPS結晶模型を手渡す','Hand over the LGPS model')}</strong><p>${tr('Li₁₀GeP₂S₁₂を一個。返品・クーリングオフは一切受け付けません。','One Li₁₀GeP₂S₁₂ per citizen. Strictly no refunds or exchanges.')}</p></div></div>${this.target.kind==='arthur'?`<p class="dossier-canon">${tr('※LGPS模型の押し付けは本作オリジナル。原作では悪口だけ言ってアーサーを放置して帰ります。','Note: the LGPS gift is this game’s twist. In the novel, Wowbagger simply insults Arthur and leaves him stranded.')}</p>`:''}<div class="briefing-cargo ${this.models===0?'empty':''}"><span>${tr('いま船にある模型在庫','Models currently aboard')}</span><strong>${this.models}<small> / 3</small></strong></div>${this.models<3?`<button class="button button-secondary" data-print-models>${tr('模型を3個まで補充する（8年待ち）','Restock to 3 models (8 years)')}</button>`:`<p class="dossier-footnote">${tr('在庫は満タン。相手が欲しがっているかどうかは調査対象外です。','Shelves full. Whether the recipient wants one is outside our remit.')}</p>`}`;
     }
     $('briefingDossier').innerHTML=head+body;
   }

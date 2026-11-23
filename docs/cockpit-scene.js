@@ -272,8 +272,8 @@ export class CockpitScene {
     const family=this.target?.dossier?.familyCount;
     const recorded=Number.isInteger(family)&&family>0;
     const captions=this.locale==='en'
-      ? ['DESTINATION LOCKED','RESIDENT DOSSIER',recorded?`HOUSEHOLD · ${family}`:'FAMILY · UNRECORDED','Li₁₀GeP₂S₁₂']
-      : ['目的地確認済み','訪問対象の記録',recorded?`家族 · ${family}人`:'家族 · 記録なし','Li₁₀GeP₂S₁₂'];
+      ? ['COORDINATES LOCKED','SUSPECT DOSSIER',recorded?`HOUSEHOLD · ${family}`:'FAMILY · UNRECORDED','Li₁₀GeP₂S₁₂']
+      : ['行き先ロック完了','次の被害者ファイル',recorded?`家族構成 · ${family}人`:'家族構成 · 記録なし','Li₁₀GeP₂S₁₂'];
     c.fillText(captions[beat],0,77,250);
     c.restore();
   }
