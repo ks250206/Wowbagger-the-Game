@@ -9,7 +9,7 @@ assert.deepEqual(restore(serialize(fresh)),fresh,'fresh state round-trips');
 for(const raw of ['{bad',JSON.stringify({...fresh,phase:'gift'}),JSON.stringify({...fresh,population:'-1'}),JSON.stringify({...fresh,completed:1})])assert.equal(restore(raw),null);
 
 const geography=['system','planet','continent','country','city'];
-assert.equal(PROFILES.length,13);
+assert.equal(PROFILES.length,24);
 for(const locale of ['ja','en'])for(const profile of profileList(locale)){
  const d=profile.dossier;
  for(const key of [...geography,'species','personality','background','address'])assert.equal(typeof d[key],'string',`${locale}/${profile.profileId}/${key}`);
@@ -25,10 +25,10 @@ for(const locale of ['ja','en'])for(const profile of profileList(locale)){
 }
 const first=generateTargets(fresh.seed,1);
 assert.deepEqual(first.map(t=>t.romanName),['Argo Hanko','Arthur Philip Dent','Bela Echo','Chroma Live','Col Unopened','Doctor Noise']);
-const firstThree=[1,2,3].flatMap(sector=>generateTargets(fresh.seed,sector));
-assert.equal(new Set(firstThree.slice(0,13).map(t=>t.profileId)).size,13,'all authored people appear exactly once before new fictional registrations');
-assert.equal(firstThree[1].profileId,'arthur');
-assert.ok(firstThree.slice(0,13).every(t=>!t.registryPrefix),'actual full names govern the authored opening');
+const firstFour=[1,2,3,4].flatMap(sector=>generateTargets(fresh.seed,sector));
+assert.equal(new Set(firstFour.slice(0,24).map(t=>t.profileId)).size,24,'all authored people appear exactly once before new fictional registrations');
+assert.equal(firstFour[1].profileId,'arthur');
+assert.ok(firstFour.slice(0,24).every(t=>!t.registryPrefix),'actual full names govern the authored opening');
 const longDirectory=Array.from({length:75},(_,i)=>generateTargets(fresh.seed,i+1)).flat();
 assert.equal(longDirectory.filter(t=>t.kind==='arthur').length,1,'the canonical person is never randomly cloned');
 assert.ok(longDirectory.every((t,i)=>!i||longDirectory[i-1].romanName<t.romanName),'alphabetic order continues across sector boundaries');
@@ -75,6 +75,6 @@ migrated=completeVisit(migrated);assert.equal(getTarget(migrated).profileId,'art
 
 let sawDeath=false;for(let seed=0;seed<50;seed++){const r=travel(createGame(seed,'en'),{mode:'warp'});if(r.event.died){sawDeath=true;assert.equal(r.state.phase,'encounter');assert.equal(r.state.deaths,1);assert.ok(r.state.years>=42);}}
 assert.ok(sawDeath);const afterSunday=printModels({...createGame(77),boredom:99,models:0}).state;assert.equal(afterSunday.sundays,1);assert.equal(afterSunday.models,3);assert.ok(afterSunday.years>=1000);
-console.log('Engine verified: 13 bilingual profiles, Arthur in real full-name order, unique canonical encounter, immutable locale changes, gift/score integrity, old-save migration, persistence, inventory recovery, immortality.');
+console.log('Engine verified: 24 bilingual profiles across 4 full sectors, Arthur in real full-name order, unique canonical encounter, immutable locale changes, gift/score integrity, old-save migration, persistence, inventory recovery, immortality.');
 function cloneMetrics(s){return Object.fromEntries(['rng','sector','targetIndex','phase','completed','score','models','years','combo','maxCombo','boredom','deaths','sundays'].map(k=>[k,s[k]]));}
 function completeVisit(s){if(s.phase==='map')s=travel(s,{mode:'normal'}).state;if(s.phase==='encounter')s=insult(s,getTarget(s).choices.findIndex(c=>c.effect===3)).state;if(s.models===0){const blocked=gift(s);assert.equal(blocked.event.type,'blocked');assert.equal(blocked.state,s);s=printModels(s).state;assert.equal(s.phase,'gift');}return gift(s).state;}

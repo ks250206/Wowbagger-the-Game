@@ -784,6 +784,640 @@ export const JA_PROFILES = [
     "profileId": "posta",
     "kind": "fictional",
     "portrait": 5
+  },
+  {
+    "profileId": "gideon",
+    "kind": "fictional",
+    "portrait": 5,
+    "name": "ギデオン・フォグ",
+    "roman": "Gideon Fog",
+    "role": "どんな大惨事も天気の話に変える英国紳士型エイリアン",
+    "species": "霧雨愛好型生命体",
+    "color": "#9ab7c7",
+    "planetName": "霧雨ときどき小雨星",
+    "intro": "「おや、隣りの恒星が爆発しましたかな？　いやあ、それにしても今日は少々湿気が強うございますな。洗濯物が乾きにくくて困ったもんです」",
+    "hint": "宇宙戦争が起きても「いやあ少し肌寒いですな」と天気の世間話に持ち込む鉄壁の礼儀作法が自慢。なお傘を14本持っているが、差すのは敗北だと思っている。",
+    "choices": [
+      {
+        "text": "君の天気トークは、会話の中身がスッカラカンなのを隠す煙幕だな。この星の濃霧よりよっぽど視界が悪いぞ。",
+        "effect": 3,
+        "tag": "中身ゼロの雑談を直撃",
+        "response": "「おっと、随分と風当たりが強うございますな！　……くっ、今の返しは少しムキになってしまった、紳士として痛恨の極みだ！」"
+      },
+      {
+        "text": "銀河が滅びかけても『今日は折り畳み傘が要りそうですな』と言い張るその神経、天気予報よりよっぽど鈍感だぞ。",
+        "effect": 2,
+        "tag": "現実逃避の礼儀を突く",
+        "response": "「まあまあ、パニックになるのは品がございませんからな。ほら、雲行きも少し落ち着いてきましたよ」"
+      },
+      {
+        "text": "そのツイードのジャケット、ちょっと濡れた犬みたいな雨の匂いがしないか？",
+        "effect": 1,
+        "tag": "服装いじり",
+        "response": "「お目が高い！　30年物の霧雨をたっぷり染み込ませた特注品でしてな」"
+      }
+    ],
+    "giftResponse": "「ほう、見事な結晶模型ですな！　……待てよ、これなら玄関に置いて『いやあ今日の結晶は少々湿気ておりますな』と新しい天気ネタが3時間は稼げそうだ！」",
+    "fact": "ギデオンはLGPS模型を「室内用・天気雑談のきっかけ装置」と命名した。以後、近所の住人が玄関の前を早足で通り過ぎる速度が1.4倍になった。",
+    "dossier": {
+      "system": "アンブレラ恒星系",
+      "planet": "霧雨ときどき小雨星",
+      "continent": "どんより曇天大陸",
+      "country": "いやあ湿気が連邦",
+      "city": "傘は差さない市",
+      "species": "フォグシャー星人",
+      "personality": "恐ろしく丁寧で、恐ろしく中身がない。宇宙の真理を語られても「そうですな、明日は午後から少し降るらしいですよ」と3秒で天気の話へ軌道修正する。",
+      "background": "かつて気象キャスターだったが、「晴れの日が多すぎると世間話のタネがなくなる」と抗議して独立。以来、毎日ちょうどよく憂鬱な霧雨を降らせる惑星で暮らしている。",
+      "familyCount": 3,
+      "familyMembers": [
+        "本人・ギデオン（傘14本をコレクションしつつ常にびしょ濡れ）",
+        "妻・ミスト（夫の『今日も降りそうね』に40年うなずき続けている）",
+        "成人の息子・ゲイル（反抗して砂漠の惑星へ移住した）"
+      ],
+      "address": "びしょ濡れ通り・傘立てだらけの2番館"
+    },
+    "briefing": [
+      "次はアンブレラ恒星系、「霧雨ときどき小雨星」の傘は差さない市だ。気象データを見たら、過去4000年の天気予報が毎日『曇りのち霧雨、たまに心の曇り』でコピペされていた。見事な安定感である。",
+      "相手はフォグシャー星人のギデオン。どんな大惨事が起きても天気の世間話にすり替える達人だ。私が『君を罵倒しに来た』と宣言しても、たぶん『いやあ、悪口日和ですな』と微笑んで返してくるに違いない。",
+      "妻のミストと、反抗して砂漠星へ逃げ出した息子ゲイルの3人家族。傘を14本も持っているのに『傘を差すのは天候への敗北』と言い張って毎日びしょ濡れだそうだ。意地を張る方向が盛大にズレている。",
+      "その中身ゼロの天気トークに鋭い一撃を食らわせ、LGPS結晶模型を押し付けてやろう。幸い、この模型は硫化物だがプラスチック製だから、霧雨に濡れても硫化水素の臭いは出ない。そこは安心してくれ。"
+    ]
+  },
+  {
+    "profileId": "hilda",
+    "kind": "fictional",
+    "portrait": 6,
+    "name": "ヒルダ・ケトル",
+    "roman": "Hilda Kettle",
+    "role": "紅茶の淹れ方に命を懸ける過激派ティールーム女将",
+    "species": "茶葉厳格監視型生命体",
+    "color": "#d8a88c",
+    "planetName": "ミルク先入れ禁止星",
+    "intro": "「ちょっとお待ちなさい！　今、電子レンジでお湯を沸かそうとしませんでした！？　この惑星ではそれ、重罪でブラックホール送りなんですよ！」",
+    "hint": "紅茶の作法に命を懸けているが、客に3時間かけて茶葉のジャンピングを説教しているあいだに、いつも紅茶が氷みたいに冷めきっている。",
+    "choices": [
+      {
+        "text": "君が作法を説教してるあいだに、肝心の紅茶が毎回氷みたいに冷めきってるぞ。礼儀を愛しすぎてお茶を殺してるな。",
+        "effect": 3,
+        "tag": "冷めた紅茶の矛盾を直撃",
+        "response": "「なっ……温度は心の熱意で補えば……いや、本当だわ、完全にぬるいじゃないの！　くっ、茶葉に顔向けできない！」"
+      },
+      {
+        "text": "小指の立て方とカップの持ち方だけで銀河の民度を採点するとは、ずいぶん安い審美眼だな。ティーバッグのほうがまだ寛大だぞ。",
+        "effect": 2,
+        "tag": "過激な紅茶警察ぶりを突く",
+        "response": "「ティーバッグですって！？　そんな冒涜的な言葉、うちの店の半径三光年以内では禁止用語ですわよ！」"
+      },
+      {
+        "text": "そのエプロンのフリル、なかなか戦闘力が高そうだな。",
+        "effect": 1,
+        "tag": "エプロンいじり",
+        "response": "「ふふ、ありがとう。糊を三倍きかせて、いつでも無作法な客を叩き出せるようにしてありますの」"
+      }
+    ],
+    "giftResponse": "「まあ、なんて美しい角砂糖……いえ、結晶模型！？　これをテーブルの真ん中に置けば、ミルクを先に入れようとする不届き者も少しは黙りますわね！」",
+    "fact": "翌日、ヒルダは人生で初めて「説教を3分で切り上げて、熱々のうちに紅茶を出す」ことに成功した。常連客はあまりの美味しさに涙を流した。",
+    "dossier": {
+      "system": "アッサム・グレイ恒星系",
+      "planet": "ミルク先入れ禁止星",
+      "continent": "ポット温め大陸",
+      "country": "茶葉ジャンピング王国",
+      "city": "蒸らし3分厳守市",
+      "species": "ボーンチャイナ星人",
+      "personality": "気品と攻撃性が絶妙にブレンドされた紅茶原理主義者。宇宙人の善悪を「お湯を沸かすやかんの材質」だけで判断する。",
+      "background": "かつて宇宙船の食堂で「ほぼ完全に紅茶に似ていない液体」を出された衝撃から覚醒。以来、全銀河に正しい紅茶の作法を説くティールームを経営している。",
+      "familyCount": 2,
+      "familyMembers": [
+        "本人・ヒルダ（電子レンジを発見しだいハンマーで割る女将）",
+        "夫・スコーン（妻に隠れて裏庭でこっそりインスタントコーヒーを飲んでいる）"
+      ],
+      "address": "ティーコージー通り・午後4時ちょうど荘"
+    },
+    "briefing": [
+      "次はアッサム・グレイ恒星系、「ミルク先入れ禁止星」の蒸らし3分厳守市だ。着陸許可の条件が『船内に電子レンジを積んでいないことの宣誓』だった。うちの調理機、さっき慌ててクローゼットに隠しておいたよ。",
+      "相手はボーンチャイナ星人のヒルダ。宇宙一うるさい紅茶警察の女将だ。宇宙の自動販売機が出す『紅茶にそっくりだが紅茶とは全く似ていない茶色い汁』への恨みがきっかけで、過激な作法マニアになったらしい。",
+      "夫のスコーンと2人暮らし。ちなみに夫は妻に隠れて裏庭でこっそりインスタントコーヒーを飲んでいるという記録がある。永遠の命を持つ私でも、その秘密がバレた瞬間の修羅場だけは立ち会いたくないな。",
+      "作法を説教するあまり紅茶を冷めさせる本末転倒ぶりをズバリ突いてやり、LGPSの結晶模型を置いて来よう。角砂糖と間違えてポットに放り込まれないよう、はっきり『食べられません』と伝えておくつもりだ。"
+    ]
+  },
+  {
+    "profileId": "icarus",
+    "kind": "fictional",
+    "portrait": 7,
+    "name": "イカルス・ピッチ",
+    "roman": "Icarus Pitch",
+    "role": "カタカナ横文字だけで巨額調達するスタートアップ教祖",
+    "species": "バズワード発光型生命体",
+    "color": "#7fd4b8",
+    "planetName": "シリーズZ資金調達星",
+    "intro": "「やあ、僕らは量子ブロックチェーンAIのシナジーで『重力というレガシー体験』をディスラプトしてるんだ！　……えっ、具体的に何を作ってるか？　未来さ！」",
+    "hint": "120ページのピッチ資料を配って巨額の投資を集めているが、実際に会社が何を作っているのか創業者本人すら一切わかっていない。",
+    "choices": [
+      {
+        "text": "君のプレゼン資料からバズワードを全部引っこ抜いたら、残るのはページ番号と社名だけだぞ。よくも中身ゼロの風船をそこまで膨らませたな。",
+        "effect": 3,
+        "tag": "中身ゼロの横文字を直撃",
+        "response": "「お、おい、それはネガティブなマインドセットだぞ！　……いや待て、今のスライド118枚のうち、具体的な機能ってどこに書いてあったっけ！？」"
+      },
+      {
+        "text": "重力をディスラプトする前に、まず君自身の両足が地面に着いているか確認したまえ。投資家の財布だけ軽くしてどうする。",
+        "effect": 2,
+        "tag": "誇大妄想の事業計画を突く",
+        "response": "「ハハッ、利益なんて昭和のKPIさ！　僕らが売ってるのはプロダクトじゃない、宇宙規模の『エコシステム』なんだよ！」"
+      },
+      {
+        "text": "その黒のタートルネック、毎朝選ぶ手間を省くために何着持っているんだ？",
+        "effect": 1,
+        "tag": "服装いじり",
+        "response": "「400着さ！　おかげで意思決定のエネルギーを全部『次のバズワード探し』に回せるんだよ！」"
+      }
+    ],
+    "giftResponse": "「うおおっ、なんだこの実体のあるプロダクトは！？　手で持てて、しかも実際に構造があるだと！？　……まずい、本物の科学を見せられると横文字が出てこない！」",
+    "fact": "翌日、イカルスは人生で初めて「実際に手で触れる試作品」を1個だけ作った。ただの文鎮だったが、投資家たちは感動して泣いた。",
+    "dossier": {
+      "system": "ユニコーン・バブル恒星系",
+      "planet": "シリーズZ資金調達星",
+      "continent": "まずはピボット大陸",
+      "country": "未上場評価額連邦",
+      "city": "コワーキング市",
+      "species": "ピッチデック星人",
+      "personality": "根拠ゼロの万能感と、歯が眩しすぎる笑顔の持ち主。「まだ何もできていない」ことを「ステルスモードで急成長中」と言い換える達人。",
+      "background": "学生時代に『空気をサブスク課金するアプリ』のスライド1枚で3億クレジット調達して以来、プロダクトを1行も作らずにシリーズZまで駆け上がった伝説の起業家。",
+      "familyCount": 2,
+      "familyMembers": [
+        "本人・イカルス（自称・最高破壊責任者）",
+        "妹・キャピタル（兄の会社にだけは絶対に出資しない敏腕ファンドマネージャー）"
+      ],
+      "address": "イノベーション通り・卓球台しかないオフィスビル最上階"
+    },
+    "briefing": [
+      "次はユニコーン・バブル恒星系、「シリーズZ資金調達星」のコワーキング市だ。宇宙港に降りただけで『無料クラフトビール付きネットワーキング会』に強制参加させられそうになった。お断りだ、私は仕事で来ている。",
+      "相手はピッチデック星人のイカルス。黒のタートルネックを着て『量子AIで重力をディスラプトする』と叫び続けている男だ。社員は400人いるのに、会社が実際に何を作っているのか知っている人間がゼロ人という奇跡の組織である。",
+      "敏腕投資家の妹キャピタルとの2人家族。なお、妹は兄の会社にだけは1クレジットも出資せず、毎年誕生日に『現実を見ろ』と書いた計算機を贈っているそうだ。話が合いそうな妹だな。",
+      "横文字の皮を剥いだら中身スッカラカンという事実をズバリ突きつけ、実体バリバリのLGPS結晶模型を押し付けてやろう。スライドの絵空事と違って、こいつはちゃんと机に置くとゴツンと音がするぞ。"
+    ]
+  },
+  {
+    "profileId": "klara",
+    "kind": "fictional",
+    "portrait": 6,
+    "name": "クララ・アストロ",
+    "roman": "Klara Astro",
+    "role": "自分の遅刻も宇宙戦争も全部「水星逆行」のせいにする占星術師",
+    "species": "全責任星転嫁型生命体",
+    "color": "#b498eb",
+    "planetName": "水星逆行のせい星",
+    "intro": "「あら、お待ち合わせに3時間遅れちゃった？　まあ仕方ないわね、いま水星が逆行してるから！　あなたの宇宙船のエンジン音がうるさいのも、ぜんぶ土星の角度のせいよ！」",
+    "hint": "自分のうっかりミスから財布の紛失まで100%「星回りのせい」にして反省ゼロ。しかもこの星から太陽系の水星は見えない。",
+    "choices": [
+      {
+        "text": "何億光年も先の星のせいにするフットワークだけは一流だな。自分のミスを1ミリも認めない才能だけは、どの星座表にも載っていないぞ。",
+        "effect": 3,
+        "tag": "責任転嫁を直撃",
+        "response": "「なっ……失礼ね！　私にそんな意地悪を言わせるのも、きっと火星が私のハウスに……あれ、今日火星どこにいたっけ！？」"
+      },
+      {
+        "text": "君の星占いは誰にでも当てはまる言葉しか書いてないな。『今日あなたは何度か呼吸をします』と予言するのと大差ないぞ。",
+        "effect": 2,
+        "tag": "バーナム効果を突く",
+        "response": "「ほら見て、あなた今ちょうど呼吸したでしょ！？　ほーら的中！　鑑定料は前払いでいただくわよ！」"
+      },
+      {
+        "text": "その自慢の水晶玉、指紋がベッタリ付いてちょっと曇っていないか？",
+        "effect": 1,
+        "tag": "小道具いじり",
+        "response": "「これは指紋じゃなくて『運命の霧』なの！　……まあ、あとでメガネ拭きで拭いておくわ」"
+      }
+    ],
+    "giftResponse": "「こ、この25個の原子の配置……すさまじい宇宙の波動を感じるわ！　待って、この四面体は一体どの星座のラッキーアイテムなの！？　今すぐ今月の運勢に書き足さなきゃ！」",
+    "fact": "翌月のクララの星占いでは、全12星座のラッキーアイテムが『硫化物系固体電解質の模型』に統一された。鉱物ショップは大混乱に陥った。",
+    "dossier": {
+      "system": "ゾディアック・シフト恒星系",
+      "planet": "水星逆行のせい星",
+      "continent": "今月の運勢大陸",
+      "country": "全部星のせい共和国",
+      "city": "アセンダント市",
+      "species": "アストリア星人",
+      "personality": "陽気でマイペース、そして鋼鉄の他責思考。鍵をなくしても、焼き焦がしたトーストを見ても、空を見上げて「ああ、今日は金星がご機嫌斜めね」で片付ける。",
+      "background": "もともとは普通の天文学者だったが、観測データを取り違えて大目玉を食らった日、「これは私のせいじゃなくて星が勝手に動いたせい」と思いついて占星術サロンを開業した。",
+      "familyCount": 3,
+      "familyMembers": [
+        "本人・クララ（遅刻の言い訳を全天88星座分そろえている）",
+        "母・ルナ（娘の言い訳に『じゃあお小遣いが減るのも満月のせいね』と返す強者）",
+        "成人の弟・オリオン（姉のせいで毎朝ラッキーカラーの靴下を強制されている）"
+      ],
+      "address": "黄道十二宮通り・予約時間どおりに開いたことのないサロン"
+    },
+    "briefing": [
+      "次はゾディアック・シフト恒星系、「水星逆行のせい星」のアセンダント市だ。なんとこの星系、太陽系から何万光年も離れているのに、住民はトラブルが起きるたび太陽系の水星に文句を言っているらしい。水星もとんだとばっちりだ。",
+      "相手はアストリア星人のクララ。自分の遅刻も財布の紛失も、ぜんぶ惑星の角度のせいにする無敵の占星術師だ。私が悪口を言いに来たことすら『今月は不死身のエイリアンと縁がある星回り』とか言い出しそうで気が重い。",
+      "母のルナと弟のオリオンの3人家族。元天文学者という経歴が泣いているぞ。ちなみに、私が不死身になったあの昼休みの事故を彼女に占わせたら、どうせ『輪ゴム座が凶角だったせい』とか言うに決まっている。",
+      "星をダシにした見事な責任逃れに痛烈な一言を浴びせ、LGPS結晶模型を置いて来よう。占いのパワーストーンではなく、正真正銘のリチウムイオン伝導体だと教えたら、どんな顔をするか見ものだな。"
+    ]
+  },
+  {
+    "profileId": "milo",
+    "kind": "fictional",
+    "portrait": 7,
+    "name": "ミロ・フリップ",
+    "roman": "Milo Flip",
+    "role": "何もない岩塊を「駅近・開放感抜群」で売る宇宙不動産王",
+    "species": "ボッタクリ仲介型生命体",
+    "color": "#e5be78",
+    "planetName": "徒歩5分（光速）の高級住宅星",
+    "intro": "「お客さん、いい物件ありますよ！　大気ゼロ、重力3倍、お隣はブラックホール！　つまり『余計な空気のないミニマル空間・筋トレ不要・吸い込まれるような絶景』です！」",
+    "hint": "誰も住めないクソ物件を、キラキラした不動産ポエムだけで超高級物件に言い換えて売りつけるのが自慢。",
+    "choices": [
+      {
+        "text": "酸素がないのを『ミニマルな空気感』と言い換えるその口先、詐欺というより悪質なポエムだな。まず君が自分で一晩住んでみろ。",
+        "effect": 3,
+        "tag": "詐欺トークを直撃",
+        "response": "「おっと手厳しい！　私はあくまで『ライフスタイルの提案者』であって、酸素の保証人じゃ……いや、さすがに息できないとクレーム来るか！？」"
+      },
+      {
+        "text": "『最寄り恒星から徒歩5分』って、光速でダッシュできる宇宙人しか通勤できないじゃないか。間取りより言い訳のほうが広いな。",
+        "effect": 2,
+        "tag": "誇大広告を突く",
+        "response": "「ちゃんとチラシの一番下に1ポイントの文字で『※光速移動の場合』って書いてありますから！　法的にセーフです！」"
+      },
+      {
+        "text": "そのギラギラした金のネクタイピン、やけに眩しくて目がチカチカするな。",
+        "effect": 1,
+        "tag": "装飾品いじり",
+        "response": "「でしょ！？　客が契約書の小さな文字を読めないように、あえて特注の反射加工をしてあるんですよ！」"
+      }
+    ],
+    "giftResponse": "「おっ、なんだこの吹き抜け付きの立体構造は！？　最新デザイナーズ物件の建築模型か！？　よし、『日当たり良好・リチウムイオン高速導線完備』で今すぐ売り出そう！」",
+    "fact": "翌日、ミロはLGPS模型の間取り図を勝手に作って『四面体メゾネット（敷金礼金なし・原子付き）』として売り出した。なぜか結晶学者から内見予約が殺到した。",
+    "dossier": {
+      "system": "プライム・ロケーション恒星系",
+      "planet": "徒歩5分（光速）の高級住宅星",
+      "continent": "角地・南向き大陸",
+      "country": "敷金返さない連邦",
+      "city": "リノベ済み市",
+      "species": "ブローカ星人",
+      "personality": "口から生まれたような陽気なペテン師。「壁に穴が空いている」は「通気性抜群」、「天井が低い」は「秘密基地感あふれる隠れ家」と0.2秒で翻訳する。",
+      "background": "かつて自分のボロボロの物置を『ヴィンテージ・ワンルーム』と称して富豪に売り抜けたことで才能が開花。以来、銀河じゅうのただの隕石にタワマンの名前を付けて転売している。",
+      "familyCount": 3,
+      "familyMembers": [
+        "本人・ミロ（隕石に『グランド・メゾン』と名付ける男）",
+        "妻・テラス（夫が自宅を内見客に売ろうとするのを毎週阻止している）",
+        "成人の娘・ロフト（反発して堅実な都市計画局の監査官になった）"
+      ],
+      "address": "絶景オーシャンビュー通り・ただし海は隣の星系・101号室"
+    },
+    "briefing": [
+      "次はプライム・ロケーション恒星系、「徒歩5分（光速）の高級住宅星」のリノベ済み市だ。案内に『宇宙港からすぐ』と書いてあったので行ってみたら、ワープで3日かかる場所だった。不動産屋の『すぐ』ほど信用できない単位はない。",
+      "相手はブローカ星人のミロ。大気ゼロのただの岩塊を『ミニマリスト垂涎の無酸素ラグジュアリー』と言い換えて売りつける宇宙不動産王だ。私が不死身だと知ったら、きっと3000年ローンを組ませようとしてくるに違いない。",
+      "妻のテラスと、都市計画局の監査官になった娘ロフトの3人家族。自宅まで勝手に『今だけ限定価格』で売りに出しては妻にフライパンで殴られているそうだ。自業自得という美しい四字熟語がぴったりである。",
+      "デタラメな物件ポエムの化けの皮を悪口で引っぺがし、LGPSの結晶模型を押し付けてやろう。もっとも、こいつのことだから『リチウムイオンの動線が最高な最新マンション』とか言って転売しかねないのが心配だ。"
+    ]
+  },
+  {
+    "profileId": "nora",
+    "kind": "fictional",
+    "portrait": 6,
+    "name": "ノーラ・ハッシュ",
+    "roman": "Nora Hush",
+    "role": "呼吸音すら「静粛に！」と怒鳴る図書館の絶対独裁者",
+    "species": "デシベル監視型生命体",
+    "color": "#8eb2d9",
+    "planetName": "しーっ！惑星",
+    "intro": "「こらぁぁぁ！！　いま靴底が床と擦れて3デシベル出ましたよ！！　図書館では静かにしろぉぉぉぉ！！（拡声器・110デシベル）」",
+    "hint": "館内の静寂を守ることに命を懸けているが、自分が「静かにしろ！」と怒鳴り散らす声が一番うるさいことに1ミリも気づいていない。",
+    "choices": [
+      {
+        "text": "この図書館で一番うるさい騒音公害は、『静かにしろ！』と拡声器で怒鳴ってる君自身の声だぞ。まず自分に退館処分を出したまえ。",
+        "effect": 3,
+        "tag": "最大の騒音源を直撃",
+        "response": "「なっ……わ、私の注意喚起は館則上『環境音』として……いや待って、今たしかに棚の本が声の振動で三冊落ちたわね！？」"
+      },
+      {
+        "text": "ページをめくる音にも罰金を取っていたら、誰も本を読めないただの紙の倉庫じゃないか。知識より無音の記録ばかり愛でているな。",
+        "effect": 2,
+        "tag": "本末転倒な静寂愛を突く",
+        "response": "「本なんて開かなくても、背表紙を静かに見つめていれば十分知的な気持ちになれるでしょうが！！（大声）」"
+      },
+      {
+        "text": "そのメガネチェーン、ずっと首から下げていて肩が凝らないのか？",
+        "effect": 1,
+        "tag": "小物いじり",
+        "response": "「音を立てずにメガネを掛け外しするための特注シリコン製よ。ほら、無音でしょ！」"
+      }
+    ],
+    "giftResponse": "「……ページをめくる音もしない。しゃべりもしない。息もしない。なんて完璧に無音で礼儀正しい芸術品なの！　特等席の防音ガラスケースに飾りますわ！」",
+    "fact": "ノーラは拡声器を封印し、代わりに『しーっ』と書いた無音のプラカードを掲げるようになった。図書館の騒音レベルは一夜にして94%低下した。",
+    "dossier": {
+      "system": "サイレント・スタック恒星系",
+      "planet": "しーっ！惑星",
+      "continent": "ヒソヒソ声大陸",
+      "country": "絶対静粛王国",
+      "city": "つま先歩き市",
+      "species": "シレンシア星人",
+      "personality": "普段は物静かな秀才だが、わずかでも物音を聞くと0.1秒で爆音の鬼教官へ変貌する。自分の叫び声だけは「正義の音だから0デシベル」と信じ込んでいる。",
+      "background": "銀河最大の図書館で司書長に就任した際、「来館者がいなければ究極の静寂が実現できるのでは？」という禁断の真理に気づいてしまい、今日も元気に客を怒鳴り散らしている。",
+      "familyCount": 2,
+      "familyMembers": [
+        "本人・ノーラ（110デシベルで静寂を説く司書長）",
+        "姉・フォルテ（ヘヴィメタルバンドのドラマー。姉妹仲は最悪）"
+      ],
+      "address": "禁帯出通り・中央大図書館（閲覧室の床は厚手フェルト張り）"
+    },
+    "briefing": [
+      "次はサイレント・スタック恒星系、「しーっ！惑星」のつま先歩き市だ。着陸するとき宇宙船のエンジンを切れと言われたよ。無重力でどうやって着陸しろと言うんだ、まったく無茶苦茶な条例である。",
+      "相手はシレンシア星人のノーラ。銀河中央図書館の司書長だ。本のページをめくる音すら許さない鉄の女だが、それを注意するときの自分の怒鳴り声が110デシベルあることには全く無自覚らしい。",
+      "ヘヴィメタルのドラマーをやっている姉フォルテとの2人家族。正月に実家で顔を合わせるたび、姉はシンバルを叩き、妹は拡声器で『静かにしろ』と叫んで近所から通報されているそうだ。",
+      "一番うるさいのはあんた自身だとズバリ指摘し、絶対に音を出さないLGPS結晶模型を押し付けてやろう。もっとも、受け取るときにうっかりテーブルへコツンと置いただけで罰金を取られそうだから気をつけねばな。"
+    ]
+  },
+  {
+    "profileId": "quentin",
+    "kind": "fictional",
+    "portrait": 5,
+    "name": "クエンティン・キュー",
+    "roman": "Quentin Queue",
+    "role": "何の列かも知らずに40年間並び続ける生粋の行列マニア",
+    "species": "最後尾自動整列型生命体",
+    "color": "#a8c7b8",
+    "planetName": "最後尾はこちら星",
+    "intro": "「おや、あなたもこの列にお並びですか？　最後尾はあちらですよ。えっ、先頭に何があるかって？　そんな野暮なことを聞くもんじゃありません、とにかく並ぶのがマナーですからな！」",
+    "hint": "「列を見たら理由を聞かず最後尾に付く」のが紳士の誇り。実は40年間、ただの故障した自動販売機の前に並んでいるだけなのに気づいていない。",
+    "choices": [
+      {
+        "text": "何をもらえる列かも知らずに40年突っ立っているとは、時間の無駄遣いにかけては不死身の私すら完敗だぞ。先頭はただの壊れた壁じゃないか。",
+        "effect": 3,
+        "tag": "盲目的な行列愛を直撃",
+        "response": "「ば、馬鹿な！　こんなに立派に142人も並んでいる列の先頭が『故障中』なわけが……ちょっと前の方、本当ですか！？　うわあ、40年返せ！」"
+      },
+      {
+        "text": "割り込みに怒って舌打ちする情熱の10分の1でも、『そもそもこの列が動いているか』の確認に使えばよかったのにな。",
+        "effect": 2,
+        "tag": "目的のない几帳面さを突く",
+        "response": "「動かない列ほど秩序が保たれて美しいんですよ！　……いや、そう言われると少し寂しい気もしてきましたな」"
+      },
+      {
+        "text": "その折りたたみ椅子、40年も座っていればさすがにガタが来ているな。",
+        "effect": 1,
+        "tag": "持ち物いじり",
+        "response": "「ふふ、これで三代目です。並んでいるあいだに通販で買って、列の142番目まで届けてもらいましたよ」"
+      }
+    ],
+    "giftResponse": "「えっ、並ばずにそのまま受け取っていいんですか！？　整理券も、ロープの仕切りもなしに！？　……なんだか悪いことをしているみたいで落ち着きませんが、ありがたく頂戴します！」",
+    "fact": "クエンティンは40年ぶりに列から一歩外へ出て、故障した自販機の横にある普通に空いたカフェで紅茶を飲んだ。翌日、彼はカフェのレジ前に新しい列を作って満足そうに並んでいた。",
+    "dossier": {
+      "system": "スタンバイ恒星系",
+      "planet": "最後尾はこちら星",
+      "continent": "ポールとロープ大陸",
+      "country": "お並びください王国",
+      "city": "蛇行レーン市",
+      "species": "キューリアン星人",
+      "personality": "恐ろしく律儀で辛抱強い。誰かが1センチでも割り込もうものなら、直接文句は言わず、聞こえるか聞こえないかギリギリの音量で「チッ」と舌打ちして30分睨みつける。",
+      "background": "40年前、街角で靴紐を結び直していた2人組を「人気の行列だ」と勘違いして後ろに並んだのが始まり。靴紐の2人は30秒後に立ち去ったが、後ろに別の客が並んだため今も引き返せずにいる。",
+      "familyCount": 3,
+      "familyMembers": [
+        "本人・クエンティン（先頭から142番目の男）",
+        "妻・ライン（夫に差し入れを届けるため別の列に並んでいる）",
+        "成人の娘・ターン（列をすっ飛ばすファストパスの開発者）"
+      ],
+      "address": "ただのレンガ壁の前・前から142番目の立ち位置"
+    },
+    "briefing": [
+      "次はスタンバイ恒星系、「最後尾はこちら星」の蛇行レーン市だ。着陸しようとしたら、上空に宇宙船が300機ほど一列に並んでいた。先頭の船がエンジン故障で止まっているのに、誰も追い抜こうとしないらしい。英国的すぎて頭が痛くなるな。",
+      "相手はキューリアン星人のクエンティン。何の列かも知らないまま40年間、故障した自販機の前に並び続けている生粋の行列マニアだ。私の永遠の命を少し分けてやったら、きっと嬉し涙を流してあと5万年くらい並ぶだろう。",
+      "妻のラインと、ファストパス開発者の娘ターンの3人家族。もともと40年前に靴紐を結んでいた2人組の後ろにうっかり並んだのがきっかけだそうだ。人生のターニングポイントというやつは、だいたいこんな風にくだらない。",
+      "何もない壁の前で40年を溶かした見事な盲従ぶりを悪口で揺さぶり、並ばずに受け取れるLGPS結晶模型を突き付けてやろう。順番待ちなしで物を渡される衝撃で、少しは目が覚めるかもしれんぞ。"
+    ]
+  },
+  {
+    "profileId": "toby",
+    "kind": "fictional",
+    "portrait": 7,
+    "name": "トビー・トレンド",
+    "roman": "Toby Trend",
+    "role": "売れた瞬間にファンを辞める銀河一の逆張りヒップスター",
+    "species": "初期衝動限定評価型生命体",
+    "color": "#c9a0dc",
+    "planetName": "初期衝動だけ評価星",
+    "intro": "「ああ、宇宙？　まあビッグバン直後の0.001秒だけは尖ってて良かったよね。銀河ができ始めてからは完全に商業主義に日和ったから、俺もう追ってないんだ」",
+    "hint": "作品そのものではなく「まだ誰も知らないマイナーなものを知っている自分」だけを愛している。有名になった瞬間、手のひらを返してけなし始める。",
+    "choices": [
+      {
+        "text": "君が愛しているのは作品じゃなくて、『誰も知らないものを見つけた俺カッコいい』って自意識だけだな。人気が出た瞬間に逃げ出す薄っぺらな評論家気取りめ。",
+        "effect": 3,
+        "tag": "逆張り根性を直撃",
+        "response": "「ち、違うし！　俺は純粋にインディーズ時代の荒削りな……いや待て、今まさに誰も知らない新星を『売れる前に飽きる』計画を立ててたところだわ……」"
+      },
+      {
+        "text": "『メンバーがまだ楽器を買う前のバンドが一番よかった』とか言い出しそうだな。逆張りを禁止されたら感想が一文字も書けないのか？",
+        "effect": 2,
+        "tag": "極端なマイナー信仰を突く",
+        "response": "「楽器を買った時点で既成概念に染まってるんだよ！　結成する前の『なんとなく音楽やりたいな』って時期が一番ピュアだろ！」"
+      },
+      {
+        "text": "そのわざと黒縁フレームだけの伊達メガネ、レンズを入れ忘れているぞ。",
+        "effect": 1,
+        "tag": "ファッションいじり",
+        "response": "「レンズなんてメジャーすぎてダサいじゃん。フレームだけで視界をフレーミングするのが今の最先端なんだよ」"
+      }
+    ],
+    "giftResponse": "「ほう、Li₁₀GeP₂S₁₂か……まあ俺は2011年の原著論文が出る前から四面体骨格に注目してたけどね。……いや、普通に造形カッコいいなこれ、もらっとくよ」",
+    "fact": "トビーはLGPS模型を棚の目立つ場所へ飾り、訪ねてきた友人全員に『これ、まだ全固体電池が流行る前から俺が目を付けてたやつ』とドヤ顔で語っている。",
+    "dossier": {
+      "system": "アンダーグラウンド恒星系",
+      "planet": "初期衝動だけ評価星",
+      "continent": "デモテープ大陸",
+      "country": "メジャー落ちたら解散連邦",
+      "city": "会員制路地裏カフェ市",
+      "species": "ヒプスタ星人",
+      "personality": "常に少し斜に構えており、世間の評判と180度逆のことを言わないと呼吸困難になる。自分が推していた店に行列ができると、翌日「味が落ちた」とレビューを書いて去る。",
+      "background": "かつて大人気ポップスターの熱狂的ファンだったが、ライブ会場で隣の人と服がかぶったショックで逆張りに覚醒。以来、観客が3人以下のイベントしか認めない孤高のウォッチャーとなった。",
+      "familyCount": 2,
+      "familyMembers": [
+        "本人・トビー（レコード針を落とす前の無音時間が一番好き）",
+        "兄・メインストリーム（超売れ線の映画とチェーン店のハンバーガーを愛する陽気な兄）"
+      ],
+      "address": "看板のない通り・合言葉を知らないと入れないコーヒー焙煎所2階"
+    },
+    "briefing": [
+      "次はアンダーグラウンド恒星系、「初期衝動だけ評価星」の会員制路地裏カフェ市だ。看板も住所表記もないせいで着陸するだけで一苦労だったよ。『見つけにくいこと自体がアート』だそうだが、配達員にとってはただの嫌がらせである。",
+      "相手はヒプスタ星人のトビー。あらゆる名作を『有名になる前が一番よかった』の一言で斬り捨てる逆張り評論家だ。私が『宇宙の全住民に悪口を言う』と説明したら、たぶん『最初の3人だけやってた頃が一番尖ってたね』と言うだろうな。",
+      "超メジャー志向の兄メインストリームとの2人家族。兄が週末にチェーン店のハンバーガーを食べるたび、弟は『まだ牛だった頃の初期衝動が失われた』と嘆いているそうだ。実に面倒くさい兄弟である。",
+      "作品愛のフリをした薄っぺらな自意識を悪口で暴いてやり、LGPSの結晶模型を押し付けよう。2011年にNature Materialsに載った有名すぎる固体電解質だから、『メジャーすぎ』と眉をひそめつつも、きっと内心欲しがるはずだ。"
+    ]
+  },
+  {
+    "profileId": "uma",
+    "kind": "fictional",
+    "portrait": 8,
+    "name": "ウマ・エコーズ",
+    "roman": "Uma Echoes",
+    "role": "「じゃあそろそろ切るね」から毎回2時間延長する長電話おばさん",
+    "species": "通話切断拒否型生命体",
+    "color": "#f0a69d",
+    "planetName": "じゃあ切るねと言いつつ切らない星",
+    "intro": "「あらよく来たわね！　あっ、今ちょうど電話中なの、すぐ切るからね！　……もしもし、じゃあそろそろ切るわね！　そういえば先週うちの隣の犬の歯医者さんの従兄弟がね――」",
+    "hint": "「手短に言うわね」「じゃあ切るね」が合図で、そこからが長話の本番。相手が寝落ちしても「聞いてる？」と起こして続きを語る。",
+    "choices": [
+      {
+        "text": "君の『そろそろ切るね』は、普通の宇宙人の『これから本題の第一章に入ります』と同じ意味だな。相手の耳に休日をやる気がないのか。",
+        "effect": 3,
+        "tag": "終わらない長電話を直撃",
+        "response": "「あらひどいわね、本当にあと一言だけだったのに！　……って、あれ、今わたし時計を見たら『切るね』って言ってから3時間経ってる！？」"
+      },
+      {
+        "text": "『手短にまとめるわね』と前置きした話が、銀河帝国の興亡史より長いとはどういう計算だ。要点だけ言うと死ぬ呪いでもかかっているのか？",
+        "effect": 2,
+        "tag": "脱線の長さを突く",
+        "response": "「だって背景をちゃんと説明しないと『犬がなぜ赤い首輪をしてたか』が伝わらないじゃない！　ほら、そこから話すとね――」"
+      },
+      {
+        "text": "その電話の受話器、もう左耳の形にめり込んで完全に一体化していないか？",
+        "effect": 1,
+        "tag": "受話器いじり",
+        "response": "「まあやだ、これは肩に挟みやすい人間工学デザインの特注品よ！　おかげで両手で編み物しながら6時間しゃべれるの」"
+      }
+    ],
+    "giftResponse": "「あら素敵！　ねぇちょっと見て、うちの姉の旦那の職場の先輩が昔こういうのを……あっ、もう帰っちゃうの？　じゃあ手短にね、あと40分だけ！」",
+    "fact": "その晩、ウマはLGPS模型の原子25個すべてに勝手にあだ名を付け、近所の友達へ1人ずつ紹介する電話をかけた。通話は翌週の火曜日まで続いた。",
+    "dossier": {
+      "system": "チャット・ループ恒星系",
+      "planet": "じゃあ切るねと言いつつ切らない星",
+      "continent": "そういえば大陸",
+      "country": "あと一言だけ連邦",
+      "city": "玄関先で2時間立ち話市",
+      "species": "テレフォニア星人",
+      "personality": "驚くほど親切でおしゃべり好き、そして話の脱線能力が光の速さを超える。1つの話題を終える前に、必ず3つの無関係な親戚の近況を分岐させる。",
+      "background": "若いころ3分だけ近況報告するつもりでかけた電話が、現在も38年目の記録を更新中。電話会社からは『銀河のインフラを支える優良顧客』として金の受話器を贈られた。",
+      "familyCount": 4,
+      "familyMembers": [
+        "本人・ウマ（『じゃあね』を1日40回言うおばさん）",
+        "夫・ミュート（妻の長電話のあいだに独学で宇宙語を6つ習得した）",
+        "成人の娘・コール（母からの着信に備えて常に予備バッテリーを3個携帯）",
+        "成人の息子・ハングアップ（母の電話を3分以内に切るプロ）"
+      ],
+      "address": "立ち話通り・玄関のドアが半開きのままの家"
+    },
+    "briefing": [
+      "次はチャット・ループ恒星系、「じゃあ切るねと言いつつ切らない星」の玄関先で2時間立ち話市だ。軌道上から着陸許可を求めただけなのに、管制官が『じゃあ降りてね、そういえば昨日うちの猫がね――』と45分しゃべり続けて燃料を無駄にしたぞ。",
+      "相手はテレフォニア星人のウマ。3分のつもりでかけた電話を38年間切り忘れている長電話の怪物だ。不死身の私にとって時間は無限にあるが、隣人の犬の歯医者の従兄弟の近況だけは、さすがに1ミリも興味がない。",
+      "夫のミュートと成人の子どもたち2人の4人家族。夫は妻の長電話を横で聞いているあいだに宇宙語を6つもマスターしたそうだ。どんな逆境にも学びはあるものだな。",
+      "『そろそろ切るね』が永遠の始まりであることを皮肉で突きつけ、LGPSの結晶模型を手渡したら即座にダッシュで船へ戻るぞ。引き止められて『あと一言だけ』に捕まったら、次の配達まで1世紀遅れかねない。"
+    ]
+  },
+  {
+    "profileId": "victor",
+    "kind": "fictional",
+    "portrait": 8,
+    "name": "ヴィクター・ヴェイグ",
+    "roman": "Victor Vague",
+    "role": "「ある意味では」「諸説ある」しか言わない無敵のコメンテーター",
+    "species": "断言回避型テレビ生命体",
+    "color": "#94b8c9",
+    "planetName": "一概には言えない星",
+    "intro": "「ええ、あなたが今ここに立っているかというご質問ですが、それは『立つ』の定義次第ですし、ある意味では座っているとも言えますから、一概には言えませんね」",
+    "hint": "絶対に炎上せず反論もされないよう、あらゆる発言から「結論」と「中身」を100%抜き取って出演料だけきっちり受け取る男。",
+    "choices": [
+      {
+        "text": "君は『どちらとも言えない』を100通りの言い回しに引き伸ばしてギャラをもらってるんだな。白紙のメモ帳のほうがまだハッキリした意見を持っているぞ。",
+        "effect": 3,
+        "tag": "中身ゼロの玉虫色を直撃",
+        "response": "「いや、白紙にもさまざまな解釈の余地が……くっ、今『お前は中身がない』と断言されて、珍しく一概にムカついているぞ！」"
+      },
+      {
+        "text": "絶対に反論されないように中身の全部を抜いた結果、君の発言がただの『温かい二酸化炭素』になっていることに気づいているか？",
+        "effect": 2,
+        "tag": "安全な無内容トークを突く",
+        "response": "「温かい二酸化炭素というのも、見方を変えれば地球温暖化への深い問題提起と捉えることも可能でありまして……えー、時間が来ましたね」"
+      },
+      {
+        "text": "その立派な銀髪、スタジオのライトだけはしっかり反射して仕事をしているな。",
+        "effect": 1,
+        "tag": "見た目いじり",
+        "response": "「ありがとうございます。光の反射角についても、さまざまな見解があるところではございますが、おおむね好評と受け止めております」"
+      }
+    ],
+    "giftResponse": "「なるほど、これはある意味では模型であり、また別の視点からは……いや待て、誰がどう見てもLi₁₀GeP₂S₁₂の結晶模型だな！　くそっ、40年ぶりに言い切ってしまった！」",
+    "fact": "その夜の生放送で、ヴィクターはうっかり「今日のスープは塩辛い」と断言してしまい、テレビ局に驚きのFAXが8万通届いた。",
+    "dossier": {
+      "system": "ニュアンス恒星系",
+      "planet": "一概には言えない星",
+      "continent": "諸説あり大陸",
+      "country": "慎重な議論が必要連邦",
+      "city": "見解の相違市",
+      "species": "アンビギュア星人",
+      "personality": "穏やかで知的な雰囲気を醸し出しているが、頭の中は「どうやってイエスもノーも言わずに90秒つなぐか」だけで占められている。",
+      "background": "かつてクイズ番組で『1たす1は？』と聞かれ、「文脈によっては2とも言えますが、多角的な検証が求められますね」と3分間語ってなぜか知性派コメンテーター枠を勝ち取った。",
+      "familyCount": 2,
+      "familyMembers": [
+        "本人・ヴィクター（40年間『はい』とも『いいえ』とも言っていない）",
+        "妻・クリア（『今夜の夕飯はカレーでいい？』に30分煙に巻かれてブチ切れた過去あり）"
+      ],
+      "address": "玉虫色通り・どっちつかずテレビ局第4スタジオ"
+    },
+    "briefing": [
+      "次はニュアンス恒星系、「一概には言えない星」の見解の相違市だ。宇宙港の案内板に『ここは宇宙港であるとも言えるし、そうでないとも言える』と書いてあった。迷子になるパイロットが続出しているらしい。",
+      "相手はアンビギュア星人のヴィクター。ワイドショーで40年間『諸説ある』『慎重な議論が必要』しか言わずに大豪邸を建てた無敵のコメンテーターだ。悪口を言っても『ある意味では褒め言葉』と受け流しそうで実に腹立たしい。",
+      "妻のクリアとの2人暮らし。奥さんはハッキリ物を言うタイプで、夕飯の相談をするたび『カレーとも言えるし、スパイス煮込みとも捉えられる』と返す夫にいつも頭を抱えているそうだ。",
+      "『白紙のメモ帳のほうがまだ意見がある』とド直球の悪口をぶつけ、誰がどう見ても言い逃れできないLGPS結晶模型を突き付けてやろう。たまにはハッキリ『ありがとう』か『いらない』くらい言わせてみせたいもんだ。"
+    ]
+  },
+  {
+    "profileId": "yolanda",
+    "kind": "fictional",
+    "portrait": 5,
+    "name": "ヨランダ・ヨーン",
+    "roman": "Yolanda Yawn",
+    "role": "「昔の宇宙はもっと良かった」と30億年愚痴り続ける懐古厨貴族",
+    "species": "思い出美化型老貴族生命体",
+    "color": "#d4b48a",
+    "planetName": "昔はよかった星",
+    "intro": "「まったく、最近の若い銀河ときたら根性が足りませんな！　わしが若いころは重力ももっと重厚で品格があったもんだ。今の星雲はみんな軽薄でいかん！」",
+    "hint": "「昔はよかった」が口癖だが、実際に過去へ戻れるタイムマシンを勧められると「暖房付きウォシュレットがない時代なんて無理」と0.5秒で断る。",
+    "choices": [
+      {
+        "text": "君が恋しがってる『古き良き時代』とやらは、君の記憶力が都合よく編集したフィクションだぞ。本当に戻されたら3分で現代の便座を恋しがるくせに。",
+        "effect": 3,
+        "tag": "都合のいい懐古趣味を直撃",
+        "response": "「なっ……べ、便座と宇宙の品格は別問題だろうが！！　……いや、たしかに昔の石の便座は冬場ひどく冷たかったがね！」"
+      },
+      {
+        "text": "最近の銀河に文句を言い続けるだけで30億年過ごすとは、ずいぶん省エネな老後だな。せめて愚痴のレパートリーくらい今世紀風に更新したまえ。",
+        "effect": 2,
+        "tag": "永遠の説教ジジイぶりを突く",
+        "response": "「ふん、古典的な愚痴ほど味わい深いのだよ！　最近の若者の愚痴はすぐSNSで終わってしまって風情がない！」"
+      },
+      {
+        "text": "その気取った片眼鏡（モノクル）、さっきから息でちょっと曇っていないか？",
+        "effect": 1,
+        "tag": "モノクルいじり",
+        "response": "「おお、よく気づいたな。昔のガラスはもっと曇りにくかったものだが……いや、単にわしが拭き忘れただけか」"
+      }
+    ],
+    "giftResponse": "「ふん、最近の若い者が作った模型にしては……いや、この四面体の骨格はなかなか骨太で古き良き職人技だな！　よし、気に入ったぞ、紅茶の横に飾ろう！」",
+    "fact": "ヨランダはLGPS模型を眺めながら「現代にも少しはマシな物があるかもしれん」と30億年ぶりにポツリと漏らした。執事は驚いてティーポットを取り落とした。",
+    "dossier": {
+      "system": "ノスタルジア恒星系",
+      "planet": "昔はよかった星",
+      "continent": "古き良き大陸",
+      "country": "あの頃は連邦",
+      "city": "懐かしの重力市",
+      "species": "オールドガード星人",
+      "personality": "威厳たっぷりの老貴族で、新しい流行をまず条件反射で全否定する。ただし最新の高速通信と全自動お風呂だけは「これは例外」と言って誰より愛用している。",
+      "background": "ビッグバンからわずか数億年後に『もう最近の宇宙はダメだ、最初のプラズマ時代が一番良かった』と論説を書いてデビューして以来、30億年間ずっと同じ愚痴で生計を立てている。",
+      "familyCount": 3,
+      "familyMembers": [
+        "本人・ヨランダ（30億年ぶっ続けで昔を懐かしむ貴族）",
+        "執事・アンティーク（主人の昔話を500万回聞いてすべて暗記している）",
+        "孫・ネオ（祖父に最新のVRゴーグルを貸したらハマりすぎて返ってこない）"
+      ],
+      "address": "ノスタルジー大通り・築20億年だけど床暖房完備の屋敷"
+    },
+    "briefing": [
+      "次はノスタルジア恒星系、「昔はよかった星」の懐かしの重力市だ。街並みは中世の石畳風なのに、よく見たら地下に最新の床暖房と超光速Wi-Fiがびっしり通っている。人間の懐古趣味なんて、だいたいこんなものだ。",
+      "相手はオールドガード星人のヨランダ。ビッグバン直後から『最近の宇宙は根性がない』と文句を言い続けている老貴族だ。まあ、不死身の私から見れば、昔も今も宇宙は一貫してロクでもない場所なのだがね。",
+      "執事のアンティークと孫のネオの3人世帯。普段は最新技術をけなしているくせに、孫から借りたVRゴーグルにどハマりして返さないというから愛嬌がある――いや、ただの頑固な食い逃げだ。",
+      "都合よく記憶を美化した『古き良き時代』の嘘を悪口で突っつき、最新科学の結晶であるLGPS模型を押し付けてやろう。これでも『昔のリチウムのほうが味が濃かった』とか言い出したら、さすがに笑ってしまうな。"
+    ]
   }
 ];
 export const EN_PROFILES = [
@@ -1536,6 +2170,640 @@ export const EN_PROFILES = [
       "Posta is a Postran who trusts dashboards far more than living beings. If I marked the whole Universe insulted without leaving my sofa, he’d put me up for Employee of the Aeon. Thankfully, I still have standards.",
       "Five in the household—Myra, Rack, Bell, and grown son Track. He actually used to hand parcels to people. Looks like I’m about to reintroduce a lost ancient technology: putting a real object into someone’s palm.",
       "One crisp lecture on arriving numbers versus missing parcels, then an LGPS crystal model handed over face to face. Slipping an insult card through the letterbox and legging it would be far too shoddy for my reputation."
+    ]
+  },
+  {
+    "profileId": "gideon",
+    "kind": "fictional",
+    "portrait": 5,
+    "roman": "Gideon Fog",
+    "color": "#9ab7c7",
+    "name": "Gideon Fog",
+    "role": "Gentleman who turns every cosmic disaster into weather chat",
+    "species": "Drizzle-appreciating life-form",
+    "planetName": "Drizzle-With-Light-Drizzle",
+    "intro": "“Oh, did the neighbouring star just explode? Good gracious. Still, rather muggy out today, wouldn’t you say? Dreadful weather for drying the washing.”",
+    "hint": "Prides himself on turning galactic wars into polite remarks about humidity. Owns fourteen umbrellas and refuses to open any of them, considering it moral defeat.",
+    "choices": [
+      {
+        "text": "Your endless weather chat is merely a smoke screen hiding the fact you’ve nothing to say—and it’s thicker than the local fog.",
+        "effect": 3,
+        "tag": "Expose the empty small talk",
+        "response": "“My word, a rather brisk chilly gust from your direction! …Blast, I sounded mildly defensive there—terrible form for a gentleman!”"
+      },
+      {
+        "text": "Insisting ‘looks like rain’ while the galaxy collapses takes a level of obliviousness even the Met Office couldn’t forecast.",
+        "effect": 2,
+        "tag": "Mock the polite denial",
+        "response": "“Now, now—panicking is awfully vulgar. Look on the bright side, the cloud cover is clearing nicely by Tuesday.”"
+      },
+      {
+        "text": "Does that tweed jacket permanently smell slightly of wet spaniel?",
+        "effect": 1,
+        "tag": "Tease the tweed",
+        "response": "“Sharp nose, sir! Bespoke worsted steeped in thirty years of prime municipal drizzle.”"
+      }
+    ],
+    "giftResponse": "“I say, what a splendid crystal! Wait a tick—I can pop this in the hall and get three solid hours of ‘rather damp on the crystal today, isn’t it?’ out of every guest!”",
+    "fact": "Gideon dubbed the LGPS model his ‘Indoor Weather Conversation Starter’. Neighbours’ walking speeds past his front gate promptly increased by forty per cent.",
+    "dossier": {
+      "system": "Umbrella system",
+      "planet": "Drizzle-With-Light-Drizzle",
+      "continent": "Overcast-Again continent",
+      "country": "Bit-Nippy Federation",
+      "city": "No-Brolly City",
+      "species": "Fogshire native",
+      "personality": "Frightfully civil and completely hollow. Reveal the Ultimate Secret of the Universe and he will nod solemnly and remark that it’s turned out nice again.",
+      "background": "Former weather presenter who quit after a sunny week left citizens with nothing to grumble about. Now resides happily on a world engineered for perpetual dampness.",
+      "familyCount": 3,
+      "familyMembers": [
+        "Gideon himself (owns 14 umbrellas, perpetually soaked)",
+        "Spouse: Mist (has nodded politely to ‘looks like rain’ for forty years)",
+        "Adult son: Gale (rebelled by emigrating to a desert planet)"
+      ],
+      "address": "Soggy Lane, Number Two (behind the forest of umbrella stands)"
+    },
+    "briefing": [
+      "Umbrella system, Drizzle-With-Light-Drizzle, No-Brolly City. According to the planetary almanac, the last four thousand years of forecasts simply read ‘Grey with light mist, turning gloomy by tea’. Admirably consistent.",
+      "Gideon is a Fogshire native capable of steering any apocalypse back to light drizzle. If I announce I’ve crossed space to abuse him, he’ll probably smile and say it’s lovely weather for an insult.",
+      "Lives with his spouse Mist, while his grown son Gale fled to a desert world out of pure rebellion. Owns fourteen umbrellas yet considers opening one a shameful surrender to the sky.",
+      "One crisp jibe at his vacuous meteorological small talk, plus an LGPS crystal model. Happily, it’s a plastic schematic rather than real sulphide, so the damp air won’t turn his parlour into a rotten-egg factory."
+    ]
+  },
+  {
+    "profileId": "hilda",
+    "kind": "fictional",
+    "portrait": 6,
+    "roman": "Hilda Kettle",
+    "color": "#d8a88c",
+    "name": "Hilda Kettle",
+    "role": "Militant tea-room proprietor and strict etiquette enforcer",
+    "species": "Loose-leaf-policing life-form",
+    "planetName": "No-Milk-First Prime",
+    "intro": "“Hold everything! Did you just glance at a microwave to boil water?! On this planet that’s a Class-A felony punishable by immediate ejection into a black hole!”",
+    "hint": "Devoted to sacred tea rituals—yet delivers three-hour lectures on leaf circulation while every single pot goes stone cold on the table.",
+    "choices": [
+      {
+        "text": "By the time you finish lecturing people on tea etiquette, the tea itself is stone cold. You love the ceremony so much you’ve murdered the drink.",
+        "effect": 3,
+        "tag": "Expose the cold tea",
+        "response": "“Nonsense! Proper warmth comes from moral rigour—oh, good heavens, it IS lukewarm! Blast, I can’t look the Darjeeling in the eye!”"
+      },
+      {
+        "text": "Judging an entire galaxy’s civilisation by how they hold a saucer is awfully cheap snobbery. Even a cheap teabag has broader horizons.",
+        "effect": 2,
+        "tag": "Mock the tea fascism",
+        "response": "“A TEABAG?! Kindly refrain from using foul language within three light-years of my parlour!”"
+      },
+      {
+        "text": "Those heavily starched apron frills look ready for hand-to-hand combat.",
+        "effect": 1,
+        "tag": "Tease the apron",
+        "response": "“Why thank you! Triple-starched every morning in case an uncultured ruffian asks for iced tea.”"
+      }
+    ],
+    "giftResponse": "“Oh, what a dazzling sugar cube—wait, a crystal model?! Pop that in the centre of the table and even the milk-first heathens will fall respectfully silent!”",
+    "fact": "Next afternoon Hilda cut her lecture to three minutes and served a piping hot pot for the first time in decades. Regulars wept openly into their scones.",
+    "dossier": {
+      "system": "Assam Grey system",
+      "planet": "No-Milk-First Prime",
+      "continent": "Warm-the-Pot continent",
+      "country": "Kingdom of Proper Brew",
+      "city": "Three-Minute-Steep City",
+      "species": "Bone-Chinan",
+      "personality": "A potent blend of refinement and sheer menace. Ranks alien species solely by whether they own a proper whistling kettle.",
+      "background": "Radicalised after a spaceship drinks machine served her a cup of liquid almost, but not quite, entirely unlike tea. Has spent two centuries patrolling cosmic brewing standards.",
+      "familyCount": 2,
+      "familyMembers": [
+        "Hilda herself (smashes microwaves on sight with a silver mallet)",
+        "Spouse: Scone (secretly drinks instant coffee behind the garden shed)"
+      ],
+      "address": "Tea-Cosy Crescent, Sharp-at-Four Parlour"
+    },
+    "briefing": [
+      "Assam Grey system, No-Milk-First Prime, Three-Minute-Steep City. Landing clearance required a signed affidavit swearing I carried no microwave aboard. I had to shove my galley reheater into the broom cupboard.",
+      "Hilda is a Bone-Chinan and the galaxy’s fiercest tea policeman. Traumatised years ago by a drinks dispenser serving brown fluid totally unlike tea, she now enforces etiquette with terrifying zeal.",
+      "Lives with her husband Scone, who—according to my census notes—sneaks behind the shed to drink instant coffee. Immortal though I am, I have zero desire to be present when that secret surfaces.",
+      "I’ll point out that her sermons turn every cup stone cold, then hand over an LGPS crystal model. I’d best clarify it isn’t fancy rock sugar before she drops it straight into the Earl Grey."
+    ]
+  },
+  {
+    "profileId": "icarus",
+    "kind": "fictional",
+    "portrait": 7,
+    "roman": "Icarus Pitch",
+    "color": "#7fd4b8",
+    "name": "Icarus Pitch",
+    "role": "Startup guru raising billions purely on buzzwords",
+    "species": "Buzzword-emitting life-form",
+    "planetName": "Series-Z Funding World",
+    "intro": "“Hey there! We’re leveraging quantum blockchain AI synergy to disrupt the legacy gravity experience! …What do we actually build? Simple—the FUTURE!”",
+    "hint": "Raises galactic fortunes with 120-slide pitch decks, yet neither he nor his 400 employees have the faintest clue what the product actually is.",
+    "choices": [
+      {
+        "text": "Strip the buzzwords out of your pitch deck and all that’s left are the page numbers and the logo. Impressive how much air fits in one balloon.",
+        "effect": 3,
+        "tag": "Pop the buzzword bubble",
+        "response": "“Whoa, harsh legacy mindset, man! …Hang on, out of 118 slides, which one DID explain what we actually sell again?!”"
+      },
+      {
+        "text": "Before disrupting gravity, do check whether your own feet are touching the floor. Lightening investors’ wallets doesn’t count as anti-gravity.",
+        "effect": 2,
+        "tag": "Mock the vapour-plan",
+        "response": "“Haha, revenue is such a last-century KPI! We aren’t shipping a product, buddy—we’re scaling an ECOSYSTEM!”"
+      },
+      {
+        "text": "How many identical black turtlenecks do you keep in the wardrobe?",
+        "effect": 1,
+        "tag": "Tease the outfit",
+        "response": "“Four hundred! Saves precious decision energy so I can spend all morning inventing fresh nouns as verbs!”"
+      }
+    ],
+    "giftResponse": "“Whoa—a real, physical object?! With actual geometry you can hold in your hand?! …Uh-oh, actual science is making my buzzword generator crash!”",
+    "fact": "Next day Icarus built his first tangible prototype in history. It was a paperweight, yet venture capitalists gave him a standing ovation anyway.",
+    "dossier": {
+      "system": "Unicorn Bubble system",
+      "planet": "Series-Z Funding World",
+      "continent": "Quick-Pivot continent",
+      "country": "Pre-Revenue Valuation Federation",
+      "city": "Coworking City",
+      "species": "Pitchdeckian",
+      "personality": "Radiates unfounded euphoria and blinding dental work. Cheerfully translates ‘we have built nothing’ into ‘accelerating in stealth mode’.",
+      "background": "Raised three hundred million credits at university with a single slide proposing subscription-based air, and has sailed straight to Series Z without writing a line of working code.",
+      "familyCount": 2,
+      "familyMembers": [
+        "Icarus himself (self-styled Chief Disruption Officer)",
+        "Sister: Capital (canny fund manager who refuses to invest a penny in him)"
+      ],
+      "address": "Innovation Way, Penthouse Containing Only a Ping-Pong Table"
+    },
+    "briefing": [
+      "Unicorn Bubble system, Series-Z Funding World, Coworking City. Merely touching down nearly trapped me in a mandatory craft-beer networking mixer. Dreadful place—I’m here on honest nuisance business.",
+      "Icarus is a Pitchdeckian in a black turtleneck who claims to be disrupting gravity via quantum AI. Four hundred staff on payroll, and not a single soul knows what the company actually manufactures.",
+      "Shares a family tree with his razor-sharp sister Capital, a fund manager who refuses to back his ventures and sends him a pocket calculator every birthday with a note reading ‘Try arithmetic’.",
+      "I’ll puncture his slide-deck hot air and drop a gloriously solid LGPS crystal model into his hands. Unlike his quarterly roadmap, this thing actually makes a satisfying thud on a desk."
+    ]
+  },
+  {
+    "profileId": "klara",
+    "kind": "fictional",
+    "portrait": 6,
+    "roman": "Klara Astro",
+    "color": "#b498eb",
+    "name": "Klara Astro",
+    "role": "Astrologer blaming every personal blunder on Mercury",
+    "species": "Cosmic-excuse life-form",
+    "planetName": "Mercury-in-Retrograde IV",
+    "intro": "“Oh, am I three hours late? Well, obviously Mercury is in retrograde! And your ship’s noisy engine is entirely down to Saturn’s dreadful attitude today!”",
+    "hint": "Blames lost keys, burnt toast, and galactic wars 100% on planetary alignments—despite living ten thousand light-years from Mercury.",
+    "choices": [
+      {
+        "text": "Blaming a tiny rock ten thousand light-years away for your own mistakes takes real agility. Odd how zero accountability never shows up in your star charts.",
+        "effect": 3,
+        "tag": "Expose the excuse-making",
+        "response": "“Well! How terribly rude! Clearly Mars is squatting in my seventh house—wait, where IS Mars today anyway?!”"
+      },
+      {
+        "text": "Your horoscopes are so vague they fit every creature alive. You might as well charge money to predict ‘today you will breathe air’.",
+        "effect": 2,
+        "tag": "Mock the vague predictions",
+        "response": "“Aha! You literally just inhaled! Spot-on again—my consultation fee is payable in advance, darling!”"
+      },
+      {
+        "text": "Isn’t that prized crystal ball a bit smudged with fingerprints?",
+        "effect": 1,
+        "tag": "Tease the crystal ball",
+        "response": "“Those aren’t smudges, that’s the Mist of Destiny! …All right, fine, I’ll give it a wipe later.”"
+      }
+    ],
+    "giftResponse": "“Goodness, this 25-atom alignment radiates intense cosmic vibrations! Quick—which zodiac sign’s lucky charm is this?! I must update next month’s column at once!”",
+    "fact": "In Klara’s next magazine issue, all twelve star signs were advised to carry ‘a sulphide solid-electrolyte model’. Local mineral shops were besieged by noon.",
+    "dossier": {
+      "system": "Zodiac Shift system",
+      "planet": "Mercury-in-Retrograde IV",
+      "continent": "Monthly-Forecast continent",
+      "country": "Blame-the-Stars Republic",
+      "city": "Ascendant City",
+      "species": "Astrian",
+      "personality": "Breezy, theatrical, and immune to self-reflection. Drops a mug on her own toe and gazes heavenward muttering ‘Typical Venus’.",
+      "background": "Once a serious astronomer until she misread a telescope log, declared ‘the stars moved on purpose’, and opened a wildly profitable astrology parlour instead.",
+      "familyCount": 3,
+      "familyMembers": [
+        "Klara herself (owns 88 constellation-themed excuses for lateness)",
+        "Mother: Luna (cuts her allowance blaming ‘a tricky full moon’)",
+        "Adult brother: Orion (forced into lucky-colour socks every morning)"
+      ],
+      "address": "Ecliptic Avenue, Parlour Never Open at the Advertised Hour"
+    },
+    "briefing": [
+      "Zodiac Shift system, Mercury-in-Retrograde IV, Ascendant City. Despite sitting tens of thousands of light-years from Sol, every mishap on this planet is still blamed squarely on little Mercury. Poor rock.",
+      "Klara is an Astrian astrologer who treats distant planets as a universal alibi. I fully expect her to dismiss my carefully crafted insult as ‘typical Tuesday energy when Jupiter squints’.",
+      "Lives with her mother Luna and brother Orion—a fallen astronomer who traded telescopes for horoscopes. If she read my chart, she’d doubtless blame my immortality on ‘Rubber-Band Rising’.",
+      "One sharp reality check for her cosmic buck-passing, plus an LGPS crystal model. Watching her realise it’s serious battery chemistry rather than a healing quartz should brighten my afternoon."
+    ]
+  },
+  {
+    "profileId": "milo",
+    "kind": "fictional",
+    "portrait": 7,
+    "roman": "Milo Flip",
+    "color": "#e5be78",
+    "name": "Milo Flip",
+    "role": "Galactic estate agent selling airless rocks as luxury villas",
+    "species": "Upselling-broker life-form",
+    "planetName": "Five-Minutes-at-Lightspeed Estates",
+    "intro": "“Step right up! Zero atmosphere, triple gravity, black hole next door—in other words: minimalist airiness, free daily workouts, and a view that literally pulls you in!”",
+    "hint": "Turns lethal, uninhabitable boulders into priceless luxury estates purely through shameless estate-agent poetry.",
+    "choices": [
+      {
+        "text": "Calling zero oxygen ‘minimalist airiness’ goes well beyond fraud into malicious poetry. Try sleeping in one of your listings for a single night.",
+        "effect": 3,
+        "tag": "Expose the shameless spin",
+        "response": "“Ooh, feisty! I’m a lifestyle visionary, not an oxygen guarantor—though I suppose suffocating buyers do leave awkward reviews!”"
+      },
+      {
+        "text": "‘Five minutes from the nearest star’ only works if your commuter can jog at the speed of light. Your excuses have more floor space than your flats.",
+        "effect": 2,
+        "tag": "Mock the fine print",
+        "response": "“Hey, the bottom corner clearly states ‘at relativistic sprint’ in one-point pale grey font! Completely legal!”"
+      },
+      {
+        "text": "That blinding gold tiepin is doing a number on my retinas.",
+        "effect": 1,
+        "tag": "Tease the tiepin",
+        "response": "“Custom glare coating, pal! Keeps buyers from squinting at the service-charge clauses!”"
+      }
+    ],
+    "giftResponse": "“Whoa, look at this open-plan three-dimensional layout! Latest architectural scale model?! Brilliant—I’m listing it tonight as ‘Sunlit Lithium Duplex, Chain-Free’!”",
+    "fact": "Next morning Milo listed the LGPS model as a ‘Tetrahedral Penthouse (atoms included, no deposit back)’. Bafflingly, crystallographers booked viewings immediately.",
+    "dossier": {
+      "system": "Prime Location system",
+      "planet": "Five-Minutes-at-Lightspeed Estates",
+      "continent": "South-Facing-Corner continent",
+      "country": "Non-Refundable Deposit Federation",
+      "city": "Freshly-Flipped City",
+      "species": "Brokan",
+      "personality": "Smooth-talking chancer with a heart of pure commission. Translates ‘collapsing roof’ into ‘dramatic sky-facing feature’ in under half a second.",
+      "background": "Discovered his calling after flogging his own damp garden shed as a ‘rustic bijou studio’ for a king’s ransom. Now slaps grand French names onto passing asteroids.",
+      "familyCount": 3,
+      "familyMembers": [
+        "Milo himself (names passing meteors ‘Château de Gravitas’)",
+        "Spouse: Terrace (stops him selling their own house every weekend)",
+        "Adult daughter: Loft (became a ruthless planning inspector in protest)"
+      ],
+      "address": "Oceanview Boulevard (nearest ocean two star systems over), Suite 101"
+    },
+    "briefing": [
+      "Prime Location system, Five-Minutes-at-Lightspeed Estates, Freshly-Flipped City. The brochure promised ‘moments from the spaceport’, which turned out to mean three days at full warp. Never trust an estate agent’s tape measure.",
+      "Milo is a Brokan who flips airless lumps of space gravel as luxury minimalism. Once he finds out I’m immortal, he’ll doubtless try signing me onto a three-thousand-year adjustable mortgage.",
+      "Three in the family: Milo, his spouse Terrace—who chases off surprise viewings with a frying pan—and their daughter Loft, now a fierce planning inspector. Justice moves slowly, but it does move.",
+      "I’ll tear strips off his glossy property fibs and leave an LGPS crystal model in his palm. My only worry is that he’ll try flogging its lithium channels as ‘high-speed commuter links’ by lunchtime."
+    ]
+  },
+  {
+    "profileId": "nora",
+    "kind": "fictional",
+    "portrait": 6,
+    "roman": "Nora Hush",
+    "color": "#8eb2d9",
+    "name": "Nora Hush",
+    "role": "Head librarian who bellows ‘QUIET!’ through a megaphone",
+    "species": "Decibel-policing life-form",
+    "planetName": "Shhh Prime",
+    "intro": "“EXCUSE ME!! Your shoes just squeaked at THREE DECIBELS!! THIS IS A LIBRARY—KEEP IT DOWN!! (110 decibels, amplified)”",
+    "hint": "Fiercely guards absolute silence, utterly blind to the fact that her own megaphone tirades are easily the loudest thing in the building.",
+    "choices": [
+      {
+        "text": "The single biggest noise nuisance in this library is you bellowing ‘QUIET!’ through a megaphone. Kindly ban yourself from the premises.",
+        "effect": 3,
+        "tag": "Expose the loud hypocrisy",
+        "response": "“How DARE—under bylaw four, official reprimands count as ambient hush—wait, did my voice just shake three encyclopaedias off the top shelf?!”"
+      },
+      {
+        "text": "Fining readers for turning pages turns a library into a silent warehouse of unread paper. You care far more for decibels than knowledge.",
+        "effect": 2,
+        "tag": "Mock the empty silence",
+        "response": "“Nonsense! Staring silently at closed spines is MORE than intellectual enough for anybody!! (yelled at full volume)”"
+      },
+      {
+        "text": "Doesn’t that chunky spectacle chain give you a stiff neck?",
+        "effect": 1,
+        "tag": "Tease the glasses chain",
+        "response": "“Custom sound-dampened silicone, thank you! Completely silent when I whip them off to glare!”"
+      }
+    ],
+    "giftResponse": "“…No rustling pages. No coughing. Not a single decibel! What an impeccably quiet work of art! Straight into the soundproof display case it goes!”",
+    "fact": "Nora retired her megaphone and switched to holding up a silent placard reading ‘SHHH’. Average library noise plunged ninety-four per cent overnight.",
+    "dossier": {
+      "system": "Silent Stack system",
+      "planet": "Shhh Prime",
+      "continent": "Whisper-Only continent",
+      "country": "Kingdom of Absolute Hush",
+      "city": "Tiptoe City",
+      "species": "Silencian",
+      "personality": "Scholarly and serene until a pin drops, at which point she transforms into a foghorn with spectacles. Firmly believes righteous shouting registers as zero decibels.",
+      "background": "Upon becoming Chief Librarian, hit upon the brilliant realisation that a library with zero visitors achieves flawless silence, and has been yelling people out the doors ever since.",
+      "familyCount": 2,
+      "familyMembers": [
+        "Nora herself (enforces silence at 110 decibels)",
+        "Sister: Forte (heavy-metal drummer; family Christmases require police)"
+      ],
+      "address": "Reference-Only Lane, Central Library (felt-padded floors throughout)"
+    },
+    "briefing": [
+      "Silent Stack system, Shhh Prime, Tiptoe City. Traffic control demanded I shut off my landing thrusters during descent to keep noise down. Physics, apparently, is a minor bylaw violation here.",
+      "Nora is a Silencian chief librarian who fines visitors for breathing audibly, completely unbothered that her own megaphone blasts rattle the stained glass across three parishes.",
+      "Family of two, sharing parents with her sister Forte, a touring heavy-metal drummer. Holiday dinners reportedly alternate between cymbal solos and amplified shushing until the neighbours ring the council.",
+      "I’ll point out that she is her own worst noise complaint, then present a blissfully silent LGPS crystal model. I shall set it down gently—clinking it on the desk probably carries a life sentence."
+    ]
+  },
+  {
+    "profileId": "quentin",
+    "kind": "fictional",
+    "portrait": 5,
+    "roman": "Quentin Queue",
+    "color": "#a8c7b8",
+    "name": "Quentin Queue",
+    "role": "Dedicated queuer standing 40 years in a mystery line",
+    "species": "Back-of-the-line life-form",
+    "planetName": "Queue-Starts-Here",
+    "intro": "“Ah, joining the queue, sir? Splendid—back of the line is right behind me. What’s at the front? Good heavens, one doesn’t ask! One simply queues!”",
+    "hint": "Treats joining any queue without asking questions as high virtue—completely unaware the line has ended at a broken vending machine for forty years.",
+    "choices": [
+      {
+        "text": "Standing forty years in a queue without knowing what’s at the front? Even an immortal has to salute waste on that scale—you’re queuing for a brick wall.",
+        "effect": 3,
+        "tag": "Shatter the blind queuing",
+        "response": "“Preposterous! A hundred and forty-two respectable citizens wouldn’t possibly queue for an Out-of-Order sign—oi, chap at the front, IS it broken?! Forty years!!”"
+      },
+      {
+        "text": "If you put a tenth of your queue-jumping fury into checking whether the line was moving, you’d have gone home in 1986.",
+        "effect": 2,
+        "tag": "Mock the static devotion",
+        "response": "“A stationary queue is an orderly queue, sir! …Though I’ll admit my ankles have begun raising mild objections.”"
+      },
+      {
+        "text": "That folding camp stool looks about ready to surrender after forty years.",
+        "effect": 1,
+        "tag": "Tease the stool",
+        "response": "“Oh, this is my third one! Ordered it by post and had the courier deliver straight to position 142.”"
+      }
+    ],
+    "giftResponse": "“Wait—handing it straight over without a numbered ticket or velvet rope?! Good Lord, it feels terribly illicit… still, don’t mind if I do!”",
+    "fact": "Quentin stepped out of line for the first time in forty years and bought tea at an empty café nearby. Next morning he started a fresh queue outside its door and beamed.",
+    "dossier": {
+      "system": "Standby system",
+      "planet": "Queue-Starts-Here",
+      "continent": "Velvet-Rope continent",
+      "country": "Kindly-Wait-Your-Turn Kingdom",
+      "city": "Zigzag-Lane City",
+      "species": "Queuerian",
+      "personality": "Deeply principled and endlessly patient. Should anyone push in by half an inch, never speaks—simply delivers a surgical ‘tut’ and glares at the back of their neck for thirty minutes.",
+      "background": "Forty years ago mistook two fellows tying their shoelaces for a promising queue and fell in behind them. They left thirty seconds later, but someone joined behind him, trapping him honourably forever.",
+      "familyCount": 3,
+      "familyMembers": [
+        "Quentin himself (142nd from the front)",
+        "Spouse: Line (queuing elsewhere to bring him sandwiches)",
+        "Adult daughter: Turn (invented queue-skipping fast passes out of spite)"
+      ],
+      "address": "Outside the Blank Brick Wall, Standing Position 142"
+    },
+    "briefing": [
+      "Standby system, Queue-Starts-Here, Zigzag-Lane City. Three hundred spacecraft were lined up neatly in orbit when I arrived. The lead ship broke down a decade ago, yet nobody will dream of overtaking. Dreadfully British.",
+      "Quentin is a Queuerian who has stood faithfully behind a broken vending machine for forty years purely out of civic duty. Hand him my immortality and he’d happily wait another fifty millennia just to see what happens.",
+      "Three in the household: Quentin, his spouse Line bringing flasks of tea, and their daughter Turn, who invented fast-track passes purely to scandalise him. All stemming from two strangers tying their shoelaces.",
+      "I’ll break the tragic news about the blank wall at the front, then hand over an LGPS crystal model with zero waiting time. Receiving something without queuing first may shake his entire worldview."
+    ]
+  },
+  {
+    "profileId": "toby",
+    "kind": "fictional",
+    "portrait": 7,
+    "roman": "Toby Trend",
+    "color": "#c9a0dc",
+    "name": "Toby Trend",
+    "role": "Galactic contrarian who drops bands the moment anyone likes them",
+    "species": "Early-demo-only life-form",
+    "planetName": "Liked-Their-Early-Stuff",
+    "intro": "“The Universe? Yeah, the first 0.001 seconds of the Big Bang were pretty raw, I guess. Total sell-out once galaxies went mainstream—I don’t really follow it anymore.”",
+    "hint": "Cares nothing for art itself—only for being the sole person who heard of it first. The instant anything gains a second fan, he declares it ruined.",
+    "choices": [
+      {
+        "text": "You don’t love art at all—you just love the mirror reflection of yourself knowing something obscure. A shallow poseur who bolts the second anyone agrees.",
+        "effect": 3,
+        "tag": "Expose the hipster vanity",
+        "response": "“Hey, not true! I genuinely prefer lo-fi rawness—wait, am I literally planning to get bored of a new band before they form? Oh no…”"
+      },
+      {
+        "text": "You’re one step away from claiming bands were best before they bought instruments. If contrarianism were banned, could you form a single opinion?",
+        "effect": 2,
+        "tag": "Mock the knee-jerk snobbery",
+        "response": "“Buying instruments IS selling out, mate! That vague pre-rehearsal yearning was way more authentic!”"
+      },
+      {
+        "text": "You do realise your thick black frames don’t actually have lenses in them?",
+        "effect": 1,
+        "tag": "Tease the glasses",
+        "response": "“Prescription lenses are way too mainstream. Pure frames curate reality without corporate optics.”"
+      }
+    ],
+    "giftResponse": "“Oh, Li₁₀GeP₂S₁₂? Yeah, I was actually into tetrahedral sulphide frameworks back before the 2011 Nature paper dropped… okay fine, it looks pretty sick, I’ll take it.”",
+    "fact": "Toby put the LGPS model centre-stage on his shelf and tells every visitor he was ‘super into solid-state electrolytes way before batteries went mainstream’.",
+    "dossier": {
+      "system": "Underground system",
+      "planet": "Liked-Their-Early-Stuff",
+      "continent": "Cassette-Demo continent",
+      "country": "Sold-Out-After-Track-One Federation",
+      "city": "Unmarked-Alley-Café City",
+      "species": "Hipstan",
+      "personality": "Perpetually leaning against brick walls, physically incapable of agreeing with a majority. If a café he likes gains a queue, immediately posts ‘gone downhill’ and leaves.",
+      "background": "Once adored a chart-topping pop act until he saw someone wearing the same T-shirt at a gig. Traumatised into lifelong contrarianism, he now only attends concerts with three or fewer attendees.",
+      "familyCount": 2,
+      "familyMembers": [
+        "Toby himself (prefers the silent hiss before track one starts)",
+        "Brother: Mainstream (cheerful fan of blockbusters and chain burgers)"
+      ],
+      "address": "Unlisted Alley, Secret Coffee Roastery (password changes hourly)"
+    },
+    "briefing": [
+      "Underground system, Liked-Their-Early-Stuff, Unmarked-Alley-Café City. Zero signposts and an unlisted landing pad—apparently being impossible to find is ‘part of the vibe’. To a delivery pilot, it’s simply irritating.",
+      "Toby is a Hipstan contrarian who bins anything the moment a second sentient being enjoys it. Tell him I’m insulting the entire Universe and he’ll probably sigh that my first three victims were much edgier.",
+      "Family of two alongside his gloriously normal brother Mainstream. Whenever his brother enjoys a high-street burger, Toby laments that ‘beef really lost its raw edge after cooking went commercial’.",
+      "I’ll strip away his precious indie mystique and hand him an LGPS crystal model. Since it was published in Nature Materials back in 2011, he’ll pretend it’s too mainstream—and keep it anyway."
+    ]
+  },
+  {
+    "profileId": "uma",
+    "kind": "fictional",
+    "portrait": 8,
+    "roman": "Uma Echoes",
+    "color": "#f0a69d",
+    "name": "Uma Echoes",
+    "role": "Auntie who says ‘I’ll let you go’ and talks two more hours",
+    "species": "Call-extending life-form",
+    "planetName": "Anyway-I’ll-Let-You-Go",
+    "intro": "“Oh, lovely to see you! Hang on, I’m just finishing a call—right, anyway, I’ll let you go! Oh, before I forget, did I mention my neighbour’s dog’s dentist’s cousin—”",
+    "hint": "Phrases like ‘I’ll keep this brief’ and ‘I’d better hang up’ actually mean chapter one is just beginning. Wakes sleeping listeners to continue.",
+    "choices": [
+      {
+        "text": "Your ‘anyway, I’ll let you go’ translates directly to ‘buckle up for Act One’. Do you have a personal vendetta against other people’s ears?",
+        "effect": 3,
+        "tag": "Expose the endless goodbyes",
+        "response": "“Oh, how cheeky, it really was just one tiny thing! …Goodness, did I really say goodbye three hours ago?! Where does the time go!”"
+      },
+      {
+        "text": "When you preface a story with ‘to cut a long story short’, it routinely outlasts the rise and fall of galactic empires. Are you cursed to die if you summarise?",
+        "effect": 2,
+        "tag": "Mock the wild tangents",
+        "response": "“Well you simply HAVE to know why the spaniel had a red collar, otherwise the dentist’s cousin’s wedding makes no sense at all! Now, back in ’89—”"
+      },
+      {
+        "text": "Has that telephone handset actually fused permanently into your left ear?",
+        "effect": 1,
+        "tag": "Tease the handset",
+        "response": "“Custom ergonomic shoulder-grip, darling! Leaves both hands free to knit jumpers during a six-hour catch-up!”"
+      }
+    ],
+    "giftResponse": "“Oh, how darling! You know, my sister’s husband’s boss had something just like—oh, heading off already? Right, just one quick word—give me forty minutes!”",
+    "fact": "That evening Uma named all twenty-five atoms in the LGPS model and phoned her neighbours to introduce each one. The call wrapped up sometime next Tuesday.",
+    "dossier": {
+      "system": "Chat Loop system",
+      "planet": "Anyway-I’ll-Let-You-Go",
+      "continent": "Oh-One-More-Thing continent",
+      "country": "Just-a-Quick-Word Federation",
+      "city": "Two-Hour-Doorstep-Chat City",
+      "species": "Telephonian",
+      "personality": "Overwhelmingly warm, chatty, and capable of branching one anecdote into three unrelated relatives’ medical histories faster than light.",
+      "background": "Picked up the phone thirty-eight years ago for a quick three-minute check-in and is technically still on the same call. The telecoms board awarded her a solid gold handset.",
+      "familyCount": 4,
+      "familyMembers": [
+        "Uma herself (says ‘bye then’ roughly forty times a day)",
+        "Spouse: Mute (mastered six alien languages while waiting for her to hang up)",
+        "Adult daughter: Call (carries three power banks solely for Mum)",
+        "Adult son: Hangup (professional three-minute call-exit specialist)"
+      ],
+      "address": "Doorstep-Natter Lane, House Whose Front Door Never Quite Shuts"
+    },
+    "briefing": [
+      "Chat Loop system, Anyway-I’ll-Let-You-Go, Two-Hour-Doorstep-Chat City. Requesting landing clearance took forty-five minutes because the tower controller said ‘clear to land, oh by the way my cat did the funniest thing—’.",
+      "Uma is a Telephonian currently entering year thirty-eight of a quick three-minute phone call. I may possess eternity, yet I still draw the line at hearing about her neighbour’s dog’s dentist’s cousin.",
+      "Four in the household: Uma, her spouse Mute—who quietly learned six languages beside her sofa—plus grown children Call and Hangup. Truly an inspiring study in domestic adaptation.",
+      "I’ll deliver a crisp barb about her mythical goodbyes, press an LGPS crystal model into her free hand, and sprint straight back up the ramp before ‘just one quick story’ eats a century."
+    ]
+  },
+  {
+    "profileId": "victor",
+    "kind": "fictional",
+    "portrait": 8,
+    "roman": "Victor Vague",
+    "color": "#94b8c9",
+    "name": "Victor Vague",
+    "role": "TV pundit who has never committed to a single opinion",
+    "species": "Hedging-pundit life-form",
+    "planetName": "It-Depends Prime",
+    "intro": "“Well now, whether you are standing here depends entirely on how one defines ‘standing’—in a broader sense one might say you’re sitting, so we must remain measured.”",
+    "hint": "Collects handsome appearance fees by removing 100% of substance and conclusions from every sentence so nobody can ever prove him wrong.",
+    "choices": [
+      {
+        "text": "You’ve turned ‘it could go either way’ into a hundred-clause career. A blank sheet of A4 paper holds a firmer opinion than you do.",
+        "effect": 3,
+        "tag": "Expose the spineless waffle",
+        "response": "“Now, blank paper itself invites multiple interpretations—blast it, being called hollow directly has made me unambiguously cross!”"
+      },
+      {
+        "text": "By carefully draining every opinion out of your sentences so nobody can argue, you’ve reduced speech to warm carbon dioxide.",
+        "effect": 2,
+        "tag": "Mock the empty air",
+        "response": "“Warm carbon dioxide, seen through another lens, could of course be viewed as an evocative commentary on climate—ah, out of time, pity!”"
+      },
+      {
+        "text": "At least that magnificent silver hair earns its keep bouncing studio lights around.",
+        "effect": 1,
+        "tag": "Tease the hair",
+        "response": "“Most gracious! While views on hair-care lighting naturally differ, I’m broadly inclined to treat that as cautiously positive.”"
+      }
+    ],
+    "giftResponse": "“Intriguing—in one sense a crystal, yet from another angle… hang on, no, that’s blatantly an LGPS model! Blast, my first firm statement in forty years!”",
+    "fact": "Live on air that night, Victor accidentally declared ‘this soup is too salty’. The studio switchboard jammed with eighty thousand astonished callers.",
+    "dossier": {
+      "system": "Nuance system",
+      "planet": "It-Depends Prime",
+      "continent": "On-The-Other-Hand continent",
+      "country": "Needs-Further-Study Federation",
+      "city": "Differing-Views City",
+      "species": "Ambiguan",
+      "personality": "Projects immense gravitas while calculating how to speak for ninety seconds without uttering either ‘yes’ or ‘no’.",
+      "background": "Asked ‘what is one plus one?’ on a quiz show, delivered a three-minute monologue on contextual arithmetic, and was immediately signed as a flagship political pundit.",
+      "familyCount": 2,
+      "familyMembers": [
+        "Victor himself (forty years clean of direct answers)",
+        "Spouse: Clear (once snapped after a 30-minute waffle over whether he wanted curry)"
+      ],
+      "address": "Fence-Sitters Row, Broadly-Speaking TV Studio Four"
+    },
+    "briefing": [
+      "Nuance system, It-Depends Prime, Differing-Views City. The spaceport welcome sign reads ‘This may in some respects be considered a spaceport, though opinions vary’. Pilots get lost daily.",
+      "Victor is an Ambiguan television pundit who built a mansion on forty years of saying ‘there are valid points on both sides’. Even my insult risks being filed as ‘a thought-provoking perspective’.",
+      "Lives with his refreshingly blunt spouse Clear, who nearly threw a saucepan at him last Tuesday when he described dinner as ‘curry-adjacent depending on one’s culinary framework’.",
+      "I’ll hit him with a gloriously unambiguous insult and an unmistakably solid LGPS crystal model. Forcing a lifelong fence-sitter to commit to a simple ‘thanks’ or ‘clear off’ will be deeply satisfying."
+    ]
+  },
+  {
+    "profileId": "yolanda",
+    "kind": "fictional",
+    "portrait": 5,
+    "roman": "Yolanda Yawn",
+    "color": "#d4b48a",
+    "name": "Yolanda Yawn",
+    "role": "Aristocrat grumbling ‘it was better back then’ for 3 billion years",
+    "species": "Rose-tinted-nostalgia life-form",
+    "planetName": "Back-In-My-Day",
+    "intro": "“Hmph! Young galaxies today have zero backbone! Back in my day, gravity had proper weight and dignity! Modern nebulae are all flash and no substance!”",
+    "hint": "Endlessly glorifies the ancient past—yet instantly refuses any time machine because ‘they didn’t have heated toilet seats back then’.",
+    "choices": [
+      {
+        "text": "Your beloved ‘good old days’ are a work of fiction edited by a selective memory. Drop you back there and you’d be weeping for modern plumbing within three minutes.",
+        "effect": 3,
+        "tag": "Expose the fake nostalgia",
+        "response": "“Poppycock! Heated plumbing and cosmic dignity are entirely separate matters! …Though I’ll grant you, medieval stone loos were brisk in January!”"
+      },
+      {
+        "text": "Three billion years spent exclusively complaining about young galaxies is an awfully low-effort retirement. At least update your grumbles for the current aeon.",
+        "effect": 2,
+        "tag": "Mock the ancient grumbling",
+        "response": "“Bah! Classic complaints age like fine port! Young folks today whinge in two sentences online and call it a day—no stamina!”"
+      },
+      {
+        "text": "Isn’t that posh monocle fogging up slightly?",
+        "effect": 1,
+        "tag": "Tease the monocle",
+        "response": "“Good eye! Glass simply isn’t blown the way it used to be… or possibly I forgot to polish it after lunch.”"
+      }
+    ],
+    "giftResponse": "“Hmph, for something knocked up by modern youth… wait, these tetrahedra show proper old-fashioned craftsmanship! Splendid—pop it beside my tea set!”",
+    "fact": "Staring at the LGPS model, Yolanda muttered ‘perhaps the present isn’t completely hopeless’ for the first time in three billion years. The butler dropped the teapot in shock.",
+    "dossier": {
+      "system": "Nostalgia system",
+      "planet": "Back-In-My-Day",
+      "continent": "Good-Old-Days continent",
+      "country": "Not-Like-It-Used-To-Be Federation",
+      "city": "Proper-Gravity City",
+      "species": "Oldguardian",
+      "personality": "Stately old aristocrat who instinctively sneers at anything invented after Tuesday—quietly excepting high-speed broadband, underfloor heating, and modern dentistry.",
+      "background": "Published an editorial shortly after the Big Bang lamenting that the cosmos had gone soft since the primeval plasma era, and has dined out on the exact same grumble for three billion years.",
+      "familyCount": 3,
+      "familyMembers": [
+        "Yolanda herself (three billion years of unbroken reminiscing)",
+        "Butler: Antique (has memorised every anecdote after five million hearings)",
+        "Grandchild: Neo (lent Grandpa a VR headset and has never seen it again)"
+      ],
+      "address": "Rose-Tinted Avenue, Two-Billion-Year-Old Manor (with Smart Heating)"
+    },
+    "briefing": [
+      "Nostalgia system, Back-In-My-Day, Proper-Gravity City. Quaint medieval cobblestones on top, fibre-optic broadband and underfloor heating tucked neatly underneath. Nostalgia is always easiest with modern plumbing.",
+      "Yolanda is an Oldguardian aristocrat who has grumbled that young galaxies lack moral fibre for three billion years. Speaking as an immortal, I can confirm the Universe has always been equally shambolic.",
+      "Lives with long-suffering butler Antique and grandchild Neo—whose brand-new VR headset Yolanda loudly condemned as modern rubbish before secretly hogging it every evening.",
+      "One crisp reality check for those rose-tinted spectacles, plus a cutting-edge LGPS crystal model. If he claims ‘lithium had much better flavour back in the Miocene’, I may actually burst out laughing."
     ]
   }
 ];

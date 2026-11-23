@@ -328,7 +328,7 @@ export function drawAlien(canvas, {species='bureaucrat',color='#a3d9b7',mood='ne
   const rect=canvas.getBoundingClientRect(),w=rect.width||260,h=rect.height||220,dpr=Math.min(globalThis.devicePixelRatio||1,2);
   canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
   const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
-  const type=typeof species==='number'?species%5:hash(species)%5;
+  const type=typeof species==='number'?species%9:hash(species)%9;
   const angry=['angry','offended','fail'].includes(mood),happy=['happy','delighted','success'].includes(mood),confused=['confused','gift','surprised'].includes(mood);
   const scale=Math.min(w/260,h/230);c.save();c.translate(w/2,h/2);c.scale(scale,scale);
   const halo=c.createRadialGradient(0,-10,10,0,-10,110);halo.addColorStop(0,rgba(color,.14));halo.addColorStop(1,rgba(color,0));c.fillStyle=halo;circle(c,0,-10,110);c.fill();
@@ -363,11 +363,33 @@ export function drawAlien(canvas, {species='bureaucrat',color='#a3d9b7',mood='ne
     // Squidlike academic, three short neck tentacles.
     c.beginPath();c.moveTo(-46,-19);c.bezierCurveTo(-64,-87,59,-93,49,-17);c.quadraticCurveTo(40,17,28,23);c.lineTo(22,38);c.quadraticCurveTo(8,48,10,24);c.lineTo(-4,24);c.quadraticCurveTo(-5,46,-18,40);c.lineTo(-22,22);c.quadraticCurveTo(-41,27,-46,-19);c.closePath();c.fillStyle=skin;c.fill();
     c.save();c.globalAlpha=.18;c.fillStyle='#f3f4d8';for(const [x,y,r] of [[-26,-57,8],[-10,-68,5],[20,-60,7],[35,-43,4]]){circle(c,x,y,r);c.fill();}c.restore();
-  }else{
+  }else if(type===4){
     // Tall angular observer with a fin.
     c.beginPath();c.moveTo(-39,-53);c.lineTo(0,-75);c.lineTo(40,-50);c.lineTo(48,-8);c.lineTo(17,29);c.lineTo(-17,29);c.lineTo(-47,-10);c.closePath();c.fillStyle=skin;c.fill();
     c.beginPath();c.moveTo(-7,-69);c.lineTo(4,-100);c.lineTo(18,-64);c.closePath();c.fillStyle=color;c.fill();
     c.beginPath();c.moveTo(-42,-29);c.lineTo(-64,-16);c.lineTo(-46,5);c.closePath();c.fillStyle=color;c.fill();c.beginPath();c.moveTo(42,-29);c.lineTo(64,-16);c.lineTo(46,5);c.closePath();c.fill();
+  }else if(type===5){
+    // Bowler-hatted British-style alien with a monocle.
+    c.beginPath();c.ellipse(0,-17,44,48,0,0,TAU);c.fillStyle=skin;c.fill();
+    for(const d of [-1,1]){c.beginPath();c.ellipse(d*46,-16,7,13,d*.2,0,TAU);c.fillStyle=color;c.fill();}
+    c.beginPath();c.ellipse(0,-58,54,9,0,0,TAU);c.fillStyle='#2a3b45';c.fill();stroke(c,'#89a29f',1.5);
+    c.beginPath();c.arc(0,-60,34,Math.PI,TAU);c.closePath();c.fillStyle='#1f303b';c.fill();stroke(c,'#7b9491',1.5);
+    c.fillStyle='#d2c483';c.fillRect(-33,-66,66,5);
+  }else if(type===6){
+    // Halo-crowned mystic / strict proprietor with a forehead gem.
+    c.beginPath();c.moveTo(-44,-44);c.quadraticCurveTo(0,-84,44,-44);c.quadraticCurveTo(50,10,0,31);c.quadraticCurveTo(-50,10,-44,-44);c.closePath();c.fillStyle=skin;c.fill();
+    c.beginPath();c.arc(0,-54,48,Math.PI*1.12,Math.PI*1.88);stroke(c,'#e4cf8b',2.5);
+    c.beginPath();c.moveTo(0,-66);c.lineTo(8,-54);c.lineTo(0,-42);c.lineTo(-8,-54);c.closePath();c.fillStyle='#d9f78b';c.fill();
+    for(const d of [-1,1]){circle(c,d*48,-24,8);c.fillStyle=rgba(color,.75);c.fill();}
+  }else if(type===7){
+    // Spiky-crested, fast-talking tech/hipster alien.
+    c.beginPath();c.moveTo(-43,-35);c.lineTo(-47,-64);c.lineTo(-22,-55);c.lineTo(0,-82);c.lineTo(22,-55);c.lineTo(47,-64);c.lineTo(43,-35);c.lineTo(35,16);c.quadraticCurveTo(0,36,-35,16);c.closePath();c.fillStyle=skin;c.fill();
+    c.beginPath();c.roundRect(-24,18,48,20,6);c.fillStyle='#192831';c.fill();stroke(c,'rgba(190,220,210,.25)',1);
+  }else{
+    // Round-cheeked, ear-frilled chatterbox / TV pundit alien.
+    for(const d of [-1,1]){c.beginPath();c.ellipse(d*50,-24,14,22,d*-.25,0,TAU);c.fillStyle=rgba(color,.8);c.fill();stroke(c,'rgba(230,245,220,.3)',1.5);}
+    c.beginPath();c.ellipse(0,-18,48,50,0,0,TAU);c.fillStyle=skin;c.fill();
+    c.beginPath();c.arc(0,-62,22,Math.PI,TAU);c.fillStyle='rgba(235,244,225,.32)';c.fill();
   }
   // Eye sockets and eyes.
   for(const d of [-1,1]){
@@ -379,9 +401,12 @@ export function drawAlien(canvas, {species='bureaucrat',color='#a3d9b7',mood='ne
     else if(confused){c.beginPath();c.moveTo(ex-10,ey-17-(d===1?5:0));c.quadraticCurveTo(ex,ey-24-(d===1?4:0),ex+10,ey-17-(d===1?5:0));stroke(c,'#426668',3);}
     else if(!happy){c.beginPath();c.moveTo(ex-13,ey-5);c.lineTo(ex+13,ey-5);stroke(c,rgba(color,.84),5);}
   }
-  if(type===1){
-    for(const d of [-1,1]){circle(c,d*21,-28,16);stroke(c,'#d4d0a8',2.5);}
-    c.beginPath();c.moveTo(-5,-28);c.quadraticCurveTo(0,-33,5,-28);stroke(c,'#d4d0a8',2);
+  if(type===1||type===7){
+    for(const d of [-1,1]){circle(c,d*21,-28,16);stroke(c,type===7?'#23333d':'#d4d0a8',type===7?3.2:2.5);}
+    c.beginPath();c.moveTo(-5,-28);c.quadraticCurveTo(0,-33,5,-28);stroke(c,type===7?'#23333d':'#d4d0a8',2.2);
+  }else if(type===5){
+    circle(c,21,-28,16);stroke(c,'#e6d28a',2.2);
+    c.beginPath();c.moveTo(37,-24);c.quadraticCurveTo(44,6,32,36);stroke(c,'#d4c078',1.3);
   }
   // Nose and expression.
   c.beginPath();c.moveTo(0,-21);c.lineTo(-4,-8);c.lineTo(3,-8);stroke(c,'rgba(20,53,60,.28)',2);
